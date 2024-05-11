@@ -1,0 +1,1353 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     51372,       1345]
+NotebookOptionsPosition[     43452,       1174]
+NotebookOutlinePosition[     44283,       1201]
+CellTagsIndexPosition[     44203,       1196]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["HeterogeneousSalvoModel", "ObjectName",
+ CellID->676033743,ExpressionUUID->"a07e7fc1-42c1-4017-b6e3-aba974734faf"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"c8936fa9-181e-483f-b030-3e4997633dad"],
+ Cell[BoxData[
+  RowBox[{"HeterogeneousSalvoModel", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"A", ",", 
+      StyleBox["m", "TI"]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"B", ",", 
+      StyleBox["n", "TI"]}], "}"}]}], "]"}]], "InlineFormula",ExpressionUUID->
+  "8256ae56-f511-4043-8af7-a4275fccbd65"],
+ "\[LineSeparator]creates heterogeneous salvo combat model matrices."
+}], "Usage",
+ CellChangeTimes->{{3.924442228891721*^9, 3.924442306049117*^9}, {
+  3.924442337583334*^9, 3.9244424196415358`*^9}, {3.924442528926897*^9, 
+  3.924442616474483*^9}},
+ CellID->1910625971,ExpressionUUID->"e2c7eb2f-6e6e-4da5-9309-0307641dba75"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["HeterogeneousSalvoModel",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/HeterogeneousSalvoModel"]], 
+  "InlineFormula",ExpressionUUID->"8d603b4b-ee5a-4eef-bf3f-62a7aef997c8"],
+ " generates the offense matrix and defense matrix for the force ",
+ Cell[BoxData[
+ "A"], "InlineFormula",ExpressionUUID->"75d18223-3004-4da6-9b11-dc6fc1649f61"],
+ " ."
+}], "Notes",
+ CellChangeTimes->{{3.924442620300315*^9, 3.924442684023779*^9}, 
+   3.9244434128755007`*^9},
+ CellID->567721006,ExpressionUUID->"dade3fcb-ad1a-4d10-8f82-bc02cd45a316"],
+
+Cell[TextData[{
+ "The force ",
+ Cell[BoxData[
+ "A"], "InlineFormula",ExpressionUUID->"9d897e2b-fd1f-486e-957d-95799afd48e9"],
+ " has ",
+ Cell[BoxData[
+  StyleBox["m", "TI"]], "InlineFormula",ExpressionUUID->
+  "21683b7c-2809-46ae-b33c-77d2b3cc27d5"],
+ " units and it opposes the force ",
+ Cell[BoxData[
+ "B"], "InlineFormula",ExpressionUUID->"bf4502e0-84a4-45d7-b422-f1a4aa6fc1d0"],
+ " that has ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula",ExpressionUUID->
+  "5558b2b3-aaa4-47cd-9aec-71689441ca3b"],
+ " units."
+}], "Notes",
+ CellChangeTimes->{{3.924442620300315*^9, 3.9244427164617777`*^9}, {
+  3.924443389448884*^9, 3.9244434037725143`*^9}},
+ CellID->644643969,ExpressionUUID->"31254bb3-d6ec-4bd7-86a1-a913c6bdfdd3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "See Also",
+ Cell[BoxData[
+  TemplateBox[{"SeeAlso", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Insert links to any related reference (function) pages.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "8db30893-0d57-4212-9a6f-f430635d9bb5"]
+}], "SeeAlsoSection",
+ CellID->417104221,ExpressionUUID->"5cd19fd0-89e0-4dcc-9d19-e5e927c19af4"],
+
+Cell[TextData[{
+ Cell[BoxData["SalvoTerms"], "InlineSeeAlsoFunction",
+  TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
+  "27efd4c5-092d-4637-afe3-f00b91999b89"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData["SalvoDamage"], "InlineSeeAlsoFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"1a706506-cd31-43f1-88cf-4b9b6960d748",ExpressionUUID->
+  "0e4a8233-3181-4977-af5c-9451fc6894d1"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData["SalvoVariable"], "InlineSeeAlsoFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"b502eac9-4e4b-422f-b2be-facf3c812dc5",ExpressionUUID->
+  "9618446e-b100-4806-a8be-8000740fda3d"],
+ Cell[BoxData[
+  RowBox[{
+  Cell[TextData[StyleBox[
+   " \[FilledVerySmallSquare] ", "InlineSeparator"]],ExpressionUUID->
+    "5e73618e-441d-4592-ac7f-a69286f9d463"], 
+   DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
+    "c2ddbfc0-792b-4399-966f-e8883bfd6b89", 
+     "56dbe9a5-36fc-401f-980b-d0d804f38ea7"], $CellContext`cellobj$$ = 
+    CellObject[
+    "b6d79bb6-4189-468f-963f-0edb0d2c0937", 
+     "d04b2f2a-6f60-4ce8-9d38-800d150760c3"]}, 
+    TemplateBox[{
+      GraphicsBox[{{
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         CircleBox[{0, 0}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{0, 0.62}, {0, -0.62}}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{-0.62, 0}, {0.62, 0}}]}}, 
+       ImagePadding -> {{1., 1.}, {2.4, 1.}}, ImageSize -> 16, 
+       PlotRange -> {{-1.06, 1.06}, {-1.06, 1.06}}, 
+       BaselinePosition -> (Center -> 
+        Center)], $CellContext`nbobj$$, $CellContext`cellobj$$},
+     "InlineListingAddButton"],
+    Initialization:>($CellContext`nbobj$$ = 
+      EvaluationNotebook[]; $CellContext`cellobj$$ = EvaluationCell[])]}]], 
+  "InlineListingAddButton",ExpressionUUID->
+  "b6d79bb6-4189-468f-963f-0edb0d2c0937"]
+}], "SeeAlso",
+ CellChangeTimes->{{3.924443422392406*^9, 3.924443433586269*^9}, {
+  3.924444144772821*^9, 3.9244441495227957`*^9}},
+ CellID->884018539,ExpressionUUID->"6ad49065-8013-40ae-a887-f932c6c56700"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Tech Notes",
+ Cell[BoxData[
+  TemplateBox[{"TechNotes", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell["Insert links to related tech notes.", "MoreInfoText"], BaseStyle -> 
+       "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "a81e07dc-7593-491a-80ef-801d37f4b343"]
+}], "TechNotesSection",
+ CellID->1407715027,ExpressionUUID->"66344e6f-4cac-4971-b945-3abbaed762be"],
+
+Cell["XXXX", "Tutorials",
+ CellID->639119790,ExpressionUUID->"3687f759-5462-4106-872f-64ab8bc14299"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Guides", "MoreAboutSection",
+ CellID->2120591883,ExpressionUUID->"d0246a78-3b75-4a6d-9f0c-27337111ad3d"],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1149171969,ExpressionUUID->"dfff59f1-2144-4a91-b7c2-4e69a69b6a3e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Related Links",
+ Cell[BoxData[
+  TemplateBox[{"RelatedLinks", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Insert links to any related page, including web pages.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "d25537a7-bb7a-499f-8581-875d85c0665a"]
+}], "RelatedLinksSection",
+ CellID->1812845512,ExpressionUUID->"0e5fbd3f-b61b-4810-ac04-80383e8e3b91"],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->2144020195,ExpressionUUID->"3985dacf-de15-459e-9717-7cf317786399"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Examples Initialization",
+ Cell[BoxData[
+  TemplateBox[{"ExamplesInitialization", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Input that is to be evaluated before any examples are run, e.g. \
+Needs[\[Ellipsis]].", "MoreInfoText"], BaseStyle -> "IFrameBox"]], 
+     "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "50347cc0-48e0-4ba2-a8c3-6316188689c9"]
+}], "ExamplesInitializationSection",
+ CellID->1919304352,ExpressionUUID->"74ada246-ceba-4c8c-8af2-256731810de0"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<AntonAntonov`SalvoCombatModeling`\>\"", 
+  "]"}]], "ExampleInitialization",
+ CellID->396382477,ExpressionUUID->"92565f6b-5dea-49de-9b39-e17e441d5dfb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox[
+      RowBox[{"Basic", " ", "Examples"}], "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->506017945,ExpressionUUID->"47d177b8-490f-4a29-827a-a7ea38a40fcb"],
+
+Cell[TextData[{
+ "Here we generate the model matrices for the force ",
+ Cell[BoxData[
+ "A"], "InlineFormula",ExpressionUUID->"cdca51d2-c163-498c-bf8e-b8ab75ffc906"],
+ " with ",
+ Cell[BoxData[
+ "2"], "InlineFormula",ExpressionUUID->"e15aa6b8-0734-41bd-bbcd-491e41db8bed"],
+ " units fighting the force ",
+ Cell[BoxData[
+ "B"], "InlineFormula",ExpressionUUID->"dae4536b-301f-46af-b8f1-82154b2921de"],
+ " with ",
+ Cell[BoxData[
+ "1"], "InlineFormula",ExpressionUUID->"a3a90ba6-e3ac-4fc9-a50c-a9641d1ffbfa"],
+ " unit :"
+}], "ExampleText",
+ CellChangeTimes->{{3.9244434664698973`*^9, 3.924443482402698*^9}, {
+  3.924443549552294*^9, 3.92444355299442*^9}, {3.924443584160152*^9, 
+  3.924443659323864*^9}, {3.924443800745799*^9, 3.9244438056050777`*^9}, {
+  3.924451002330258*^9, 3.92445100916391*^9}},
+ CellID->854297759,ExpressionUUID->"06b5584a-64f7-4230-9ee7-1f48e01beb85"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", 
+   RowBox[{"A", ",", "B"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"m", "=", 
+  RowBox[{"HeterogeneousSalvoModel", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"A", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"B", ",", "1"}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.924443438563015*^9, 3.924443456470538*^9}, {
+  3.924443546629631*^9, 3.924443577004753*^9}, {3.924443750144503*^9, 
+  3.924443781541215*^9}, {3.924443945626067*^9, 3.9244439458720217`*^9}, {
+  3.924447963897921*^9, 3.924448012146153*^9}, {3.9244510121369867`*^9, 
+  3.924451014500105*^9}},
+ CellLabel->"In[15]:=",
+ CellID->1743631708,ExpressionUUID->"d23b9e4a-ad8f-4dfa-85cb-fa0f9c0493e7"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"A\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"A", "[", "1", "]"}], ",", 
+      RowBox[{"A", "[", "2", "]"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"B\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"B", "[", "1", "]"}], "}"}]}], ",", 
+   RowBox[{"\<\"OffenseMatrixA\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"\[Beta]", "[", 
+          RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+         RowBox[{"\[Rho]", "[", 
+          RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+         RowBox[{"\[Sigma]", "[", 
+          RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+         RowBox[{"\[Tau]", "[", 
+          RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+         RowBox[{"\[CapitalPsi]", "[", 
+          RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}]}], 
+        RowBox[{"\[Zeta]", "[", 
+         RowBox[{"A", ",", "1"}], "]"}]], "}"}], ",", 
+      RowBox[{"{", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"\[Beta]", "[", 
+          RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+         RowBox[{"\[Rho]", "[", 
+          RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+         RowBox[{"\[Sigma]", "[", 
+          RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+         RowBox[{"\[Tau]", "[", 
+          RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+         RowBox[{"\[CapitalPsi]", "[", 
+          RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}]}], 
+        RowBox[{"\[Zeta]", "[", 
+         RowBox[{"A", ",", "2"}], "]"}]], "}"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"DefenseMatrixA\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"\[Gamma]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Delta]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalTheta]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}]}], 
+         RowBox[{"\[Zeta]", "[", 
+          RowBox[{"A", ",", "1"}], "]"}]], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"\[Gamma]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Delta]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalTheta]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}]}], 
+         RowBox[{"\[Zeta]", "[", 
+          RowBox[{"A", ",", "2"}], "]"}]]}], "}"}]}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.924443448858705*^9, 3.9244434569408627`*^9}, {
+   3.924443570904378*^9, 3.924443577979512*^9}, {3.924443750787519*^9, 
+   3.924443781820518*^9}, 3.924443946252287*^9, 3.9244441818961697`*^9, {
+   3.9244479663904877`*^9, 3.924447978696306*^9}, 3.924448012512632*^9, 
+   3.9244510148383503`*^9},
+ CellLabel->"Out[16]=",
+ CellID->1749850560,ExpressionUUID->"f17af640-ce4c-4c86-bdd2-e724b8bc5d0a"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Here is the matrix formula of the damage of the units ",
+ Cell[BoxData[
+ "A"], "InlineFormula",ExpressionUUID->"60d0f1db-4b44-475e-9e3c-e337a2c80525"],
+ ":"
+}], "ExampleText",
+ CellChangeTimes->{{3.9244434919518948`*^9, 3.924443532743541*^9}, {
+  3.924443948767888*^9, 3.92444394952901*^9}},
+ CellID->2100345989,ExpressionUUID->"8b554109-bd30-4c0f-a4d0-2e7717e21694"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"m", "[", "\"\<OffenseMatrixA\>\"", "]"}], ".", 
+     RowBox[{"m", "[", "\"\<B\>\"", "]"}]}], "-", 
+    RowBox[{
+     RowBox[{"m", "[", "\"\<DefenseMatrixA\>\"", "]"}], ".", 
+     RowBox[{"m", "[", "\"\<A\>\"", "]"}]}]}], "//", "Simplify"}], "//", 
+  "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.92444345764172*^9, 3.924443461408613*^9}, {
+  3.9244435355807962`*^9, 3.924443541903006*^9}, {3.924443678706468*^9, 
+  3.924443740918586*^9}},
+ CellLabel->"In[17]:=",
+ CellID->70925163,ExpressionUUID->"0759556e-1056-4755-8a77-b8b12a8bd9f2"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", 
+   TagBox[GridBox[{
+      {
+       FractionBox[
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"A", "[", "1", "]"}]}], " ", 
+          RowBox[{"\[Gamma]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Delta]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalTheta]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"B", "[", "1", "]"}], " ", 
+          RowBox[{"\[Beta]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Rho]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Sigma]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalPsi]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}]}]}], 
+        RowBox[{"\[Zeta]", "[", 
+         RowBox[{"A", ",", "1"}], "]"}]]},
+      {
+       FractionBox[
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"A", "[", "2", "]"}]}], " ", 
+          RowBox[{"\[Gamma]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Delta]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalTheta]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"B", "[", "1", "]"}], " ", 
+          RowBox[{"\[Beta]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+          RowBox[{"\[Rho]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Sigma]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+          RowBox[{"\[CapitalPsi]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}]}]}], 
+        RowBox[{"\[Zeta]", "[", 
+         RowBox[{"A", ",", "2"}], "]"}]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    Column], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.924443695158773*^9, 3.924443783823021*^9}, {
+   3.9244439329583797`*^9, 3.924443950827408*^9}, 3.924444183500606*^9, 
+   3.924447983026512*^9, 3.924448015116346*^9, 3.924451017956903*^9},
+ CellLabel->"Out[17]//MatrixForm=",
+ CellID->390754668,ExpressionUUID->"a7bf037a-5871-4502-a42e-2c8112c3af3f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "More Examples",
+ Cell[BoxData[
+  TemplateBox[{"MoreExamples", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell["Extended examples in standardized sections.", "MoreInfoText"], 
+       BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "48292399-0fa2-4901-a177-ccfd49f42602"]
+}], "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->608359495,ExpressionUUID->"ff91c2de-a6dd-4eac-acd4-4ab11eef2881"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Scope", "ExampleSection",ExpressionUUID->
+   "01868d18-ff4b-4697-acac-c0dbabae5f2d"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->528389098,ExpressionUUID->"e07cd157-7906-4880-8987-1196a12489be"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Generalizations & Extensions", "ExampleSection",ExpressionUUID->
+   "f00cb524-0983-48e3-bd68-e00aeaf3b051"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->790689741,ExpressionUUID->"076ec4a5-47a5-4992-9fa9-95c7d07d5a31"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Options", "ExampleSection",ExpressionUUID->
+   "d488c6f0-30cd-41e9-890a-69c3245d75f2"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->493669351,ExpressionUUID->"f27b056c-20e4-4998-91be-441908e7f6de"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "XXXX", "ExampleSubsection",ExpressionUUID->
+   "14958a33-b6d1-488f-9cd9-5931850d3eb2"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1371453896,ExpressionUUID->"168d2aba-bbbc-4b7f-b75c-adac1dc05d8d"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "XXXX", "ExampleSubsection",ExpressionUUID->
+   "02c3a8f4-420f-418c-b0e9-bebc7f86c1a4"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1083646821,ExpressionUUID->"e15c2515-13ea-41bc-838d-2f4c2090457f"]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Applications", "ExampleSection",ExpressionUUID->
+   "26dcdb3f-4f55-4b35-ba07-f13caa635a29"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->43310340,ExpressionUUID->"9c06e271-92e5-4890-9b9a-933ff77c2b59"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Properties & Relations", "ExampleSection",ExpressionUUID->
+   "cebda642-6fee-46c5-80e8-42a3f576f204"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2067411694,ExpressionUUID->"5ceb2964-aaea-4612-967b-6d6462ee864d"],
+
+Cell[TextData[{
+ "The following table shows model variables and descriptions using ",
+ Cell[BoxData[
+  ButtonBox["SalvoVariableRules",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/SalvoVariableRules"]], 
+  "InlineFormula",ExpressionUUID->"363dca2a-57e1-4541-b89f-bcc55c8f0d48"],
+ ":"
+}], "ExampleText",
+ CellChangeTimes->{{3.924448114026874*^9, 3.924448137618767*^9}, {
+  3.9244501199656887`*^9, 3.924450127116796*^9}, {3.924450286343899*^9, 
+  3.924450297683694*^9}, {3.9244508312142687`*^9, 3.924450842550179*^9}, {
+  3.924450941283216*^9, 3.9244509431314297`*^9}},
+ CellID->818157324,ExpressionUUID->"c0308929-eab3-4a36-a2d0-e677abf263ca"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", 
+   RowBox[{"A", ",", "B"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ResourceFunction", "[", "\"\<GridTableForm\>\"", "]"}], "[", 
+  RowBox[{
+   RowBox[{"List", "@@@", 
+    RowBox[{"Normal", "[", 
+     RowBox[{"SalvoVariableRules", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"A", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"B", ",", "1"}], "}"}]}], "]"}], "]"}]}], ",", 
+   RowBox[{"TableHeadings", "->", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Variable\>\"", ",", "\"\<Description\>\""}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.924444538540097*^9, 3.924444541696506*^9}, {
+  3.9244476818351717`*^9, 3.924447727286894*^9}, {3.924447989791202*^9, 
+  3.924447991581435*^9}, {3.924448075968464*^9, 3.924448104219293*^9}, {
+  3.92444816725349*^9, 3.924448169781229*^9}, {3.924450092236383*^9, 
+  3.9244501105703583`*^9}, {3.9244509940706043`*^9, 3.924450994317507*^9}},
+ CellLabel->"In[13]:=",
+ CellID->713557254,ExpressionUUID->"dbd83da7-3e46-4e42-bdef-792bb0d1f87d"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     StyleBox["\<\"#\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[0, 0, 1],
+      FrontFaceColor->RGBColor[0, 0, 1],
+      BackFaceColor->RGBColor[0, 0, 1],
+      GraphicsColor->RGBColor[0, 0, 1],
+      FontFamily->"Times",
+      FontColor->RGBColor[0, 0, 1]], 
+     StyleBox["\<\"Variable\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[0, 0, 1],
+      FrontFaceColor->RGBColor[0, 0, 1],
+      BackFaceColor->RGBColor[0, 0, 1],
+      GraphicsColor->RGBColor[0, 0, 1],
+      FontFamily->"Times",
+      FontColor->RGBColor[0, 0, 1]], 
+     StyleBox["\<\"Description\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[0, 0, 1],
+      FrontFaceColor->RGBColor[0, 0, 1],
+      BackFaceColor->RGBColor[0, 0, 1],
+      GraphicsColor->RGBColor[0, 0, 1],
+      FontFamily->"Times",
+      FontColor->RGBColor[0, 0, 1]]},
+    {"1", 
+     RowBox[{"\[Beta]", "[", 
+      RowBox[{"A", ",", "B", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Beta]: Offensive combat potential of A[1] units against \
+B[1]. (hits /shooting unit)\"\>"},
+    {"2", 
+     RowBox[{"\[Beta]", "[", 
+      RowBox[{"A", ",", "B", ",", "2", ",", "1"}], 
+      "]"}], "\<\"\[Beta]: Offensive combat potential of A[2] units against \
+B[1]. (hits /shooting unit)\"\>"},
+    {"3", 
+     RowBox[{"\[Beta]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Beta]: Offensive combat potential of B[1] units against \
+A[1]. (hits /shooting unit)\"\>"},
+    {"4", 
+     RowBox[{"\[Beta]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "2"}], 
+      "]"}], "\<\"\[Beta]: Offensive combat potential of B[1] units against \
+A[2]. (hits /shooting unit)\"\>"},
+    {"5", 
+     RowBox[{"\[Gamma]", "[", 
+      RowBox[{"A", ",", "B", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Gamma]: Defensive combat power of side A[1] against B[1] \
+units, {shots /defending units}\"\>"},
+    {"6", 
+     RowBox[{"\[Gamma]", "[", 
+      RowBox[{"A", ",", "B", ",", "2", ",", "1"}], 
+      "]"}], "\<\"\[Gamma]: Defensive combat power of side A[2] against B[1] \
+units, {shots /defending units}\"\>"},
+    {"7", 
+     RowBox[{"\[Gamma]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Gamma]: Defensive combat power of side B[1] against A[1] \
+units, {shots /defending units}\"\>"},
+    {"8", 
+     RowBox[{"\[Gamma]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "2"}], 
+      "]"}], "\<\"\[Gamma]: Defensive combat power of side B[1] against A[2] \
+units, {shots /defending units}\"\>"},
+    {"9", 
+     RowBox[{"\[Delta]", "[", 
+      RowBox[{"A", ",", "B", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Delta]: Defender alertness or readiness of unit A[1] \
+against B[1]. {[0,1]}\"\>"},
+    {"10", 
+     RowBox[{"\[Delta]", "[", 
+      RowBox[{"A", ",", "B", ",", "2", ",", "1"}], 
+      "]"}], "\<\"\[Delta]: Defender alertness or readiness of unit A[2] \
+against B[1]. {[0,1]}\"\>"},
+    {"11", 
+     RowBox[{"\[Delta]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Delta]: Defender alertness or readiness of unit B[1] \
+against A[1]. {[0,1]}\"\>"},
+    {"12", 
+     RowBox[{"\[Delta]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "2"}], 
+      "]"}], "\<\"\[Delta]: Defender alertness or readiness of unit B[1] \
+against A[2]. {[0,1]}\"\>"},
+    {"13", 
+     RowBox[{"\[Zeta]", "[", 
+      RowBox[{"A", ",", "1"}], 
+      "]"}], "\<\"\[Zeta]: Staying power of A[1] unit, {hits}\"\>"},
+    {"14", 
+     RowBox[{"\[Zeta]", "[", 
+      RowBox[{"A", ",", "2"}], 
+      "]"}], "\<\"\[Zeta]: Staying power of A[2] unit, {hits}\"\>"},
+    {"15", 
+     RowBox[{"\[Zeta]", "[", 
+      RowBox[{"B", ",", "1"}], 
+      "]"}], "\<\"\[Zeta]: Staying power of B[1] unit, {hits}\"\>"},
+    {"16", 
+     RowBox[{"\[CapitalTheta]", "[", 
+      RowBox[{"A", ",", "B", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[CapitalTheta]: Fraction of A[1] units that engage B[1] \
+units. [0,1]\"\>"},
+    {"17", 
+     RowBox[{"\[CapitalTheta]", "[", 
+      RowBox[{"A", ",", "B", ",", "2", ",", "1"}], 
+      "]"}], "\<\"\[CapitalTheta]: Fraction of A[2] units that engage B[1] \
+units. [0,1]\"\>"},
+    {"18", 
+     RowBox[{"\[CapitalTheta]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[CapitalTheta]: Fraction of B[1] units that engage A[1] \
+units. [0,1]\"\>"},
+    {"19", 
+     RowBox[{"\[CapitalTheta]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "2"}], 
+      "]"}], "\<\"\[CapitalTheta]: Fraction of B[1] units that engage A[2] \
+units. [0,1]\"\>"},
+    {"20", 
+     RowBox[{"\[Rho]", "[", 
+      RowBox[{"A", ",", "B", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Rho]: Distraction factor of unit A[1] against B[1]. [0,1]\
+\"\>"},
+    {"21", 
+     RowBox[{"\[Rho]", "[", 
+      RowBox[{"A", ",", "B", ",", "2", ",", "1"}], 
+      "]"}], "\<\"\[Rho]: Distraction factor of unit A[2] against B[1]. [0,1]\
+\"\>"},
+    {"22", 
+     RowBox[{"\[Rho]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Rho]: Distraction factor of unit B[1] against A[1]. [0,1]\
+\"\>"},
+    {"23", 
+     RowBox[{"\[Rho]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "2"}], 
+      "]"}], "\<\"\[Rho]: Distraction factor of unit B[1] against A[2]. [0,1]\
+\"\>"},
+    {"24", 
+     RowBox[{"\[Sigma]", "[", 
+      RowBox[{"A", ",", "B", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Sigma]: Scouting effectiveness of unit A[1] against B[1]. \
+[0,1]\"\>"},
+    {"25", 
+     RowBox[{"\[Sigma]", "[", 
+      RowBox[{"A", ",", "B", ",", "2", ",", "1"}], 
+      "]"}], "\<\"\[Sigma]: Scouting effectiveness of unit A[2] against B[1]. \
+[0,1]\"\>"},
+    {"26", 
+     RowBox[{"\[Sigma]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Sigma]: Scouting effectiveness of unit B[1] against A[1]. \
+[0,1]\"\>"},
+    {"27", 
+     RowBox[{"\[Sigma]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "2"}], 
+      "]"}], "\<\"\[Sigma]: Scouting effectiveness of unit B[1] against A[2]. \
+[0,1]\"\>"},
+    {"28", 
+     RowBox[{"\[Tau]", "[", 
+      RowBox[{"A", ",", "B", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Tau]: Training effectiveness of unit A[1] against B[1]. \
+[0,1]\"\>"},
+    {"29", 
+     RowBox[{"\[Tau]", "[", 
+      RowBox[{"A", ",", "B", ",", "2", ",", "1"}], 
+      "]"}], "\<\"\[Tau]: Training effectiveness of unit A[2] against B[1]. \
+[0,1]\"\>"},
+    {"30", 
+     RowBox[{"\[Tau]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[Tau]: Training effectiveness of unit B[1] against A[1]. \
+[0,1]\"\>"},
+    {"31", 
+     RowBox[{"\[Tau]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "2"}], 
+      "]"}], "\<\"\[Tau]: Training effectiveness of unit B[1] against A[2]. \
+[0,1]\"\>"},
+    {"32", 
+     RowBox[{"\[CapitalPsi]", "[", 
+      RowBox[{"A", ",", "B", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[CapitalPsi]: Fraction of A[1] units that engage B[1] \
+units. [0,1]\"\>"},
+    {"33", 
+     RowBox[{"\[CapitalPsi]", "[", 
+      RowBox[{"A", ",", "B", ",", "2", ",", "1"}], 
+      "]"}], "\<\"\[CapitalPsi]: Fraction of A[2] units that engage B[1] \
+units. [0,1]\"\>"},
+    {"34", 
+     RowBox[{"\[CapitalPsi]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "1"}], 
+      "]"}], "\<\"\[CapitalPsi]: Fraction of B[1] units that engage A[1] \
+units. [0,1]\"\>"},
+    {"35", 
+     RowBox[{"\[CapitalPsi]", "[", 
+      RowBox[{"B", ",", "A", ",", "1", ",", "2"}], 
+      "]"}], "\<\"\[CapitalPsi]: Fraction of B[1] units that engage A[2] \
+units. [0,1]\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96], 
+       GrayLevel[1], 
+       GrayLevel[0.96]}},
+   GridBoxDividers->{
+    "ColumnsIndexed" -> {
+      1 -> GrayLevel[0], 2 -> GrayLevel[0], 3 -> GrayLevel[0.8], 4 -> 
+       GrayLevel[0.8], 4 -> GrayLevel[0]}, 
+     "Rows" -> {True, True, {False}, True}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.924447698599243*^9, 3.9244477276969557`*^9}, {
+   3.924447985204611*^9, 3.924447991915653*^9}, 3.924448104794965*^9, 
+   3.924448170140695*^9, {3.924450096337377*^9, 3.924450110890222*^9}, 
+   3.924450994681946*^9},
+ CellLabel->"Out[14]=",
+ CellID->2091558175,ExpressionUUID->"e1a76269-aff1-479b-82ad-b0dc30585a17"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Possible Issues", "ExampleSection",ExpressionUUID->
+   "1af22a98-d301-4498-9277-3edccf21aea8"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->702932598,ExpressionUUID->"75b95114-a6b9-450c-8d1a-83b8e4e33b6d"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Interactive Examples", "ExampleSection",ExpressionUUID->
+   "e5e9a698-99b6-4a2d-a66d-32e02fbef850"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->880632439,ExpressionUUID->"2d3f3e5f-0edd-485f-965d-110d3f12abf9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Neat Examples", "ExampleSection",ExpressionUUID->
+   "7ffa5305-4a63-4c62-b370-cd962d0bce12"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->332107149,ExpressionUUID->"5ad7012b-c498-4c9b-90c8-217f760d376f"],
+
+Cell["\<\
+We can define formatted forms of the symbols to representing the fighting \
+forces to be colors:\
+\>", "ExampleText",
+ CellChangeTimes->{{3.9244439777650833`*^9, 3.924443993932919*^9}, {
+  3.9244440395297213`*^9, 3.924444101349881*^9}},
+ CellID->1483079096,ExpressionUUID->"626e39d1-6834-442d-9f3d-6dd152be8e3f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Format", "[", "A", "]"}], "=", "Red"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Format", "[", "B", "]"}], "=", "Blue"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.924443896687554*^9, 3.924443920425392*^9}, {
+  3.924447785355854*^9, 3.9244478197799807`*^9}},
+ CellLabel->"In[19]:=",
+ CellID->160932643,ExpressionUUID->"0396f566-d9fb-4c21-aa7b-2531681c5b84"],
+
+Cell["Here we make a model for \"red vs. blue\":", "ExampleText",
+ CellChangeTimes->{{3.924444137674911*^9, 3.924444139621269*^9}, {
+  3.924444214457965*^9, 3.924444221927663*^9}, {3.924444352609569*^9, 
+  3.924444356613552*^9}, {3.924450954988901*^9, 3.924450976989952*^9}, {
+  3.924451061184326*^9, 3.924451075844503*^9}},
+ CellID->427793373,ExpressionUUID->"b9f7e4e9-18a8-49ff-9311-f7ece66fc979"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HeterogeneousSalvoModel", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"A", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"B", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.924451048271584*^9, 3.92445109165211*^9}},
+ CellLabel->"In[23]:=",
+ CellID->2017866867,ExpressionUUID->"be474010-aaea-4dd9-9774-628fa9f175c3"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"A\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+        "RGBColorSwatchTemplate"], "[", "1", "]"}], ",", 
+      RowBox[{
+       TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+        "RGBColorSwatchTemplate"], "[", "2", "]"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"B\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+       "RGBColorSwatchTemplate"], "[", "1", "]"}], "}"}]}], ",", 
+   RowBox[{"\<\"OffenseMatrixA\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{"\[Zeta]", "[", 
+          RowBox[{
+           TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+            "RGBColorSwatchTemplate"], ",", "1"}], "]"}]], 
+        RowBox[{"\[Beta]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+        RowBox[{"\[Rho]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+        RowBox[{"\[Sigma]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+        RowBox[{"\[Tau]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+        RowBox[{"\[CapitalPsi]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}]}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["1", 
+         RowBox[{"\[Zeta]", "[", 
+          RowBox[{
+           TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+            "RGBColorSwatchTemplate"], ",", "2"}], "]"}]], 
+        RowBox[{"\[Beta]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+        RowBox[{"\[Rho]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+        RowBox[{"\[Sigma]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+        RowBox[{"\[Tau]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+        RowBox[{"\[CapitalPsi]", "[", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+           "RGBColorSwatchTemplate"], ",", 
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}]}], "}"}]}], 
+     "}"}]}], ",", 
+   RowBox[{"\<\"DefenseMatrixA\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"\[Gamma]", "[", 
+           RowBox[{
+            TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+             "RGBColorSwatchTemplate"], ",", 
+            TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+             "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Delta]", "[", 
+           RowBox[{
+            TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+             "RGBColorSwatchTemplate"], ",", 
+            TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+             "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalTheta]", "[", 
+           RowBox[{
+            TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+             "RGBColorSwatchTemplate"], ",", 
+            TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+             "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{
+            TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+             "RGBColorSwatchTemplate"], ",", 
+            TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+             "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}]}], 
+         RowBox[{"\[Zeta]", "[", 
+          RowBox[{
+           TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+            "RGBColorSwatchTemplate"], ",", "1"}], "]"}]], ",", "0"}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"\[Gamma]", "[", 
+           RowBox[{
+            TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+             "RGBColorSwatchTemplate"], ",", 
+            TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+             "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Delta]", "[", 
+           RowBox[{
+            TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+             "RGBColorSwatchTemplate"], ",", 
+            TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+             "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalTheta]", "[", 
+           RowBox[{
+            TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+             "RGBColorSwatchTemplate"], ",", 
+            TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+             "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{
+            TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+             "RGBColorSwatchTemplate"], ",", 
+            TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+             "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}]}], 
+         RowBox[{"\[Zeta]", "[", 
+          RowBox[{
+           TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+            "RGBColorSwatchTemplate"], ",", "2"}], "]"}]]}], "}"}]}], 
+     "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.924451048716392*^9, 3.924451092013*^9},
+ CellLabel->"Out[23]=",
+ CellID->1115213876,ExpressionUUID->"ed59e87f-6b20-455b-9892-f863bcfe91db"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Metadata", "MetadataSection",
+ CellID->414854690,ExpressionUUID->"75e49237-ca38-42db-a0fb-0a8be777cadd"],
+
+Cell[TextData[{
+ "New in: ",
+ Cell["1.0.0", "HistoryData",
+  CellTags->"New",ExpressionUUID->"c314cb57-f05d-4361-ad20-98c4c8b3ce39"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"4a364557-8b70-49f3-9a09-8d3d9aba4559"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->
+  "846d4ecb-32d5-4df3-a6b2-ac85703d123c"]
+}], "History",
+ CellChangeTimes->{{3.864923683926749*^9, 3.864923685610183*^9}, {
+  3.924443812986418*^9, 3.92444381395287*^9}},
+ CellID->1730856668,ExpressionUUID->"da2b902f-4828-474c-b063-36087de945df"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Categorization",
+ Cell[BoxData[
+  TemplateBox[{"Metadata", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Metadata such as page URI, context, and type of documentation page.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "effe9deb-ce1e-433b-9fbb-b9be4b0c173f"]
+}], "CategorizationSection",
+ CellID->694536814,ExpressionUUID->"87c983dc-b1c6-4b54-8aa7-8f7632028d64"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->1506611453,ExpressionUUID->"a8e2b12e-0d95-41ed-90e2-21c34ca40930"],
+
+Cell["AntonAntonov/SalvoCombatModeling", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->419866886,ExpressionUUID->"c5d26fab-e87a-43c5-91de-ff9bedfa5d23"],
+
+Cell["AntonAntonov`SalvoCombatModeling`", "Categorization",
+ CellLabel->"Context",
+ CellID->71488960,ExpressionUUID->"b8896191-bd47-4a81-8302-98275a24c09a"],
+
+Cell["AntonAntonov/SalvoCombatModeling/ref/HeterogeneousSalvoModel", \
+"Categorization",
+ CellLabel->"URI",
+ CellID->1071592047,ExpressionUUID->"3465aa39-1108-4c66-9272-dc5b0ae1b88a"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1451333047,ExpressionUUID->"49e52661-f980-4e7f-b53d-9a3ff8375b83"],
+
+Cell["XXXX", "Keywords",
+ CellID->1435258303,ExpressionUUID->"2aef2271-1c43-4647-a6c3-d69a88cab7cc"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1849975417,ExpressionUUID->"edbcace2-bb70-40a8-89a4-02c1dc722262"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1268592253,ExpressionUUID->"8f7dbb84-bbbf-4438-a7ee-0bc7fb84ad04"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->1012348755,ExpressionUUID->"3d2f88c3-7594-42d4-a280-6b5a7dce276b"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->32590104,ExpressionUUID->"d156e6df-dc99-444d-9a67-6b313179ef20"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->133547943,ExpressionUUID->"906bc4ed-7d09-4533-9c78-a8e3a1b9589d"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{1493, 1291},
+WindowMargins->{{Automatic, 795}, {Automatic, 3}},
+TaggingRules-><|"Paclet" -> "AntonAntonov/SalvoCombatModeling"|>,
+CellContext->"Global`",
+Magnification:>1.25 Inherited,
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"c2ddbfc0-792b-4399-966f-e8883bfd6b89"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[17712, 481, 487, 13, 72, "ExtendedExamplesSection",ExpressionUUID->"ff91c2de-a6dd-4eac-acd4-4ab11eef2881",
+   CellTags->"ExtendedExamples",
+   CellID->608359495]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 44009, 1189}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 120, 1, 92, "ObjectName",ExpressionUUID->"a07e7fc1-42c1-4017-b6e3-aba974734faf",
+ CellID->676033743],
+Cell[703, 25, 738, 17, 99, "Usage",ExpressionUUID->"e2c7eb2f-6e6e-4da5-9309-0307641dba75",
+ CellID->1910625971],
+Cell[1444, 44, 611, 14, 34, "Notes",ExpressionUUID->"dade3fcb-ad1a-4d10-8f82-bc02cd45a316",
+ CellID->567721006],
+Cell[2058, 60, 730, 19, 33, "Notes",ExpressionUUID->"31254bb3-d6ec-4bd7-86a1-a913c6bdfdd3",
+ CellID->644643969]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2825, 84, 458, 13, 50, "SeeAlsoSection",ExpressionUUID->"5cd19fd0-89e0-4dcc-9d19-e5e927c19af4",
+ CellID->417104221],
+Cell[3286, 99, 2259, 51, 30, "SeeAlso",ExpressionUUID->"6ad49065-8013-40ae-a887-f932c6c56700",
+ CellID->884018539]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5582, 155, 436, 12, 51, "TechNotesSection",ExpressionUUID->"66344e6f-4cac-4971-b945-3abbaed762be",
+ CellID->1407715027],
+Cell[6021, 169, 100, 1, 24, "Tutorials",ExpressionUUID->"3687f759-5462-4106-872f-64ab8bc14299",
+ CellID->639119790]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6158, 175, 118, 1, 50, "MoreAboutSection",ExpressionUUID->"d0246a78-3b75-4a6d-9f0c-27337111ad3d",
+ CellID->2120591883],
+Cell[6279, 178, 101, 1, 24, "MoreAbout",ExpressionUUID->"dfff59f1-2144-4a91-b7c2-4e69a69b6a3e",
+ CellID->1149171969]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6417, 184, 473, 13, 50, "RelatedLinksSection",ExpressionUUID->"0e5fbd3f-b61b-4810-ac04-80383e8e3b91",
+ CellID->1812845512],
+Cell[6893, 199, 104, 1, 24, "RelatedLinks",ExpressionUUID->"3985dacf-de15-459e-9717-7cf317786399",
+ CellID->2144020195]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7034, 205, 531, 14, 87, "ExamplesInitializationSection",ExpressionUUID->"74ada246-ceba-4c8c-8af2-256731810de0",
+ CellID->1919304352],
+Cell[7568, 221, 192, 3, 57, "ExampleInitialization",ExpressionUUID->"92565f6b-5dea-49de-9b39-e17e441d5dfb",
+ CellID->396382477]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7797, 229, 442, 12, 90, "PrimaryExamplesSection",ExpressionUUID->"47d177b8-490f-4a29-827a-a7ea38a40fcb",
+ CellID->506017945],
+Cell[8242, 243, 869, 19, 30, "ExampleText",ExpressionUUID->"06b5584a-64f7-4230-9ee7-1f48e01beb85",
+ CellID->854297759],
+Cell[CellGroupData[{
+Cell[9136, 266, 743, 17, 58, "Input",ExpressionUUID->"d23b9e4a-ad8f-4dfa-85cb-fa0f9c0493e7",
+ CellID->1743631708],
+Cell[9882, 285, 3470, 82, 230, "Output",ExpressionUUID->"f17af640-ce4c-4c86-bdd2-e724b8bc5d0a",
+ CellID->1749850560]
+}, Open  ]],
+Cell[13367, 370, 385, 8, 30, "ExampleText",ExpressionUUID->"8b554109-bd30-4c0f-a4d0-2e7717e21694",
+ CellID->2100345989],
+Cell[CellGroupData[{
+Cell[13777, 382, 612, 15, 58, "Input",ExpressionUUID->"0759556e-1056-4755-8a77-b8b12a8bd9f2",
+ CellID->70925163],
+Cell[14392, 399, 3271, 76, 76, "Output",ExpressionUUID->"a7bf037a-5871-4502-a42e-2c8112c3af3f",
+ CellID->390754668]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17712, 481, 487, 13, 72, "ExtendedExamplesSection",ExpressionUUID->"ff91c2de-a6dd-4eac-acd4-4ab11eef2881",
+ CellTags->"ExtendedExamples",
+ CellID->608359495],
+Cell[18202, 496, 241, 5, 43, "ExampleSection",ExpressionUUID->"e07cd157-7906-4880-8987-1196a12489be",
+ CellID->528389098],
+Cell[18446, 503, 264, 5, 27, "ExampleSection",ExpressionUUID->"076ec4a5-47a5-4992-9fa9-95c7d07d5a31",
+ CellID->790689741],
+Cell[CellGroupData[{
+Cell[18735, 512, 243, 5, 27, "ExampleSection",ExpressionUUID->"f27b056c-20e4-4998-91be-441908e7f6de",
+ CellID->493669351],
+Cell[18981, 519, 247, 5, 32, "ExampleSubsection",ExpressionUUID->"168d2aba-bbbc-4b7f-b75c-adac1dc05d8d",
+ CellID->1371453896],
+Cell[19231, 526, 247, 5, 26, "ExampleSubsection",ExpressionUUID->"e15c2515-13ea-41bc-838d-2f4c2090457f",
+ CellID->1083646821]
+}, Open  ]],
+Cell[19493, 534, 247, 5, 43, "ExampleSection",ExpressionUUID->"9c06e271-92e5-4890-9b9a-933ff77c2b59",
+ CellID->43310340],
+Cell[CellGroupData[{
+Cell[19765, 543, 259, 5, 27, "ExampleSection",ExpressionUUID->"5ceb2964-aaea-4612-967b-6d6462ee864d",
+ CellID->2067411694],
+Cell[20027, 550, 684, 14, 32, "ExampleText",ExpressionUUID->"c0308929-eab3-4a36-a2d0-e677abf263ca",
+ CellID->818157324],
+Cell[CellGroupData[{
+Cell[20736, 568, 1081, 25, 106, "Input",ExpressionUUID->"dbd83da7-3e46-4e42-bdef-792bb0d1f87d",
+ CellID->713557254],
+Cell[21820, 595, 9189, 251, 1342, "Output",ExpressionUUID->"e1a76269-aff1-479b-82ad-b0dc30585a17",
+ CellID->2091558175]
+}, Open  ]]
+}, Open  ]],
+Cell[31036, 850, 251, 5, 43, "ExampleSection",ExpressionUUID->"75b95114-a6b9-450c-8d1a-83b8e4e33b6d",
+ CellID->702932598],
+Cell[31290, 857, 256, 5, 27, "ExampleSection",ExpressionUUID->"2d3f3e5f-0edd-485f-965d-110d3f12abf9",
+ CellID->880632439],
+Cell[CellGroupData[{
+Cell[31571, 866, 249, 5, 27, "ExampleSection",ExpressionUUID->"5ad7012b-c498-4c9b-90c8-217f760d376f",
+ CellID->332107149],
+Cell[31823, 873, 322, 6, 30, "ExampleText",ExpressionUUID->"626e39d1-6834-442d-9f3d-6dd152be8e3f",
+ CellID->1483079096],
+Cell[32148, 881, 429, 11, 58, "Input",ExpressionUUID->"0396f566-d9fb-4c21-aa7b-2531681c5b84",
+ CellID->160932643],
+Cell[32580, 894, 399, 5, 30, "ExampleText",ExpressionUUID->"b9f7e4e9-18a8-49ff-9311-f7ece66fc979",
+ CellID->427793373],
+Cell[CellGroupData[{
+Cell[33004, 903, 362, 9, 33, "Input",ExpressionUUID->"be474010-aaea-4dd9-9774-628fa9f175c3",
+ CellID->2017866867],
+Cell[33369, 914, 7154, 167, 267, "Output",ExpressionUUID->"ed59e87f-6b20-455b-9892-f863bcfe91db",
+ CellID->1115213876]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40584, 1088, 110, 1, 90, "MetadataSection",ExpressionUUID->"75e49237-ca38-42db-a0fb-0a8be777cadd",
+ CellID->414854690],
+Cell[40697, 1091, 594, 14, 33, "History",ExpressionUUID->"da2b902f-4828-474c-b063-36087de945df",
+ CellID->1730856668],
+Cell[CellGroupData[{
+Cell[41316, 1109, 484, 13, 27, "CategorizationSection",ExpressionUUID->"87c983dc-b1c6-4b54-8aa7-8f7632028d64",
+ CellID->694536814],
+Cell[41803, 1124, 135, 2, 43, "Categorization",ExpressionUUID->"a8e2b12e-0d95-41ed-90e2-21c34ca40930",
+ CellID->1506611453],
+Cell[41941, 1128, 160, 2, 43, "Categorization",ExpressionUUID->"c5d26fab-e87a-43c5-91de-ff9bedfa5d23",
+ CellID->419866886],
+Cell[42104, 1132, 156, 2, 43, "Categorization",ExpressionUUID->"b8896191-bd47-4a81-8302-98275a24c09a",
+ CellID->71488960],
+Cell[42263, 1136, 183, 3, 43, "Categorization",ExpressionUUID->"3465aa39-1108-4c66-9272-dc5b0ae1b88a",
+ CellID->1071592047]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[42483, 1144, 111, 1, 26, "KeywordsSection",ExpressionUUID->"49e52661-f980-4e7f-b53d-9a3ff8375b83",
+ CellID->1451333047],
+Cell[42597, 1147, 100, 1, 87, "Keywords",ExpressionUUID->"2aef2271-1c43-4647-a6c3-d69a88cab7cc",
+ CellID->1435258303]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[42734, 1153, 120, 1, 26, "TemplatesSection",ExpressionUUID->"edbcace2-bb70-40a8-89a4-02c1dc722262",
+ CellID->1849975417],
+Cell[42857, 1156, 149, 2, 87, "Template",ExpressionUUID->"8f7dbb84-bbbf-4438-a7ee-0bc7fb84ad04",
+ CellID->1268592253],
+Cell[43009, 1160, 138, 2, 87, "Template",ExpressionUUID->"3d2f88c3-7594-42d4-a280-6b5a7dce276b",
+ CellID->1012348755],
+Cell[43150, 1164, 134, 2, 87, "Template",ExpressionUUID->"d156e6df-dc99-444d-9a67-6b313179ef20",
+ CellID->32590104],
+Cell[43287, 1168, 137, 2, 87, "Template",ExpressionUUID->"906bc4ed-7d09-4533-9c78-a8e3a1b9589d",
+ CellID->133547943]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
