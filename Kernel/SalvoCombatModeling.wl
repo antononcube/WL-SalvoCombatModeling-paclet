@@ -22,6 +22,8 @@ SalvoDamage::usage = "Salvo damage.";
 
 HeterogeneousSalvoModel::usage = "Creates heterogeneous salvo combat model matrices.";
 
+SalvoNotionDefinitions::usage = "Model notions definitions dataset.";
+
 Begin["`Private`"];
 
 (*=================================================================*)
@@ -183,6 +185,32 @@ HeterogeneousSalvoModel[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_
         |>
       |>
     ];
+
+(*=================================================================*)
+(* Notion definitions                                              *)
+(*=================================================================*)
+Clear[SalvoNotionDefinitions];
+
+SyntaxInformation[SalvoNotionDefinitions] = {"ArgumentsPattern" -> {_.}};
+
+SalvoNotionDefinitions::noargs = "The first argument is expected to be a string, one of \"Bulgarian\", \"English\", \"Russian\"";
+
+SalvoNotionDefinitions[lang_String : "English"] :=
+    Module[{pObj, fileName, dsDefinitions},
+      If[!MemberQ[ToLowerCase /@ {"Bulgarian", "English", "Russian"}, ToLowerCase@lang],
+        Message[SalvoNotionDefinitions::noargs];
+        Return[$Failed];
+      ];
+      pObj = PacletObject["AntonAntonov/SalvoCombatModeling"];
+      fileName = FileNameJoin[{pObj["Location"], "Resources", "Definitions" <> lang <> ".json"}];
+      dsDefinitions = Import[fileName, "Dataset"];
+      dsDefinitions
+    ];
+
+SalvoNotionDefinitions[___] := (
+  Message[SalvoNotionDefinitions::noargs];
+  $Failed
+);
 
 End[];
 EndPackage[];
