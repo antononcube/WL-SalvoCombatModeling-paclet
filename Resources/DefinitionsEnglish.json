@@ -1,0 +1,58 @@
+[
+  {
+    "notion": "Force",
+    "definition": "A group of naval ships that operate and fight together."
+  },
+  {
+    "notion": "Unit",
+    "definition": "A unit is an individual ship in a force."
+  },
+  {
+    "notion": "Salvo",
+    "definition": "A salvo is the number of shots fired as a unit of force in a discrete period of time."
+  },
+  {
+    "notion": "Combat Potential",
+    "definition": "Combat Potential is a force's total stored offensive capability of an element or force measured in number of total shots available."
+  },
+  {
+    "notion": "Combat Power",
+    "definition": "Also called Striking Power, is the maximum offensive capability of an element or force per salvo, measured in the number of hitting shots that would be achieved in the absence of degrading factors."
+  },
+  {
+    "notion": "Scouting Effectiveness",
+    "definition": "Scouting Effectiveness is a dimensionless degradation factor applied to a force's combat power as a result of imperfect information. It is a number between zero and one that describes the difference between the shots delivered based on perfect knowledge of enemy composition and position and shots based on existing information [Ref. 7]."
+  },
+  {
+    "notion": "Training Effectiveness",
+    "definition": "Training effectiveness is a fraction that indicates the degradation in combat power due the lack of training, motivation, or readiness."
+  },
+  {
+    "notion": "Distraction Factor",
+    "definition": "Also called chaff effectiveness or seduction, is a multiplier that describes the effectiveness of an offensive weapon in the presence of distraction or other soft kill. This multiplier is a fraction, where one indicates no susceptibility/complete effectiveness and zero indicates complete susceptibility/no effectiveness."
+  },
+  {
+    "notion": "Offensive Effectiveness",
+    "definition": "Offensive effectiveness is a composite term made of the product of scouting effectiveness, training effectiveness, distraction, or any other factor which represents the probability of a single salvo hitting its target. Offensive effectiveness transforms a unit's combat potential parameter into combat power."
+  },
+  {
+    "notion": "Defensive Potential",
+    "definition": "Defensive potential is a force's total defensive capability measured in units of enemy hits eliminated independent of weapon system or operator accuracy or any other multiplicative factor."
+  },
+  {
+    "notion": "Defensive Power",
+    "definition": "Defensive power is the number of missiles in an enemy salvo that a defending element or force can eliminate."
+  },
+  {
+    "notion": "Defender Alertness",
+    "definition": "Defender alertness is the extent to which a defender fails to take proper defensive actions against enemy fire. This may be the result of any inattentiveness due to improper emission control procedures, readiness, or other similar factors. This multiplier is a fraction, where one indicates complete alertness and zero indicates no alertness."
+  },
+  {
+    "notion": "Defensive Effectiveness",
+    "definition": "Defensive effectiveness is a composite term made of the product of training effectiveness and defender alertness. This term also applies to any value that represents the overall degradation of a force's defensive power."
+  },
+  {
+    "notion": "Staying Power",
+    "definition": "Staying power is the number of hits that a unit or force can absorb before being placed out of action."
+  }
+]
