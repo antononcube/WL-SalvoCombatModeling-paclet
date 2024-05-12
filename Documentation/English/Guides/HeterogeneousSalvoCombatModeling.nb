@@ -1,0 +1,499 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19083,        491]
+NotebookOptionsPosition[     14952,        401]
+NotebookOutlinePosition[     15524,        420]
+CellTagsIndexPosition[     15481,        417]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Heterogeneous Salvo Combat Modeling", "GuideTitle",
+ CellID->1453540726,ExpressionUUID->"6a2f6350-db2a-43a8-b677-626422727ace"],
+
+Cell["\<\
+Heterogeneous Salvo Combat Modeling (HSCM) gives mathematical representation \
+missile battles. Traditionally, the forces are \"naval forces\", but \
+obviously land- and air forces can be also used or included in the model.\
+\>", "GuideAbstract",
+ CellChangeTimes->{{3.924524829595582*^9, 3.92452498500704*^9}, {
+  3.92452505106455*^9, 3.924525100588386*^9}},
+ CellID->2032497257,ExpressionUUID->"4f5efa3c-96e0-41ab-9277-8c8c4d7e7933"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "GuideFunctionsSection",
+ CellID->159025570,ExpressionUUID->"be4cf2b7-e7e8-4f0d-8615-2ca5fc36bd17"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["HeterogeneousSalvoModel",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/HeterogeneousSalvoModel"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"c40ac8e4-27e1-4161-a8df-4d4f38357a23",ExpressionUUID->
+  "8511bb8b-fa2e-4f1c-a7f3-1b349f590264"],
+ " \[LongDash] generates HSCM in matrix notation"
+}], "GuideText",
+ CellChangeTimes->{{3.924525110849978*^9, 3.9245251474101954`*^9}, {
+  3.924525397410059*^9, 3.924525397410075*^9}},
+ CellID->1273098122,ExpressionUUID->"0f8eb0eb-f715-4d4e-9cad-a94911e4b203"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["SalvoVariableRules",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/SalvoVariableRules"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"c5c6736a-1ff4-4e4e-8fcf-2d9846cbae62",ExpressionUUID->
+  "4c248ae5-4d14-45a2-b484-90097ea2535b"],
+ " \[LongDash] provides descriptions of HSCM variables"
+}], "GuideText",
+ CellChangeTimes->{{3.924525152428784*^9, 3.924525183028145*^9}, {
+  3.924525401078833*^9, 3.9245254010788727`*^9}},
+ CellID->1580561393,ExpressionUUID->"ab3c865c-d6e4-42c3-889c-a22a7e711b4c"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["SalvoNotionDefinitions",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/SalvoNotionDefinitions"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"d850da85-fa4b-4b16-926b-8f8d4eecba4d",ExpressionUUID->
+  "7e261e67-c97a-477e-9673-f655bdf38e05"],
+ " \[LongDash] gives a dataset with model notion definitions"
+}], "GuideText",
+ CellChangeTimes->{{3.9245277118736353`*^9, 3.9245277468837748`*^9}, {
+  3.924529812276486*^9, 3.924529812276505*^9}},
+ CellID->1384038745,ExpressionUUID->"b866cdc0-aa11-4728-9e24-258f8c894ef1"],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->122618761,ExpressionUUID->"3afbdd88-87d8-4c59-8f39-14f34c1aacb8"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["SalvoDamage",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/SalvoDamage"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
+  "74655872-bf55-44bd-8e3c-43c27f30daa2"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["SalvoForceNameQ",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/SalvoForceNameQ"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"12babd41-ffdd-4bf9-8965-dc34d1411d82",ExpressionUUID->
+  "1e3ca223-d25f-4171-a7a5-6c9121c4f548"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["SalvoTerms",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/SalvoTerms"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"1e9254d5-0bfc-409a-9926-5313ab37743a",ExpressionUUID->
+  "d339f89d-d0b0-479d-948c-092e0b1c97e2"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["SalvoVariable",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/SalvoVariable"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"7b052551-2ce7-4278-8802-055da8dfaa69",ExpressionUUID->
+  "d35b3597-288f-4448-b583-3dcf63a56e16"],
+ Cell[BoxData[
+  RowBox[{
+  Cell[TextData[StyleBox[
+   " \[FilledVerySmallSquare] ", "InlineSeparator"]],ExpressionUUID->
+    "1cacf351-6e6e-4020-9649-dda9a2569d7d"], 
+   DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
+    "e1d538c9-b0f9-4ee2-a9ec-39d41db200a3", 
+     "8b952be3-e6a2-4d37-b5d9-61e4ab22879e"], $CellContext`cellobj$$ = 
+    CellObject[
+    "ec008240-9e35-4733-b2d6-f3e97e14f4ce", 
+     "908c82dd-26e0-4237-b39e-1bcbbd614692"]}, 
+    TemplateBox[{
+      GraphicsBox[{{
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         CircleBox[{0, 0}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{0, 0.62}, {0, -0.62}}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{-0.62, 0}, {0.62, 0}}]}}, 
+       ImagePadding -> {{1., 1.}, {2.4, 1.}}, ImageSize -> 16, 
+       PlotRange -> {{-1.06, 1.06}, {-1.06, 1.06}}, 
+       BaselinePosition -> (Center -> 
+        Center)], $CellContext`nbobj$$, $CellContext`cellobj$$},
+     "InlineListingAddButton"],
+    Initialization:>($CellContext`nbobj$$ = 
+      EvaluationNotebook[]; $CellContext`cellobj$$ = EvaluationCell[])]}]], 
+  "InlineListingAddButton",ExpressionUUID->
+  "ec008240-9e35-4733-b2d6-f3e97e14f4ce"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.924525215946516*^9, 3.924525270185403*^9}, {
+  3.924525404256134*^9, 3.924525412575062*^9}},
+ CellID->1416698654,ExpressionUUID->"44f847c4-3321-4d88-b706-2617b980cb78"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Variables", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.924525194674074*^9, 3.92452519743073*^9}},
+ CellID->813004670,ExpressionUUID->"1ac2ee25-8bfe-4fe9-bd41-6a3313ebfffb"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["\[Beta]",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/\[Beta]"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "9220605b-b851-4f2b-9d79-42715c81344a"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["\[CapitalDelta]",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/\[CapitalDelta]"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"cf96c4c5-fdb3-4338-8a83-c59158b6c749",ExpressionUUID->
+  "9499435e-78be-4edf-8a7c-bed18d3ee265"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["\[CapitalPsi]",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/\[CapitalPsi]"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"3bb2ad6f-b547-4b01-87b7-fd28872d37b9",ExpressionUUID->
+  "98ba26e8-f562-436a-8310-85701c2b4df9"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["\[CapitalTheta]",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/\[CapitalTheta]"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"5a583c00-a9f7-4b2f-95c6-e07608296be3",ExpressionUUID->
+  "09e53a63-64ef-41bf-9cea-1e2a023ee5e7"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["\[CapitalDelta]",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/\[CapitalDelta]"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"332f5703-1110-41da-aab4-9dcbc3a152c0",ExpressionUUID->
+  "1f844ba3-c9a4-441d-9632-674166f22470"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["\[Gamma]",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/\[Gamma]"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"b97fdafd-c7d9-4fb6-8602-9562dccd9852",ExpressionUUID->
+  "49bcbc22-f993-4a0e-99b7-6489883b47f3"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["\[Rho]",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/\[Rho]"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"f1285c79-99e1-43b7-8e7a-4becbef52d05",ExpressionUUID->
+  "29b2ebac-5259-4f01-8b23-a047913c206e"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["\[Sigma]",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/\[Sigma]"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"3733efff-1718-4045-914e-395c59e03990",ExpressionUUID->
+  "a5846d09-7efa-4357-aae0-3668276f442d"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["\[Tau]",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/\[Tau]"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"381627ec-5f35-44b8-a409-96d2507b5f6f",ExpressionUUID->
+  "60172b1b-5a85-4bc1-8a2c-537ef6888b76"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["\[Zeta]",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/SalvoCombatModeling/ref/\[Zeta]"]], 
+  "InlineGuideFunction",
+  TaggingRules->{"PageType" -> "Function"},
+  CellTags->"ed2943f4-9882-4552-a337-24698ee50684",ExpressionUUID->
+  "8de9abbf-66d1-4368-8ad8-631a40ef0811"],
+ Cell[BoxData[
+  RowBox[{
+  Cell[TextData[StyleBox[
+   " \[FilledVerySmallSquare] ", "InlineSeparator"]],ExpressionUUID->
+    "b86d3d89-04f9-4765-a67b-034100b5eed2"], 
+   DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
+    "e1d538c9-b0f9-4ee2-a9ec-39d41db200a3", 
+     "8b952be3-e6a2-4d37-b5d9-61e4ab22879e"], $CellContext`cellobj$$ = 
+    CellObject[
+    "11e53f96-e72a-4807-9bb9-70d020f3dc1a", 
+     "f3bba66e-3e90-4ec4-a140-5ce9c54da1aa"]}, 
+    TemplateBox[{
+      GraphicsBox[{{
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         CircleBox[{0, 0}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{0, 0.62}, {0, -0.62}}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{-0.62, 0}, {0.62, 0}}]}}, 
+       ImagePadding -> {{1., 1.}, {2.4, 1.}}, ImageSize -> 16, 
+       PlotRange -> {{-1.06, 1.06}, {-1.06, 1.06}}, 
+       BaselinePosition -> (Center -> 
+        Center)], $CellContext`nbobj$$, $CellContext`cellobj$$},
+     "InlineListingAddButton"],
+    Initialization:>($CellContext`nbobj$$ = 
+      EvaluationNotebook[]; $CellContext`cellobj$$ = EvaluationCell[])]}]], 
+  "InlineListingAddButton",ExpressionUUID->
+  "11e53f96-e72a-4807-9bb9-70d020f3dc1a"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.9245252937531347`*^9, 3.9245253709513187`*^9}, {
+  3.924525420213159*^9, 3.924525451475543*^9}},
+ CellID->434386579,ExpressionUUID->"c78e9983-32be-41d1-b81c-d3cc4a940415"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Notes", "GuideTutorialsSection",
+ CellID->1303083489,ExpressionUUID->"6090f395-2994-4ba3-9be7-b540de29e37a"],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->885967517,ExpressionUUID->"c45b1fd7-e8f8-47f8-8143-bbec579ad701"],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->1951933568,ExpressionUUID->"34a4fd71-d0f3-4fa6-ba38-55dcc4f12704"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Guides", "GuideMoreAboutSection",
+ CellChangeTimes->{{3.8430423939366693`*^9, 3.843042395176153*^9}},
+ CellID->1187285804,ExpressionUUID->"46bc704d-dd77-414c-83d0-f1a3856d5d5f"],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->294459904,ExpressionUUID->"aec4441d-c4cc-4d19-b9e2-982961637967"],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->1185283840,ExpressionUUID->"03bcfc2b-4893-4a18-a679-0ec6b133e3aa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "GuideRelatedLinksSection",
+ CellID->1007189308,ExpressionUUID->"d8773976-3d8b-464b-99ab-600c63693427"],
+
+Cell[TextData[ButtonBox["Salvo combat model",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://en.wikipedia.org/wiki/Salvo_combat_model"], None},
+ ButtonNote->
+  "https://en.wikipedia.org/wiki/Salvo_combat_model"]], "GuideRelatedLinks",
+ CellChangeTimes->{{3.924525471382722*^9, 3.924525482094445*^9}},
+ CellID->1921873237,ExpressionUUID->"157ef364-3334-4110-ac32-83acc39c77be"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Metadata", "MetadataSection",
+ CellID->1364593902,ExpressionUUID->"f5438ddc-a0a8-4d76-a45a-898e00925cb4"],
+
+Cell[TextData[{
+ "New in: ",
+ Cell["1.0.0", "HistoryData",
+  CellTags->"New",ExpressionUUID->"303f9a5d-7a86-410c-b236-38d299e25975"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"495619c6-3877-4c6c-8b70-cc75315e9ad3"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->
+  "caa44d11-e49b-4030-969f-33ab7c8c3960"]
+}], "History",
+ CellChangeTimes->{{3.924525379453978*^9, 3.924525380690599*^9}},
+ CellID->1751844601,ExpressionUUID->"dc15f996-16bf-4a69-afd7-923decdb0973"],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1251408637,ExpressionUUID->"43832fac-20d9-4114-b683-359f71476708"],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->2117606988,ExpressionUUID->"d17aff70-d120-4548-8414-8622d8e693a7"],
+
+Cell["AntonAntonov/SalvoCombatModeling", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->374165585,ExpressionUUID->"743d7a6c-228f-4dc7-86b8-f05b397a63d8"],
+
+Cell["AntonAntonov`SalvoCombatModeling`", "Categorization",
+ CellLabel->"Context",
+ CellID->768868679,ExpressionUUID->"213fa6e7-43ef-4b30-94d2-2516b2be1d9f"],
+
+Cell["\<\
+AntonAntonov/SalvoCombatModeling/guide/HeterogeneousSalvoCombatModeling\
+\>", "Categorization",
+ CellLabel->"URI",
+ CellID->966783954,ExpressionUUID->"f6cb21a7-f781-4461-9585-2e4f6c5e2e43"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->876641676,ExpressionUUID->"bc679981-2bbb-4484-ac17-88828f74f0dd"],
+
+Cell["XXXX", "Keywords",
+ CellID->1978830112,ExpressionUUID->"960d24d6-99e4-4871-a49b-d6063e0f10cb"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{1138, 970},
+WindowMargins->{{Automatic, 987}, {Automatic, 38}},
+TaggingRules-><|"Paclet" -> "AntonAntonov/SalvoCombatModeling"|>,
+Magnification:>1.25 Inherited,
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"e1d538c9-b0f9-4ee2-a9ec-39d41db200a3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 133, 1, 109, "GuideTitle",ExpressionUUID->"6a2f6350-db2a-43a8-b677-626422727ace",
+ CellID->1453540726],
+Cell[716, 25, 445, 7, 82, "GuideAbstract",ExpressionUUID->"4f5efa3c-96e0-41ab-9277-8c8c4d7e7933",
+ CellID->2032497257]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1198, 37, 108, 1, 91, "GuideFunctionsSection",ExpressionUUID->"be4cf2b7-e7e8-4f0d-8615-2ca5fc36bd17",
+ CellID->159025570],
+Cell[1309, 40, 625, 14, 34, "GuideText",ExpressionUUID->"0f8eb0eb-f715-4d4e-9cad-a94911e4b203",
+ CellID->1273098122],
+Cell[1937, 56, 621, 14, 34, "GuideText",ExpressionUUID->"ab3c865c-d6e4-42c3-889c-a22a7e711b4c",
+ CellID->1580561393],
+Cell[2561, 72, 637, 14, 34, "GuideText",ExpressionUUID->"b866cdc0-aa11-4728-9e24-258f8c894ef1",
+ CellID->1384038745],
+Cell[CellGroupData[{
+Cell[3223, 90, 103, 1, 35, "GuideDelimiter",ExpressionUUID->"3afbdd88-87d8-4c59-8f39-14f34c1aacb8",
+ CellID->122618761],
+Cell[3329, 93, 3005, 73, 34, "InlineGuideFunctionListing",ExpressionUUID->"44f847c4-3321-4d88-b706-2617b980cb78",
+ CellID->1416698654]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6371, 171, 185, 2, 46, "GuideFunctionsSubsection",ExpressionUUID->"1ac2ee25-8bfe-4fe9-bd41-6a3313ebfffb",
+ CellID->813004670],
+Cell[6559, 175, 5230, 128, 34, "InlineGuideFunctionListing",ExpressionUUID->"c78e9983-32be-41d1-b81c-d3cc4a940415",
+ CellID->434386579]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11838, 309, 119, 1, 93, "GuideTutorialsSection",ExpressionUUID->"6090f395-2994-4ba3-9be7-b540de29e37a",
+ CellID->1303083489],
+Cell[11960, 312, 104, 1, 30, "GuideTutorial",ExpressionUUID->"c45b1fd7-e8f8-47f8-8143-bbec579ad701",
+ CellID->885967517],
+Cell[12067, 315, 105, 1, 30, "GuideTutorial",ExpressionUUID->"34a4fd71-d0f3-4fa6-ba38-55dcc4f12704",
+ CellID->1951933568]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12209, 321, 191, 2, 93, "GuideMoreAboutSection",ExpressionUUID->"46bc704d-dd77-414c-83d0-f1a3856d5d5f",
+ CellID->1187285804],
+Cell[12403, 325, 105, 1, 30, "GuideMoreAbout",ExpressionUUID->"aec4441d-c4cc-4d19-b9e2-982961637967",
+ CellID->294459904],
+Cell[12511, 328, 106, 1, 30, "GuideMoreAbout",ExpressionUUID->"03bcfc2b-4893-4a18-a679-0ec6b133e3aa",
+ CellID->1185283840]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12654, 334, 125, 1, 93, "GuideRelatedLinksSection",ExpressionUUID->"d8773976-3d8b-464b-99ab-600c63693427",
+ CellID->1007189308],
+Cell[12782, 337, 385, 7, 30, "GuideRelatedLinks",ExpressionUUID->"157ef364-3334-4110-ac32-83acc39c77be",
+ CellID->1921873237]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13204, 349, 111, 1, 90, "MetadataSection",ExpressionUUID->"f5438ddc-a0a8-4d76-a45a-898e00925cb4",
+ CellID->1364593902],
+Cell[13318, 352, 546, 13, 33, "History",ExpressionUUID->"dc15f996-16bf-4a69-afd7-923decdb0973",
+ CellID->1751844601],
+Cell[CellGroupData[{
+Cell[13889, 369, 123, 1, 27, "CategorizationSection",ExpressionUUID->"43832fac-20d9-4114-b683-359f71476708",
+ CellID->1251408637],
+Cell[14015, 372, 134, 2, 87, "Categorization",ExpressionUUID->"d17aff70-d120-4548-8414-8622d8e693a7",
+ CellID->2117606988],
+Cell[14152, 376, 160, 2, 87, "Categorization",ExpressionUUID->"743d7a6c-228f-4dc7-86b8-f05b397a63d8",
+ CellID->374165585],
+Cell[14315, 380, 157, 2, 87, "Categorization",ExpressionUUID->"213fa6e7-43ef-4b30-94d2-2516b2be1d9f",
+ CellID->768868679],
+Cell[14475, 384, 199, 4, 87, "Categorization",ExpressionUUID->"f6cb21a7-f781-4461-9585-2e4f6c5e2e43",
+ CellID->966783954]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[14711, 393, 110, 1, 26, "KeywordsSection",ExpressionUUID->"bc679981-2bbb-4484-ac17-88828f74f0dd",
+ CellID->876641676],
+Cell[14824, 396, 100, 1, 87, "Keywords",ExpressionUUID->"960d24d6-99e4-4871-a49b-d6063e0f10cb",
+ CellID->1978830112]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
