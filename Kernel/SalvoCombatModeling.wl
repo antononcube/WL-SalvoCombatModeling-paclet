@@ -12,11 +12,11 @@ BeginPackage["AntonAntonov`SalvoCombatModeling`"];
 \[Delta]::usage = "Defender alertness.";
 \[CapitalDelta]::usage = "Number of unit out of action.";
 
+SalvoForceNameQ::usage = "Check is the argument suitable to be salvo combat model force name.";
 SalvoVariable::usage = "Gives rules for salvo combat modeling variables.";
 SalvoVariableRules::usage = "Salvo variable rules.";
 
 (*GenerateVariables::usage = "Generate variables for give fighting sides.";*)
-
 SalvoTerms::usage = "Salvo terms.";
 SalvoDamage::usage = "Salvo damage.";
 
@@ -27,6 +27,12 @@ Begin["`Private`"];
 (*=================================================================*)
 (* Generic variable definitions                                    *)
 (*=================================================================*)
+
+Clear[SalvoForceNameQ];
+SalvoForceNameQ[x_?AtomQ] := True;
+SalvoForceNameQ[x_RGBColor] := True;
+SalvoForceNameQ[___] := False;
+
 
 Clear[SalvoVariable];
 
@@ -129,14 +135,14 @@ Clear[SalvoTerms];
 
 SyntaxInformation[SalvoTerms] = {"ArgumentsPattern" -> {{_Symbol, _Integer}, {{_Symbol, _Integer}}}};
 
-SalvoTerms[{A_Symbol, m_Integer}, {B_Symbol, n_Integer}] :=
+SalvoTerms[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}] :=
     Table[(\[Sigma][B, A, j, i] * \[Tau][B, A, j, i] * \[Rho][A, B, i, j] * \[Beta][ B, A, j, i] * \[CapitalPsi][B, A, j, i] * B[j] - \[Delta][A, B, i, j] * \[Tau][A, B, i, j] * \[Gamma][A, B, i, j] * \[CapitalTheta][A, B, i, j] * A[i]) * 1 / \[Zeta][A, i], {i, m}, {j, n}];
 
 Clear[SalvoDamage];
 
 SyntaxInformation[SalvoDamage] = {"ArgumentsPattern" -> {{_Symbol, _Integer}, {{_Symbol, _Integer}}}};
 
-SalvoDamage[{A_Symbol, m_Integer}, {B_Symbol, n_Integer}] := Total[Flatten@ SalvoTerms[{A, m}, {B, n}]];
+SalvoDamage[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}] := Total[Flatten@ SalvoTerms[{A, m}, {B, n}]];
 
 (*=================================================================*)
 (* Matrix notation (definition)                                    *)
@@ -144,22 +150,38 @@ SalvoDamage[{A_Symbol, m_Integer}, {B_Symbol, n_Integer}] := Total[Flatten@ Salv
 
 Clear[HeterogeneousSalvoModel];
 
-SyntaxInformation[HeterogeneousSalvoModel] = {"ArgumentsPattern" -> {{_Symbol, _Integer}, {{_Symbol, _Integer}}}};
+SyntaxInformation[HeterogeneousSalvoModel] = {"ArgumentsPattern" -> {{_?SalvoForceNameQ, _Integer}, {{_?SalvoForceNameQ, _Integer}}}};
 
-HeterogeneousSalvoModel[{A_Symbol, m_Integer}, {B_Symbol, n_Integer}] :=
-    Block[{vecA, vecB, matOffense, matDefense},
+HeterogeneousSalvoModel[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}] :=
+    Block[{vecA, vecB, matOffenseA, matDefenseA, matOffenseB, matDefenseB, nameA, nameB},
       vecA = Array[A, m];
       vecB = Array[B, n];
-      matOffense =
-          Table[\[Beta][B, A, j, i] * \[Rho][A, B, i, j] * \[Sigma][B, A, j, i] * \[Tau][B, A, 1 j, i] * \[CapitalPsi][B, A, 1 j, i] * 1 / \[Zeta][A, i], {i, m}, {j, n}];
-      matDefense =
+      matOffenseA =
+          Table[\[Beta][B, A, j, i] * \[Rho][A, B, i, j] * \[Sigma][B, A, j, i] * \[Tau][B, A, j, i] * \[CapitalPsi][B, A, j, i] * 1 / \[Zeta][A, i], {i, m}, {j, n}];
+      matDefenseA =
           DiagonalMatrix[
             Total /@ Table[\[Gamma][A, B, i, j] * \[Delta][A, B, i, j] * \[CapitalTheta][A, B, i, j] * \[Tau][A, B, i, j] * 1 / \[Zeta][A, i], {i, m}, {j, n}]
           ];
-      <|SymbolName[A] -> vecA,
-        SymbolName[B] -> vecB,
-        "OffenseMatrix" <> SymbolName[A] -> matOffense,
-        "DefenseMatrix" <> SymbolName[A] -> matDefense|>
+      matOffenseB =
+          Table[\[Beta][A, B, j, i] * \[Rho][B, A, i, j] * \[Sigma][A, B, j, i] * \[Tau][A, B, 1 j, i] * \[CapitalPsi][A, B, j, i] * 1 / \[Zeta][B, i], {i, n}, {j, m}];
+      matDefenseB =
+          DiagonalMatrix[
+            Total /@ Table[\[Gamma][B, A, i, j] * \[Delta][B, A, i, j] * \[CapitalTheta][B, A, i, j] * \[Tau][B, A, i, j] * 1 / \[Zeta][B, i], {i, n}, {j, m}]
+          ];
+      nameA = If[Head[A] === Symbol, SymbolName[A], A];
+      nameB = If[Head[B] === Symbol, SymbolName[B], B];
+      <|
+        nameA -> <|
+          "Units" -> vecA,
+          "OffenseMatrix" -> matOffenseA,
+          "DefenseMatrix" -> matDefenseA
+        |>,
+        nameB -> <|
+          "Units" -> vecB,
+          "OffenseMatrix" -> matOffenseB,
+          "DefenseMatrix" -> matDefenseB
+        |>
+      |>
     ];
 
 End[];
