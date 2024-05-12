@@ -33,8 +33,9 @@ Cell[CellGroupData[{
 
 Cell["", "FileManagerTopSpacer",
  CellGroupingRules->{"SectionGrouping", 99},
+ TaggingRules->{},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->592636116,ExpressionUUID->"de1b760c-0367-42d0-99b4-8895717de05e"],
+ CellID->592636116,ExpressionUUID->"827c545c-0800-42e3-b676-6b37066dd407"],
 
 Cell[CellGroupData[{
 
@@ -59,17 +60,18 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"de76991e-0385-4208-8dc2-1b0ccd25ef5a"]], \
+   "Text"}]],ExpressionUUID->"36075c47-9be6-43cf-8ae4-bf79344a5874"]], \
 "FileManagerDirectory",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerDocumentationIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->406046826,ExpressionUUID->"ba3f62a0-6dfb-4406-9b16-85eb80c1b10c"],
+ CellID->406046826,ExpressionUUID->"f13fa832-e9de-4f40-a52c-207e84fac0d0"],
 
 Cell[CellGroupData[{
 
@@ -94,17 +96,20 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation", "English"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"8af66ad4-f9d5-4ae1-b3fc-ef1082be75ed"]], \
+   "Text"}]],ExpressionUUID->"b1418f25-7492-48c1-a215-a81f61d0166c"]], \
 "FileManagerDirectory",
  CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->2076714631,ExpressionUUID->"5c4f83a9-2d7b-4190-b910-ead72f65e733"],
+ CellID->2076714631,ExpressionUUID->"85709ec4-4ca5-4821-b693-e1050ba60bc8"],
+
+Cell[CellGroupData[{
 
 Cell[TextData[Cell[BoxData[
  InterpretationBox[
@@ -127,17 +132,45 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation", "English", "Guides"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"0fc43055-0f9e-4e0e-8312-501563bf9336"]], \
+   "Text"}]],ExpressionUUID->"a0de1695-3d9d-4fe8-99b1-509c7e9fdb31"]], \
 "FileManagerDirectory",
  CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 120},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
-      TemplateBox[{}, "FileManagerEmptyDirectoryIconTemplate"]], Background -> 
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->291088526,ExpressionUUID->"b689b764-46b6-46e7-bc0a-d37157d35619"],
+ CellID->291088526,ExpressionUUID->"6172c9fd-abca-41ae-a8c6-1fa6e00afc1d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"HeterogeneousSalvoCombatModeling.nb\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Documentation", "English", "Guides", 
+       "HeterogeneousSalvoCombatModeling.nb"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[3]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Documentation", "English", "Guides", 
+    "HeterogeneousSalvoCombatModeling.nb"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{69 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 130},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
+    Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->1643645909,ExpressionUUID->"e52e2aed-6b1f-4a47-a8bd-6e1f3d4f7e86"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -162,17 +195,18 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation", "English", "ReferencePages"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"a64e6945-da7e-49ca-adc9-ee5576b117e0"]], \
+   "Text"}]],ExpressionUUID->"398eca40-7090-4cf9-a7a7-d2e1612b3b02"]], \
 "FileManagerDirectory",
  CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 120},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->357108616,ExpressionUUID->"e57c5b2e-c44d-45ed-8a21-f425441020e7"],
+ CellID->357108616,ExpressionUUID->"4b0410b3-5395-4a06-a911-4a20dd96c491"],
 
 Cell[CellGroupData[{
 
@@ -198,17 +232,18 @@ Cell[TextData[Cell[BoxData[
     "Symbols"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"683bb55a-99ba-4100-9ec7-9219dab63f10"]], \
+   "Text"}]],ExpressionUUID->"0ff64765-5e0c-4a38-8f50-51ee044f2d5c"]], \
 "FileManagerDirectory",
  CellMargins->{{69 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 130},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1855199394,ExpressionUUID->"1ab6e83a-53e0-4451-8ccd-d11e7d54563a"],
+ CellID->1855199394,ExpressionUUID->"8418b613-bd72-417b-a03c-cfb3ae59e8be"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -227,13 +262,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1021144165,ExpressionUUID->"ad79672b-fca7-4f31-b6b8-f5f34f6c645a"],
+ CellID->1021144165,ExpressionUUID->"0320ce43-4391-4814-bfeb-9131fcf42b55"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -252,13 +288,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1802598617,ExpressionUUID->"c5236eb7-8bcf-46d9-96de-a97ba5c59768"],
+ CellID->1802598617,ExpressionUUID->"48438bd2-4575-4beb-86b2-4e10d33b1ab0"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -277,13 +314,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1723147690,ExpressionUUID->"bd975642-3978-4443-8414-7cdb146ffe9b"],
+ CellID->1723147690,ExpressionUUID->"706fee31-e3b2-4569-9101-1bd5066ec5be"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -302,13 +340,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->2126246035,ExpressionUUID->"a66df3a7-20fe-481c-984c-53251b9906ff"],
+ CellID->2126246035,ExpressionUUID->"402d2c1b-cdc0-4370-b65b-01b3e3f55aaf"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -327,13 +366,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1689224165,ExpressionUUID->"de0bcf70-f722-469c-9928-09ff8a13e38e"],
+ CellID->1689224165,ExpressionUUID->"4c54bcda-d091-42b2-b52d-8312f6452630"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -352,13 +392,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1056727815,ExpressionUUID->"d244f21e-aae8-4bef-bb14-48dc119f0909"],
+ CellID->1056727815,ExpressionUUID->"05767f08-c5a4-4275-8dfb-699ab9c822c9"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -377,13 +418,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->975947502,ExpressionUUID->"15420df4-6c75-450a-8a22-26fc519c3aba"],
+ CellID->975947502,ExpressionUUID->"9b3bfadd-5036-4ebf-a858-7a3559c1c361"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -402,13 +444,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->269570328,ExpressionUUID->"21ac0c23-48a0-4b56-b1b0-3cc3a50c693e"],
+ CellID->269570328,ExpressionUUID->"1ef962da-372e-41c9-bed1-8634f9ad38e1"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -427,13 +470,66 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1625491173,ExpressionUUID->"9930d8fe-8b98-4a93-bff0-b70a9ce5d4a1"],
+ CellID->1625491173,ExpressionUUID->"2e20a381-eba5-4308-83a9-de24e621288c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"SalvoForceNameQ.nb\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Documentation", "English", "ReferencePages", 
+       "Symbols", "SalvoForceNameQ.nb"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Documentation", "English", "ReferencePages", 
+    "Symbols", "SalvoForceNameQ.nb"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
+    Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->1346310299,ExpressionUUID->"83cd7e0d-ae53-48a2-9314-024817c479eb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"SalvoNotionDefinitions.nb\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Documentation", "English", "ReferencePages", 
+       "Symbols", "SalvoNotionDefinitions.nb"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Documentation", "English", "ReferencePages", 
+    "Symbols", "SalvoNotionDefinitions.nb"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
+    Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->1241392985,ExpressionUUID->"256b6ad8-2f99-44cc-9a58-2e89985b2a49"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -452,13 +548,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1490671124,ExpressionUUID->"f8013f02-dccb-4ead-bdd9-d0ff1da14fc3"],
+ CellID->1490671124,ExpressionUUID->"93a70fde-75d3-47d0-8200-1df0bcbf45a8"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -477,13 +574,40 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1165355166,ExpressionUUID->"67913d9e-121b-479d-a302-41d1b9937b98"],
+ CellID->1165355166,ExpressionUUID->"78ffa8bc-c3cf-4492-bcc6-472dee6c43b3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"SalvoVariableRules.nb\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Documentation", "English", "ReferencePages", 
+       "Symbols", "SalvoVariableRules.nb"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Documentation", "English", "ReferencePages", 
+    "Symbols", "SalvoVariableRules.nb"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
+    Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->1549490501,ExpressionUUID->"b5353779-52bb-42c3-9ebb-4a9ee7ece103"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -502,13 +626,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1073414322,ExpressionUUID->"5e268f8d-6bb4-41e0-8cfa-db5704055aee"],
+ CellID->1073414322,ExpressionUUID->"c6c3d10b-a31b-4247-9609-d14a5297f1de"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -527,13 +652,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->2011875054,ExpressionUUID->"757e4942-e14d-42cd-bc3c-98b4e8f5cfae"],
+ CellID->2011875054,ExpressionUUID->"e64299b6-a311-4816-b146-79f1cf6dad4e"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -552,13 +678,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1454010563,ExpressionUUID->"f2c9595e-a115-463c-bbbb-c8981b7e064f"]
+ CellID->1454010563,ExpressionUUID->"f3a90fb8-60f1-4081-a481-36c479905240"]
 }, Open  ]]
 }, Open  ]],
 
@@ -583,17 +710,18 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation", "English", "Tutorials"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"a1fa9e7a-25ec-4803-8b9c-b599253c2fd5"]], \
+   "Text"}]],ExpressionUUID->"1600d4b0-fdbd-40c6-8ec0-78f2ec4181cf"]], \
 "FileManagerDirectory",
  CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 120},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerEmptyDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1339113128,ExpressionUUID->"7abd60d8-4ae1-4d27-a916-b86f54a0e4cf"]
+ CellID->1339113128,ExpressionUUID->"202365ed-3342-48ec-99e9-f30b1bb07001"]
 }, Open  ]]
 }, Open  ]],
 
@@ -620,17 +748,18 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Kernel"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"6cc6b6f1-db41-462d-a696-deabb7f13e2a"]], \
+   "Text"}]],ExpressionUUID->"7fbeb87e-0782-4dc2-b94a-88f1a7d23bc0"]], \
 "FileManagerDirectory",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerKernelIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1873458063,ExpressionUUID->"3fe7229d-6a70-4411-b950-9a7bfa9acadc"],
+ CellID->1873458063,ExpressionUUID->"3c588c65-f99b-4086-80aa-af5034b68a38"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -647,13 +776,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->804432527,ExpressionUUID->"d839c3eb-baf7-4fd3-916a-82c28caeec1d"]
+ CellID->804432527,ExpressionUUID->"200f9c1d-b8d9-499b-9397-c28fb59357f0"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -671,13 +801,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
      Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1687923424,ExpressionUUID->"af566acc-efb7-4d4a-b570-d9b9edd96753"],
+ CellID->1687923424,ExpressionUUID->"af006eaa-5c7a-4614-ad1d-cf224e88fde6"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -694,13 +825,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerPacletInfoIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->670010298,ExpressionUUID->"7d0d6f92-f9e0-4281-9d32-fc50d7cb1cdd"],
+ CellID->670010298,ExpressionUUID->"4968ee50-99b8-4846-ac47-13b577161c8f"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -717,13 +849,14 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerTXTIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1606317265,ExpressionUUID->"46b3d0c8-8a9c-455e-aa99-97342df9b3e2"],
+ CellID->1606317265,ExpressionUUID->"1e785f76-377e-4069-83ec-b7d6cf24043c"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -740,18 +873,129 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1357346418,ExpressionUUID->"e8b9854f-0b26-4e63-b122-7633cb2df56f"],
+ CellID->1357346418,ExpressionUUID->"08f97c2b-24d8-496e-8459-e65aae39bfe6"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"Resources\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[0]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Resources"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"77d5e154-ec12-4611-98af-c13c63d69086"]], \
+"FileManagerDirectory",
+ CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->1674641202,ExpressionUUID->"e976283f-a152-4110-bde8-576a454c76e9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"DefinitionsBulgarian.json\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Resources", "DefinitionsBulgarian.json"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Resources", "DefinitionsBulgarian.json"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->1961994876,ExpressionUUID->"2e966bdd-9bbc-4d94-bba5-54a8f2489ab3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"DefinitionsEnglish.json\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Resources", "DefinitionsEnglish.json"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Resources", "DefinitionsEnglish.json"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->774004432,ExpressionUUID->"bff66bc4-9be2-4813-a495-8a8251d6bc56"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"DefinitionsRussian.json\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Resources", "DefinitionsRussian.json"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Resources", "DefinitionsRussian.json"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->636481247,ExpressionUUID->"9ee4c174-41b2-417b-94ff-c88d1016189e"]
+}, Closed]],
 
 Cell["", "FileManagerBottomSpacer",
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->202465245,ExpressionUUID->"b0eb93e1-4a7d-4d66-b300-5d4c8938480b"]
+ CellID->202465245,ExpressionUUID->"665d1ce6-d34e-4f5e-82b8-3d87458d0498"]
 }, Open  ]]
 }, Open  ]],
 
@@ -969,11 +1213,12 @@ examples on the webpage for the resource.", "MoreInfoText"], Background ->
 
 Cell["\<\
 The original salvo combat model provides a mathematical representation of \
-anti-ship missile battles between modern warships. \
+anti-ship missile battles between modern warships.\
 \>", "Notes",
  TaggingRules->{},
  CellChangeTimes->{
-  3.9244417823130703`*^9, {3.924441946616061*^9, 3.924441948199753*^9}},
+  3.9244417823130703`*^9, {3.924441946616061*^9, 3.924441948199753*^9}, 
+   3.9245080760497637`*^9},
  CellTags->"DefaultContent",
  CellID->889292814,ExpressionUUID->"ed5e3ee3-6afd-4eb4-b2f4-5e708d71294e"],
 
@@ -982,6 +1227,7 @@ The Heterogneous Salvo Combat Model (HSCM) extention of the original model \
 allows more detailed and comprehensive modeling of missile and drone combat \
 scenarios.\
 \>", "Notes",
+ TaggingRules->{},
  CellChangeTimes->{{3.924441950463359*^9, 3.9244420086522617`*^9}, {
   3.924442120815681*^9, 3.924442191669598*^9}},
  CellID->1771096196,ExpressionUUID->"6f024edb-8f6e-4889-b295-24e739e0d97a"]
@@ -1092,7 +1338,9 @@ general overview of your paclet.", "MoreInfoText"], Background ->
 Cell[BoxData[
  TemplateBox[{},
   "MainGuideChooserTemplate"]], "MainGuideChooser",
- TaggingRules->{"Refreshing" -> False, "Relative" -> True},
+ TaggingRules->{
+  "Refreshing" -> False, "Relative" -> True, "MainGuidePageString" -> 
+   "Documentation/English/Guides/HeterogeneousSalvoCombatModeling.nb"},
  CellTags->"MainGuidePagePanel",
  CellID->614786987,ExpressionUUID->"1dcb7dfe-86bc-4830-a689-e92803006f56"]
 }, Open  ]]
@@ -1205,9 +1453,11 @@ Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
  TaggingRules->{},
+ CellLabel->"In[76]:=",
  CellID->462042388,ExpressionUUID->"c30f2a11-7743-4c0c-a1e3-b9562a780b95"],
 
 Cell["Here we generate a homogeneous salvo combat model:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.924445012606619*^9, 3.924445032801516*^9}},
  CellID->1640232807,ExpressionUUID->"249c14ac-5578-4f19-a718-cfbdb1f88fe8"],
 
@@ -1218,67 +1468,176 @@ Cell[BoxData[
   RowBox[{"HeterogeneousSalvoModel", "[", 
    RowBox[{
     RowBox[{"{", 
-     RowBox[{"A", ",", "1"}], "}"}], ",", 
+     RowBox[{"A", ",", "2"}], "}"}], ",", 
     RowBox[{"{", 
      RowBox[{"B", ",", "1"}], "}"}]}], "]"}]}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.92404047689893*^9, 3.924040479485018*^9}, {
   3.92444469983566*^9, 3.924444709158228*^9}, {3.924444994486196*^9, 
-  3.924445008232337*^9}},
- CellLabel->"In[53]:=",
+  3.924445008232337*^9}, {3.924522539492985*^9, 3.9245225691709757`*^9}},
+ CellLabel->"In[1]:=",
  CellID->680394371,ExpressionUUID->"b07ace95-e863-4aef-b41a-c31a987568cb"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
   RowBox[{
    RowBox[{"\<\"A\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"A", "[", "1", "]"}], "}"}]}], ",", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"A", "[", "1", "]"}], ",", 
+         RowBox[{"A", "[", "2", "]"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Beta]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Rho]", "[", 
+             RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Sigma]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[CapitalPsi]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{"A", ",", "1"}], "]"}]], "}"}], ",", 
+         RowBox[{"{", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Beta]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Rho]", "[", 
+             RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Sigma]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[CapitalPsi]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{"A", ",", "2"}], "]"}]], "}"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Gamma]", "[", 
+              RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[Delta]", "[", 
+              RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalTheta]", "[", 
+              RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[Tau]", "[", 
+              RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"A", ",", "1"}], "]"}]], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Gamma]", "[", 
+              RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[Delta]", "[", 
+              RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalTheta]", "[", 
+              RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[Tau]", "[", 
+              RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"A", ",", "2"}], "]"}]]}], "}"}]}], "}"}]}]}], 
+     "\[RightAssociation]"}]}], ",", 
    RowBox[{"\<\"B\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"B", "[", "1", "]"}], "}"}]}], ",", 
-   RowBox[{"\<\"OffenseMatrixA\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"{", 
-      FractionBox[
-       RowBox[{
-        RowBox[{"\[Beta]", "[", 
-         RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
-        RowBox[{"\[Rho]", "[", 
-         RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
-        RowBox[{"\[Sigma]", "[", 
-         RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
-        RowBox[{"\[Tau]", "[", 
-         RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
-        RowBox[{"\[CapitalPsi]", "[", 
-         RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}]}], 
-       RowBox[{"\[Zeta]", "[", 
-        RowBox[{"A", ",", "1"}], "]"}]], "}"}], "}"}]}], ",", 
-   RowBox[{"\<\"DefenseMatrixA\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"{", 
-      FractionBox[
-       RowBox[{
-        RowBox[{"\[Gamma]", "[", 
-         RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
-        RowBox[{"\[Delta]", "[", 
-         RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
-        RowBox[{"\[CapitalTheta]", "[", 
-         RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
-        RowBox[{"\[Tau]", "[", 
-         RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}]}], 
-       RowBox[{"\[Zeta]", "[", 
-        RowBox[{"A", ",", "1"}], "]"}]], "}"}], "}"}]}]}], 
-  "\[RightAssociation]"}]], "Output",
- CellChangeTimes->{3.924445008578498*^9, 3.924448593339376*^9, 
-  3.924448842322051*^9},
- CellLabel->"Out[53]=",
- CellID->2074605029,ExpressionUUID->"a8b234a1-d135-4b7e-bacc-f80ccf16d89c"]
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"B", "[", "1", "]"}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Beta]", "[", 
+             RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Rho]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Sigma]", "[", 
+             RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[CapitalPsi]", "[", 
+             RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{"B", ",", "1"}], "]"}]], ",", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Beta]", "[", 
+             RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Rho]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Sigma]", "[", 
+             RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[CapitalPsi]", "[", 
+             RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{"B", ",", "1"}], "]"}]]}], "}"}], "}"}]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Gamma]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Delta]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[CapitalTheta]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{"B", ",", "1"}], "]"}]], "+", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Gamma]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Delta]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[CapitalTheta]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{"B", ",", "1"}], "]"}]]}], "}"}], "}"}]}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.924445008578498*^9, 3.924448593339376*^9, 3.924448842322051*^9, 
+   3.924522308411178*^9, {3.9245225308571997`*^9, 3.9245225694258966`*^9}, 
+   3.924522749526393*^9},
+ CellLabel->"Out[1]=",
+ CellID->1166539317,ExpressionUUID->"c9393795-f333-4dec-95e3-1e0e8651c844"]
 }, Open  ]],
 
-Cell["Here we add clarification tooltips to the model terms:", "Text",
+Cell["\<\
+Here we add clarification tooltips to the model terms and display the \
+matrices in matrix form:\
+\>", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.9244450370098667`*^9, 3.924445051029706*^9}, {
-  3.9244466040277233`*^9, 3.9244466161721773`*^9}},
+  3.9244466040277233`*^9, 3.9244466161721773`*^9}, {3.924522590320026*^9, 
+  3.92452259856513*^9}},
  CellID->271563781,ExpressionUUID->"8da8e1e5-377b-457e-87b4-6dc7e2425964"],
 
 Cell[CellGroupData[{
@@ -1334,197 +1693,1277 @@ Cell[BoxData[
        RowBox[{"SalvoVariableRules", "[", 
         RowBox[{
          RowBox[{"{", 
-          RowBox[{"A", ",", "1"}], "}"}], ",", 
+          RowBox[{"A", ",", "2"}], "}"}], ",", 
          RowBox[{"{", 
           RowBox[{"B", ",", "1"}], "}"}]}], "]"}]}], "]"}]}], "}"}], ",", 
    "\[IndentingNewLine]", 
    RowBox[{"ReplaceAll", "[", 
-    RowBox[{"m", ",", "vrules"}], "]"}]}], "\[IndentingNewLine]", 
-  "]"}]], "Input",
+    RowBox[{
+     RowBox[{"m", "/.", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x_List", "/;", 
+         RowBox[{"MatrixQ", "[", "x", "]"}]}], ")"}], ":>", 
+       RowBox[{"MatrixForm", "[", "x", "]"}]}]}], ",", "vrules"}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.9244447188923817`*^9, 3.924444731062573*^9}, {
   3.924444798575407*^9, 3.924444808317945*^9}, {3.9244449335191193`*^9, 
   3.924444947797934*^9}, {3.9244450592165813`*^9, 3.924445150918899*^9}, {
   3.92444518578273*^9, 3.924445194650969*^9}, {3.9244452362750883`*^9, 
   3.924445378633938*^9}, {3.924446366964624*^9, 3.9244463778626432`*^9}, {
-  3.9244485767608232`*^9, 3.924448578345923*^9}},
- CellLabel->"In[54]:=",
+  3.9244485767608232`*^9, 3.924448578345923*^9}, {3.924522444700472*^9, 
+  3.9245225266113863`*^9}, {3.924522573580274*^9, 3.924522573805932*^9}},
+ CellLabel->"In[2]:=",
  CellID->1325427879,ExpressionUUID->"ad01aec7-2877-4cc5-85bf-67314336f9b2"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
   RowBox[{
    RowBox[{"\<\"A\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"A", "[", "1", "]"}], "}"}]}], ",", 
-   RowBox[{"\<\"B\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"B", "[", "1", "]"}], "}"}]}], ",", 
-   RowBox[{"\<\"OffenseMatrixA\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"{", 
-      FractionBox[
-       RowBox[{
-        TagBox[
-         TooltipBox[
-          RowBox[{"\[Beta]", "[", 
-           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
-          
-          "\"\[Beta]: Offensive combat potential of B[1] units against A[1]. \
-(hits /shooting unit)\"",
-          
-          TooltipStyle->{
-           FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-            RGBColor[1, 0.5, 0], CellFrame -> 3}],
-         Annotation[#, 
-          "\[Beta]: Offensive combat potential of B[1] units against A[1]. \
-(hits /shooting unit)", "Tooltip"]& ], " ", 
-        TagBox[
-         TooltipBox[
-          RowBox[{"\[Rho]", "[", 
-           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
-          "\"\[Rho]: Distraction factor of unit A[1] against B[1]. [0,1]\"",
-          
-          TooltipStyle->{
-           FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-            RGBColor[1, 0.5, 0], CellFrame -> 3}],
-         Annotation[#, 
-          "\[Rho]: Distraction factor of unit A[1] against B[1]. [0,1]", 
-          "Tooltip"]& ], " ", 
-        TagBox[
-         TooltipBox[
-          RowBox[{"\[Sigma]", "[", 
-           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
-          
-          "\"\[Sigma]: Scouting effectiveness of unit B[1] against A[1]. \
-[0,1]\"",
-          
-          TooltipStyle->{
-           FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-            RGBColor[1, 0.5, 0], CellFrame -> 3}],
-         Annotation[#, 
-          "\[Sigma]: Scouting effectiveness of unit B[1] against A[1]. [0,1]",
-           "Tooltip"]& ], " ", 
-        TagBox[
-         TooltipBox[
-          RowBox[{"\[Tau]", "[", 
-           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
-          
-          "\"\[Tau]: Training effectiveness of unit B[1] against A[1]. \
-[0,1]\"",
-          
-          TooltipStyle->{
-           FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-            RGBColor[1, 0.5, 0], CellFrame -> 3}],
-         Annotation[#, 
-          "\[Tau]: Training effectiveness of unit B[1] against A[1]. [0,1]", 
-          "Tooltip"]& ], " ", 
-        TagBox[
-         TooltipBox[
-          RowBox[{"\[CapitalPsi]", "[", 
-           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
-          
-          "\"\[CapitalPsi]: Fraction of B[1] units that engage A[1] units. \
-[0,1]\"",
-          
-          TooltipStyle->{
-           FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-            RGBColor[1, 0.5, 0], CellFrame -> 3}],
-         Annotation[#, 
-          "\[CapitalPsi]: Fraction of B[1] units that engage A[1] units. \
-[0,1]", "Tooltip"]& ]}], 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"A", "[", "1", "]"}], ",", 
+         RowBox[{"A", "[", "2", "]"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
        TagBox[
-        TooltipBox[
-         RowBox[{"\[Zeta]", "[", 
-          RowBox[{"A", ",", "1"}], "]"}],
-         "\"\[Zeta]: Staying power of A[1] unit, {hits}\"",
-         TooltipStyle->{
-          FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-           RGBColor[1, 0.5, 0], CellFrame -> 3}],
-        Annotation[#, "\[Zeta]: Staying power of A[1] unit, {hits}", 
-         "Tooltip"]& ]], "}"}], "}"}]}], ",", 
-   RowBox[{"\<\"DefenseMatrixA\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"{", 
-      FractionBox[
-       RowBox[{
-        TagBox[
-         TooltipBox[
-          RowBox[{"\[Gamma]", "[", 
-           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
-          
-          "\"\[Gamma]: Defensive combat power of side A[1] against B[1] \
-units, {shots /defending units}\"",
-          
-          TooltipStyle->{
-           FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-            RGBColor[1, 0.5, 0], CellFrame -> 3}],
-         Annotation[#, 
-          "\[Gamma]: Defensive combat power of side A[1] against B[1] units, \
-{shots /defending units}", "Tooltip"]& ], " ", 
-        TagBox[
-         TooltipBox[
-          RowBox[{"\[Delta]", "[", 
-           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
-          
-          "\"\[Delta]: Defender alertness or readiness of unit A[1] against \
-B[1]. {[0,1]}\"",
-          
-          TooltipStyle->{
-           FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-            RGBColor[1, 0.5, 0], CellFrame -> 3}],
-         Annotation[#, 
-          "\[Delta]: Defender alertness or readiness of unit A[1] against \
-B[1]. {[0,1]}", "Tooltip"]& ], " ", 
-        TagBox[
-         TooltipBox[
-          RowBox[{"\[CapitalTheta]", "[", 
-           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
-          
-          "\"\[CapitalTheta]: Fraction of A[1] units that engage B[1] units. \
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+           {
+            FractionBox[
+             RowBox[{
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Beta]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Beta]: Offensive combat potential of B[1] units against \
+A[1]. (hits /shooting unit)\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Beta]: Offensive combat potential of B[1] units against \
+A[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Rho]", "[", 
+                 RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Rho]: Distraction factor of unit A[1] against B[1]. \
 [0,1]\"",
-          
-          TooltipStyle->{
-           FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-            RGBColor[1, 0.5, 0], CellFrame -> 3}],
-         Annotation[#, 
-          "\[CapitalTheta]: Fraction of A[1] units that engage B[1] units. \
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Rho]: Distraction factor of unit A[1] against B[1]. [0,1]",
+                 "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Sigma]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Sigma]: Scouting effectiveness of unit B[1] against \
+A[1]. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Sigma]: Scouting effectiveness of unit B[1] against A[1]. \
 [0,1]", "Tooltip"]& ], " ", 
-        TagBox[
-         TooltipBox[
-          RowBox[{"\[Tau]", "[", 
-           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
-          
-          "\"\[Tau]: Training effectiveness of unit A[1] against B[1]. \
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Tau]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Tau]: Training effectiveness of unit B[1] against A[1]. \
 [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Tau]: Training effectiveness of unit B[1] against A[1]. \
+[0,1]", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[CapitalPsi]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[CapitalPsi]: Fraction of B[1] units that engage A[1] \
+units. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[CapitalPsi]: Fraction of B[1] units that engage A[1] \
+units. [0,1]", "Tooltip"]& ]}], 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Zeta]", "[", 
+                RowBox[{"A", ",", "1"}], "]"}],
+               "\"\[Zeta]: Staying power of A[1] unit, {hits}\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, "\[Zeta]: Staying power of A[1] unit, {hits}", 
+               "Tooltip"]& ]]},
+           {
+            FractionBox[
+             RowBox[{
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Beta]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}],
+                
+                "\"\[Beta]: Offensive combat potential of B[1] units against \
+A[2]. (hits /shooting unit)\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Beta]: Offensive combat potential of B[1] units against \
+A[2]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Rho]", "[", 
+                 RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}],
+                
+                "\"\[Rho]: Distraction factor of unit A[2] against B[1]. \
+[0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Rho]: Distraction factor of unit A[2] against B[1]. [0,1]",
+                 "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Sigma]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}],
+                
+                "\"\[Sigma]: Scouting effectiveness of unit B[1] against \
+A[2]. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Sigma]: Scouting effectiveness of unit B[1] against A[2]. \
+[0,1]", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Tau]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}],
+                
+                "\"\[Tau]: Training effectiveness of unit B[1] against A[2]. \
+[0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Tau]: Training effectiveness of unit B[1] against A[2]. \
+[0,1]", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[CapitalPsi]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}],
+                
+                "\"\[CapitalPsi]: Fraction of B[1] units that engage A[2] \
+units. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[CapitalPsi]: Fraction of B[1] units that engage A[2] \
+units. [0,1]", "Tooltip"]& ]}], 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Zeta]", "[", 
+                RowBox[{"A", ",", "2"}], "]"}],
+               "\"\[Zeta]: Staying power of A[2] unit, {hits}\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, "\[Zeta]: Staying power of A[2] unit, {hits}", 
+               "Tooltip"]& ]]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
           
-          TooltipStyle->{
-           FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-            RGBColor[1, 0.5, 0], CellFrame -> 3}],
-         Annotation[#, 
-          "\[Tau]: Training effectiveness of unit A[1] against B[1]. [0,1]", 
-          "Tooltip"]& ]}], 
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.7]}, 
+              Offset[0.27999999999999997`]}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}}], "\[NoBreak]", ")"}],
+        Function[BoxForm`e$, 
+         MatrixForm[BoxForm`e$]]]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
        TagBox[
-        TooltipBox[
-         RowBox[{"\[Zeta]", "[", 
-          RowBox[{"A", ",", "1"}], "]"}],
-         "\"\[Zeta]: Staying power of A[1] unit, {hits}\"",
-         TooltipStyle->{
-          FontSize -> 16, Background -> RGBColor[1, 1, 0.85], CellFrameColor -> 
-           RGBColor[1, 0.5, 0], CellFrame -> 3}],
-        Annotation[#, "\[Zeta]: Staying power of A[1] unit, {hits}", 
-         "Tooltip"]& ]], "}"}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
- 
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+           {
+            FractionBox[
+             RowBox[{
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Gamma]", "[", 
+                 RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Gamma]: Defensive combat power of side A[1] against B[1] \
+units, {shots /defending units}\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Gamma]: Defensive combat power of side A[1] against B[1] \
+units, {shots /defending units}", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Delta]", "[", 
+                 RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Delta]: Defender alertness or readiness of unit A[1] \
+against B[1]. {[0,1]}\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Delta]: Defender alertness or readiness of unit A[1] \
+against B[1]. {[0,1]}", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[CapitalTheta]", "[", 
+                 RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[CapitalTheta]: Fraction of A[1] units that engage B[1] \
+units. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[CapitalTheta]: Fraction of A[1] units that engage B[1] \
+units. [0,1]", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Tau]", "[", 
+                 RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Tau]: Training effectiveness of unit A[1] against B[1]. \
+[0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Tau]: Training effectiveness of unit A[1] against B[1]. \
+[0,1]", "Tooltip"]& ]}], 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Zeta]", "[", 
+                RowBox[{"A", ",", "1"}], "]"}],
+               "\"\[Zeta]: Staying power of A[1] unit, {hits}\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, "\[Zeta]: Staying power of A[1] unit, {hits}", 
+               "Tooltip"]& ]], "0"},
+           {"0", 
+            FractionBox[
+             RowBox[{
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Gamma]", "[", 
+                 RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}],
+                
+                "\"\[Gamma]: Defensive combat power of side A[2] against B[1] \
+units, {shots /defending units}\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Gamma]: Defensive combat power of side A[2] against B[1] \
+units, {shots /defending units}", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Delta]", "[", 
+                 RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}],
+                
+                "\"\[Delta]: Defender alertness or readiness of unit A[2] \
+against B[1]. {[0,1]}\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Delta]: Defender alertness or readiness of unit A[2] \
+against B[1]. {[0,1]}", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[CapitalTheta]", "[", 
+                 RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}],
+                
+                "\"\[CapitalTheta]: Fraction of A[2] units that engage B[1] \
+units. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[CapitalTheta]: Fraction of A[2] units that engage B[1] \
+units. [0,1]", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Tau]", "[", 
+                 RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}],
+                
+                "\"\[Tau]: Training effectiveness of unit A[2] against B[1]. \
+[0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Tau]: Training effectiveness of unit A[2] against B[1]. \
+[0,1]", "Tooltip"]& ]}], 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Zeta]", "[", 
+                RowBox[{"A", ",", "2"}], "]"}],
+               "\"\[Zeta]: Staying power of A[2] unit, {hits}\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, "\[Zeta]: Staying power of A[2] unit, {hits}", 
+               "Tooltip"]& ]]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+          
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.7]}, 
+              Offset[0.27999999999999997`]}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}}], "\[NoBreak]", ")"}],
+        Function[BoxForm`e$, 
+         MatrixForm[BoxForm`e$]]]}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"B\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"B", "[", "1", "]"}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       TagBox[
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+           {
+            FractionBox[
+             RowBox[{
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Beta]", "[", 
+                 RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Beta]: Offensive combat potential of A[1] units against \
+B[1]. (hits /shooting unit)\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Beta]: Offensive combat potential of A[1] units against \
+B[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Rho]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Rho]: Distraction factor of unit B[1] against A[1]. \
+[0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Rho]: Distraction factor of unit B[1] against A[1]. [0,1]",
+                 "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Sigma]", "[", 
+                 RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Sigma]: Scouting effectiveness of unit A[1] against \
+B[1]. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Sigma]: Scouting effectiveness of unit A[1] against B[1]. \
+[0,1]", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Tau]", "[", 
+                 RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[Tau]: Training effectiveness of unit A[1] against B[1]. \
+[0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Tau]: Training effectiveness of unit A[1] against B[1]. \
+[0,1]", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[CapitalPsi]", "[", 
+                 RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}],
+                
+                "\"\[CapitalPsi]: Fraction of A[1] units that engage B[1] \
+units. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[CapitalPsi]: Fraction of A[1] units that engage B[1] \
+units. [0,1]", "Tooltip"]& ]}], 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Zeta]", "[", 
+                RowBox[{"B", ",", "1"}], "]"}],
+               "\"\[Zeta]: Staying power of B[1] unit, {hits}\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, "\[Zeta]: Staying power of B[1] unit, {hits}", 
+               "Tooltip"]& ]], 
+            FractionBox[
+             RowBox[{
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Beta]", "[", 
+                 RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}],
+                
+                "\"\[Beta]: Offensive combat potential of A[2] units against \
+B[1]. (hits /shooting unit)\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Beta]: Offensive combat potential of A[2] units against \
+B[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Rho]", "[", 
+                 RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}],
+                
+                "\"\[Rho]: Distraction factor of unit B[1] against A[2]. \
+[0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Rho]: Distraction factor of unit B[1] against A[2]. [0,1]",
+                 "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Sigma]", "[", 
+                 RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}],
+                
+                "\"\[Sigma]: Scouting effectiveness of unit A[2] against \
+B[1]. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Sigma]: Scouting effectiveness of unit A[2] against B[1]. \
+[0,1]", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Tau]", "[", 
+                 RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}],
+                
+                "\"\[Tau]: Training effectiveness of unit A[2] against B[1]. \
+[0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[Tau]: Training effectiveness of unit A[2] against B[1]. \
+[0,1]", "Tooltip"]& ], " ", 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[CapitalPsi]", "[", 
+                 RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}],
+                
+                "\"\[CapitalPsi]: Fraction of A[2] units that engage B[1] \
+units. [0,1]\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, 
+                "\[CapitalPsi]: Fraction of A[2] units that engage B[1] \
+units. [0,1]", "Tooltip"]& ]}], 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Zeta]", "[", 
+                RowBox[{"B", ",", "1"}], "]"}],
+               "\"\[Zeta]: Staying power of B[1] unit, {hits}\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, "\[Zeta]: Staying power of B[1] unit, {hits}", 
+               "Tooltip"]& ]]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+          
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.7]}, 
+              Offset[0.27999999999999997`]}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}}], "\[NoBreak]", ")"}],
+        Function[BoxForm`e$, 
+         MatrixForm[BoxForm`e$]]]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       TagBox[
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+           {
+            RowBox[{
+             FractionBox[
+              RowBox[{
+               TagBox[
+                TooltipBox[
+                 RowBox[{"\[Gamma]", "[", 
+                  RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
+                 
+                 "\"\[Gamma]: Defensive combat power of side B[1] against \
+A[1] units, {shots /defending units}\"",
+                 
+                 TooltipStyle->{
+                  FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                   CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+                
+                Annotation[#, 
+                 "\[Gamma]: Defensive combat power of side B[1] against A[1] \
+units, {shots /defending units}", "Tooltip"]& ], " ", 
+               TagBox[
+                TooltipBox[
+                 RowBox[{"\[Delta]", "[", 
+                  RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
+                 
+                 "\"\[Delta]: Defender alertness or readiness of unit B[1] \
+against A[1]. {[0,1]}\"",
+                 
+                 TooltipStyle->{
+                  FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                   CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+                Annotation[#, 
+                 "\[Delta]: Defender alertness or readiness of unit B[1] \
+against A[1]. {[0,1]}", "Tooltip"]& ], " ", 
+               TagBox[
+                TooltipBox[
+                 RowBox[{"\[CapitalTheta]", "[", 
+                  RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
+                 
+                 "\"\[CapitalTheta]: Fraction of B[1] units that engage A[1] \
+units. [0,1]\"",
+                 
+                 TooltipStyle->{
+                  FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                   CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+                
+                Annotation[#, 
+                 "\[CapitalTheta]: Fraction of B[1] units that engage A[1] \
+units. [0,1]", "Tooltip"]& ], " ", 
+               TagBox[
+                TooltipBox[
+                 RowBox[{"\[Tau]", "[", 
+                  RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}],
+                 
+                 "\"\[Tau]: Training effectiveness of unit B[1] against A[1]. \
+[0,1]\"",
+                 
+                 TooltipStyle->{
+                  FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                   CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+                
+                Annotation[#, 
+                 "\[Tau]: Training effectiveness of unit B[1] against A[1]. \
+[0,1]", "Tooltip"]& ]}], 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Zeta]", "[", 
+                 RowBox[{"B", ",", "1"}], "]"}],
+                "\"\[Zeta]: Staying power of B[1] unit, {hits}\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, "\[Zeta]: Staying power of B[1] unit, {hits}", 
+                "Tooltip"]& ]], "+", 
+             FractionBox[
+              RowBox[{
+               TagBox[
+                TooltipBox[
+                 RowBox[{"\[Gamma]", "[", 
+                  RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}],
+                 
+                 "\"\[Gamma]: Defensive combat power of side B[1] against \
+A[2] units, {shots /defending units}\"",
+                 
+                 TooltipStyle->{
+                  FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                   CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+                
+                Annotation[#, 
+                 "\[Gamma]: Defensive combat power of side B[1] against A[2] \
+units, {shots /defending units}", "Tooltip"]& ], " ", 
+               TagBox[
+                TooltipBox[
+                 RowBox[{"\[Delta]", "[", 
+                  RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}],
+                 
+                 "\"\[Delta]: Defender alertness or readiness of unit B[1] \
+against A[2]. {[0,1]}\"",
+                 
+                 TooltipStyle->{
+                  FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                   CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+                
+                Annotation[#, 
+                 "\[Delta]: Defender alertness or readiness of unit B[1] \
+against A[2]. {[0,1]}", "Tooltip"]& ], " ", 
+               TagBox[
+                TooltipBox[
+                 RowBox[{"\[CapitalTheta]", "[", 
+                  RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}],
+                 
+                 "\"\[CapitalTheta]: Fraction of B[1] units that engage A[2] \
+units. [0,1]\"",
+                 
+                 TooltipStyle->{
+                  FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                   CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+                
+                Annotation[#, 
+                 "\[CapitalTheta]: Fraction of B[1] units that engage A[2] \
+units. [0,1]", "Tooltip"]& ], " ", 
+               TagBox[
+                TooltipBox[
+                 RowBox[{"\[Tau]", "[", 
+                  RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}],
+                 
+                 "\"\[Tau]: Training effectiveness of unit B[1] against A[2]. \
+[0,1]\"",
+                 
+                 TooltipStyle->{
+                  FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                   CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+                
+                Annotation[#, 
+                 "\[Tau]: Training effectiveness of unit B[1] against A[2]. \
+[0,1]", "Tooltip"]& ]}], 
+              TagBox[
+               TooltipBox[
+                RowBox[{"\[Zeta]", "[", 
+                 RowBox[{"B", ",", "1"}], "]"}],
+                "\"\[Zeta]: Staying power of B[1] unit, {hits}\"",
+                
+                TooltipStyle->{
+                 FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                  CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+               
+               Annotation[#, "\[Zeta]: Staying power of B[1] unit, {hits}", 
+                "Tooltip"]& ]]}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+          
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.7]}, 
+              Offset[0.27999999999999997`]}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}}], "\[NoBreak]", ")"}],
+        Function[BoxForm`e$, 
+         MatrixForm[BoxForm`e$]]]}]}], "\[RightAssociation]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{{3.924445328724598*^9, 3.9244453705622683`*^9}, 
    3.924446380297941*^9, {3.924448578896739*^9, 3.924448595244115*^9}, 
-   3.924448842350193*^9},
- CellLabel->"Out[54]=",
- CellID->1342229711,ExpressionUUID->"24649a29-bd42-4083-a787-8c917a3ba791"]
+   3.924448842350193*^9, 3.924522311391569*^9, {3.9245224775144243`*^9, 
+   3.924522574079723*^9}, 3.924522749557313*^9},
+ CellLabel->"Out[2]=",
+ CellID->1648087356,ExpressionUUID->"799cf6a2-7cc1-4618-9a1c-77034068cc55"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Here is the matrix formula of the damage of the units ",
+ Cell[BoxData[
+ "A"], "InlineFormula",ExpressionUUID->"056a079e-00c0-4bfc-b533-cecab5ddce64"],
+ ":"
+}], "ExampleText",
+ TaggingRules->{},
+ CellChangeTimes->{{3.9244434919518943`*^9, 3.924443532743541*^9}, {
+  3.924443948767888*^9, 3.92444394952901*^9}},
+ CellID->2100345989,ExpressionUUID->"94e03bd7-f362-4000-b6f8-a879d80616b4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"m", "[", 
+      RowBox[{"\"\<A\>\"", ",", "\"\<OffenseMatrix\>\""}], "]"}], ".", 
+     RowBox[{"m", "[", 
+      RowBox[{"\"\<B\>\"", ",", "\"\<Units\>\""}], "]"}]}], "-", 
+    RowBox[{
+     RowBox[{"m", "[", 
+      RowBox[{"\"\<A\>\"", ",", "\"\<DefenseMatrix\>\""}], "]"}], ".", 
+     RowBox[{"m", "[", 
+      RowBox[{"\"\<A\>\"", ",", "\"\<Units\>\""}], "]"}]}]}], "//", 
+   "Simplify"}], "//", "MatrixForm"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.92444345764172*^9, 3.924443461408613*^9}, {
+  3.924443535580796*^9, 3.924443541903006*^9}, {3.924443678706468*^9, 
+  3.924443740918586*^9}, {3.924522688670989*^9, 3.924522729797948*^9}},
+ CellLabel->"In[3]:=",
+ CellID->70925163,ExpressionUUID->"736c3bd7-9d4f-40b9-9837-bcbf0cdd57ae"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", 
+   TagBox[GridBox[{
+      {
+       FractionBox[
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"A", "[", "1", "]"}]}], " ", 
+          RowBox[{"\[Gamma]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Delta]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalTheta]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"B", "[", "1", "]"}], " ", 
+          RowBox[{"\[Beta]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Rho]", "[", 
+           RowBox[{"A", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Sigma]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalPsi]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "1"}], "]"}]}]}], 
+        RowBox[{"\[Zeta]", "[", 
+         RowBox[{"A", ",", "1"}], "]"}]]},
+      {
+       FractionBox[
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"A", "[", "2", "]"}]}], " ", 
+          RowBox[{"\[Gamma]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Delta]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[CapitalTheta]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"B", "[", "1", "]"}], " ", 
+          RowBox[{"\[Beta]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+          RowBox[{"\[Rho]", "[", 
+           RowBox[{"A", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+          RowBox[{"\[Sigma]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+          RowBox[{"\[Tau]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}], " ", 
+          RowBox[{"\[CapitalPsi]", "[", 
+           RowBox[{"B", ",", "A", ",", "1", ",", "2"}], "]"}]}]}], 
+        RowBox[{"\[Zeta]", "[", 
+         RowBox[{"A", ",", "2"}], "]"}]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    Column], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.924443695158773*^9, 3.924443783823021*^9}, {
+   3.9244439329583797`*^9, 3.924443950827408*^9}, 3.924444183500606*^9, 
+   3.924447983026512*^9, 3.924448015116346*^9, 3.924451017956903*^9, 
+   3.924522684719947*^9, {3.924522730286298*^9, 3.924522749583911*^9}},
+ CellLabel->"Out[3]//MatrixForm=",
+ CellID->1160113286,ExpressionUUID->"28e17973-8c80-4cdb-afcd-22a448ceaa7b"]
 }, Open  ]]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
 Cell["Scope", "Subsection",
  TaggingRules->{},
- CellID->964056545,ExpressionUUID->"9bc329e8-43a9-4b32-a200-354e5bd32c6f"]
+ CellID->964056545,ExpressionUUID->"9bc329e8-43a9-4b32-a200-354e5bd32c6f"],
+
+Cell["\<\
+Colors or emoji characters (like flags) can be used to designate the forces. \
+For example, here is generated a model for \"Red vs. Blue\":\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.9245223485312347`*^9, 3.9245224318963223`*^9}},
+ CellID->990607722,ExpressionUUID->"33357f2f-a190-43e0-ae59-844147e952ae"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m", "=", 
+  RowBox[{"HeterogeneousSalvoModel", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+       "RGBColorSwatchTemplate"], ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+       "RGBColorSwatchTemplate"], ",", "1"}], "}"}]}], "]"}]}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.9245081287067623`*^9, 3.9245081870259132`*^9}, {
+  3.924508252095889*^9, 3.9245082524994097`*^9}, {3.924508458535103*^9, 
+  3.924508466363699*^9}, {3.924509140554895*^9, 3.9245091439007053`*^9}, {
+  3.924522765194377*^9, 3.924522765602559*^9}},
+ CellLabel->"In[4]:=",
+ CellID->2035445455,ExpressionUUID->"a1229788-4d58-4537-9523-377f82ddd4f4"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{
+    TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+     "RGBColorSwatchTemplate"], "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], "[", "1", "]"}], ",", 
+         RowBox[{
+          TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+           "RGBColorSwatchTemplate"], "[", "2", "]"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Beta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Rho]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Sigma]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[CapitalPsi]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{
+             TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+              "RGBColorSwatchTemplate"], ",", "1"}], "]"}]], "}"}], ",", 
+         RowBox[{"{", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Beta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Rho]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Sigma]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[CapitalPsi]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{
+             TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+              "RGBColorSwatchTemplate"], ",", "2"}], "]"}]], "}"}]}], "}"}]}],
+       ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Gamma]", "[", 
+              RowBox[{
+               TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+                "RGBColorSwatchTemplate"], ",", 
+               TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+                "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[Delta]", "[", 
+              RowBox[{
+               TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+                "RGBColorSwatchTemplate"], ",", 
+               TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+                "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalTheta]", "[", 
+              RowBox[{
+               TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+                "RGBColorSwatchTemplate"], ",", 
+               TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+                "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[Tau]", "[", 
+              RowBox[{
+               TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+                "RGBColorSwatchTemplate"], ",", 
+               TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+                "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1"}], "]"}]], ",", "0"}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Gamma]", "[", 
+              RowBox[{
+               TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+                "RGBColorSwatchTemplate"], ",", 
+               TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+                "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[Delta]", "[", 
+              RowBox[{
+               TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+                "RGBColorSwatchTemplate"], ",", 
+               TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+                "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalTheta]", "[", 
+              RowBox[{
+               TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+                "RGBColorSwatchTemplate"], ",", 
+               TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+                "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[Tau]", "[", 
+              RowBox[{
+               TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+                "RGBColorSwatchTemplate"], ",", 
+               TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+                "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "2"}], "]"}]]}], "}"}]}], 
+        "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{
+    TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+     "RGBColorSwatchTemplate"], "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+          "RGBColorSwatchTemplate"], "[", "1", "]"}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Beta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Rho]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Sigma]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[CapitalPsi]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{
+             TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+              "RGBColorSwatchTemplate"], ",", "1"}], "]"}]], ",", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Beta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Rho]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Sigma]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[CapitalPsi]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", "2", ",", "1"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{
+             TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+              "RGBColorSwatchTemplate"], ",", "1"}], "]"}]]}], "}"}], "}"}]}],
+       ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Gamma]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Delta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[CapitalTheta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "1"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{
+             TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+              "RGBColorSwatchTemplate"], ",", "1"}], "]"}]], "+", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"\[Gamma]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Delta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[CapitalTheta]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}], " ", 
+            RowBox[{"\[Tau]", "[", 
+             RowBox[{
+              TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+               "RGBColorSwatchTemplate"], ",", 
+              TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+               "RGBColorSwatchTemplate"], ",", "1", ",", "2"}], "]"}]}], 
+           RowBox[{"\[Zeta]", "[", 
+            RowBox[{
+             TemplateBox[<|"color" -> RGBColor[0, 0, 1]|>,
+              "RGBColorSwatchTemplate"], ",", "1"}], "]"}]]}], "}"}], 
+        "}"}]}]}], "\[RightAssociation]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.924508252999456*^9, {3.9245084514489803`*^9, 3.924508463220571*^9}, 
+   3.92450914448533*^9, 3.924510475901576*^9, 3.924522342220825*^9, 
+   3.9245227658562117`*^9},
+ CellLabel->"Out[4]=",
+ CellID->935368989,ExpressionUUID->"1334c346-2ceb-46ab-ab3b-441e8b14ee32"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "07abc66a-8318-464c-87f8-45a7c5b2dbde"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ TaggingRules->{},
+ CellID->463324739,ExpressionUUID->"8b311515-ba1f-4530-b7d1-630c64b4d5b1"],
+
+Cell["Get a dataset of model notion definitions:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.924528931034198*^9, 3.9245289536389103`*^9}},
+ CellID->323184351,ExpressionUUID->"5cfaa877-799d-4326-8c36-c07c453a083a"],
+
+Cell[BoxData[
+ RowBox[{"SalvoNotionDefinitions", "[", "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.924528954593544*^9, 3.9245289745277843`*^9}},
+ CellLabel->"In[3]:=",
+ CellID->1474513423,ExpressionUUID->"ddbfdecd-23b1-4ee7-97f3-a2c425af1d70"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1869,8 +3308,22 @@ Cell["Heterogeneous Salvo Combat Model", "Item",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellChangeTimes->{{3.924040317201673*^9, 3.924040339827333*^9}, {
-  3.924451124837764*^9, 3.924451145742668*^9}},
- CellID->475829506,ExpressionUUID->"b5b7200d-c667-4ed8-a4d1-ba790655058b"]
+  3.924451124837764*^9, 3.924451145742668*^9}, {3.9245298337448483`*^9, 
+  3.924529833767132*^9}},
+ CellID->475829506,ExpressionUUID->"b5b7200d-c667-4ed8-a4d1-ba790655058b"],
+
+Cell["Operations Research", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.924040317201673*^9, 3.924040339827333*^9}, {
+  3.924451124837764*^9, 3.924451145742668*^9}, {3.924529834485787*^9, 
+  3.9245298415501137`*^9}},
+ CellID->1383494882,ExpressionUUID->"f6668e74-429a-47a4-bcf6-6619128cb39d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2193,7 +3646,11 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
    "TemplateCellGroup"},
  CellID->687116677,ExpressionUUID->"02bef5c5-5037-4358-9320-be4b8e793963"],
 
-Cell["https://en.wikipedia.org/wiki/Salvo_combat_model", "Item",
+Cell[TextData[ButtonBox["Salvo combat model - Wikipedia",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://en.wikipedia.org/wiki/Salvo_combat_model"], None},
+ ButtonNote->"https://en.wikipedia.org/wiki/Salvo_combat_model"]], "Item",
  TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
@@ -2203,7 +3660,7 @@ Cell["https://en.wikipedia.org/wiki/Salvo_combat_model", "Item",
    PassEventsDown -> False, PassEventsUp -> False},
  CellChangeTimes->{3.924040425458731*^9},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->702019342,ExpressionUUID->"a6ea741f-09ea-48c4-8597-7c33b76e294d"]
+ CellID->702019342,ExpressionUUID->"f3e0fa79-ab8e-4d1c-8a52-af1441cb04e3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3559,7 +5016,7 @@ Cell["Additional information about limitations, issues, etc.", "Text",
 }, Open  ]]
 },
 WindowSize->{1287, 1071},
-WindowMargins->{{Automatic, 1014}, {Automatic, 58}},
+WindowMargins->{{1050, Automatic}, {Automatic, 40}},
 WindowTitle->"SalvoCombatModeling | Definition Notebook",
 DockedCells->{
   Cell[
@@ -3575,7 +5032,1667 @@ DockedCells->{
    CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
    CacheGraphics -> False, CellOpen -> Dynamic[
      CurrentValue[
-      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]]},
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]], 
+  Cell[
+   BoxData[
+    StyleBox[
+     InterpretationBox[
+      StyleBox[
+       PaneSelectorBox[{False -> GridBox[{{
+             OpenerBox[
+              Dynamic[
+               CurrentValue[
+                EvaluationCell[], {TaggingRules, "StripeOpen"}, False]], 
+              Appearance -> Automatic, Enabled -> Automatic, AutoAction -> 
+              False, ContinuousAction -> False], 
+             TagBox[
+              GridBox[{{
+                 StyleBox[
+                  DynamicBox[
+                   ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.924529912948379`16.346362632804503*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                   "System"], FontSlant -> Italic, FontColor -> 
+                  GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                  False], "\"   \"", 
+                 ItemBox[
+                  StyleBox[
+                   TagBox[
+                    GridBox[{{"\"Published to the cloud\"", 
+                    TemplateBox[{"\"  View \[RightGuillemet]\"", {
+                    URL[
+                    "https://www.wolframcloud.com/obj/antononcube/\
+DeployedResources/Paclet/AntonAntonov/SalvoCombatModeling"], None}, 
+                    "https://www.wolframcloud.com/obj/antononcube/\
+DeployedResources/Paclet/AntonAntonov/SalvoCombatModeling", "Hyperlink", {
+                    "HyperlinkActive"}, BaseStyle -> {"Hyperlink"}, 
+                    Alignment -> {Automatic, Baseline}, BaselinePosition -> 
+                    Baseline}, "HyperlinkTemplate"]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
+                   LineBreakWithin -> Automatic, LineIndent -> 0, 
+                   StripOnInput -> False], ItemSize -> Fit, StripOnInput -> 
+                  False], 
+                 ItemBox[
+                  StyleBox[
+                   TemplateBox[{
+                    RowBox[{"ResourceObject", "[", 
+                    ButtonBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    Thickness[0.0025], {
+                    FaceForm[{
+                    RGBColor[
+                    0.9607843137254902, 0.5058823529411764, 
+                    0.19607843137254902`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}}}, {{{205., 22.660200119018555`}, {205., 
+                    212.11320304870605`}, {246.01799774169922`, 
+                    235.79520988464355`}, {369.0710144042969, 
+                    306.8401927947998}, {369.0710144042969, 
+                    117.38719749450684`}, {205., 22.660200119018555`}}, {{
+                    30.928985595703125`, 306.8401927947998}, {
+                    153.98200225830078`, 235.79520988464355`}, {195., 
+                    212.11320304870605`}, {195., 22.660200119018555`}, {
+                    30.928985595703125`, 117.38719749450684`}, {
+                    30.928985595703125`, 306.8401927947998}}, {{200., 
+                    410.22620964050293`}, {364.0710144042969, 
+                    315.5001964569092}, {241.01799774169922`, 
+                    244.45519828796387`}, {200., 220.77320671081543`}, {
+                    158.98200225830078`, 244.45519828796387`}, {
+                    35.928985595703125`, 315.5001964569092}, {200., 
+                    410.22620964050293`}}, CompressedData["
+1:eJxTTMoPSmViYGCQAWIQDQQPlDrLHYB0n8ffYgewSEAmhO9aBaJ/1cmB+XqT
+gsF8tsaHGch8BoYNGcjqGS7lmqOYd/qhKYg+9+8dhH/prQmI9ptyBYV/jmEH
+Cj+CeUEMMr9iq24MsnkV3Eeike2b8aQrGtk9DSrhyiA6e88JMD/BvUgJbG/S
+EzBfQYpBCaKeIROZv2muNDK/YaqzeSayflj4wMyHhR/M/oDHC8uR3fdAaWM5
+svthfJj/YHyY/2F8WPjAzIOFH0p8AQA7u3Ea
+                    "]}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{43., 198.67381286621094`}, {107.71399688720703`, 
+                    161.3118133544922}, {107.71399688720703`, 
+                    86.58680725097656}, {43., 123.94882202148438`}, {43., 
+                    198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.3137254901960784, 0.4549019607843137, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{182.77679443359375`, 198.67381286621094`}, {
+                    182.77679443359375`, 123.94882202148438`}, {
+                    118.06279754638672`, 86.58680725097656}, {
+                    118.06279754638672`, 161.3118133544922}, {
+                    182.77679443359375`, 198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.7803921568627451, 0.8627450980392157, 
+                    0.9490196078431372], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{112.8884048461914, 244.9990997314453}, {
+                    177.60240173339844`, 207.63610076904297`}, {
+                    112.8884048461914, 170.27410888671875`}, {
+                    48.174407958984375`, 207.63610076904297`}, {
+                    112.8884048461914, 244.9990997314453}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{130.02911376953125`, 350.11590576171875`}, {
+                    194.80210876464844`, 312.7189064025879}, {
+                    194.80210876464844`, 237.92591094970703`}, {
+                    130.02911376953125`, 275.32291412353516`}, {
+                    130.02911376953125`, 350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.4627450980392157, 0.3607843137254902, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{269.9334716796875, 350.11590576171875`}, {
+                    269.9334716796875, 275.32291412353516`}, {
+                    205.1604766845703, 237.92591094970703`}, {
+                    205.1604766845703, 312.7189064025879}, {269.9334716796875,
+                     350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.8862745098039215, 0.803921568627451, 
+                    0.9529411764705882], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{199.98130798339844`, 396.48345947265625`}, {
+                    264.7543029785156, 359.0864601135254}, {
+                    199.98130798339844`, 321.69046783447266`}, {
+                    135.20831298828125`, 359.0864601135254}, {
+                    199.98130798339844`, 396.48345947265625`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{217.61199951171875`, 199.13890075683594`}, {
+                    281.8990020751953, 162.0229034423828}, {281.8990020751953,
+                     87.7908935546875}, {217.61199951171875`, 
+                    124.90690612792969`}, {217.61199951171875`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.43137254901960786`, 0.6039215686274509, 
+                    0.34509803921568627`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{356.46661376953125`, 199.13890075683594`}, {
+                    356.46661376953125`, 124.90690612792969`}, {
+                    292.1796112060547, 87.7908935546875}, {292.1796112060547, 
+                    162.0229034423828}, {356.46661376953125`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[0.8549019607843137, 0.9450980392156862, 0.8], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{287.039306640625, 245.15859985351562`}, {
+                    351.32630920410156`, 208.0426025390625}, {
+                    287.039306640625, 170.92660522460938`}, {
+                    222.75230407714844`, 208.0426025390625}, {
+                    287.039306640625, 245.15859985351562`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    356.46649169921875`, 215.76849365234375`}, {
+                    296.2834930419922, 250.5924949645996}, {
+                    356.46649169921875`, 285.26649475097656`}, {
+                    356.46649169921875`, 215.76849365234375`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    217.61199951171875`, 114.06449890136719`}, {
+                    277.7949981689453, 79.24049758911133}, {
+                    217.61199951171875`, 44.566497802734375`}, {
+                    217.61199951171875`, 114.06449890136719`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    122.17269897460938`, 78.36309814453125}, {
+                    182.42269897460938`, 113.07109832763672`}, {
+                    182.35969924926758`, 43.614097595214844`}, {
+                    122.17269897460938`, 78.36309814453125}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    103.52159881591797`, 249.46669006347656`}, {
+                    43.27159881591797, 214.7586898803711}, {
+                    43.334598541259766`, 284.21569061279297`}, {
+                    103.52159881591797`, 249.46669006347656`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    120.86710357666016`, 350.61541748046875`}, {
+                    120.80010357499123`, 281.0834197998047}, {
+                    60.68010330200195, 315.86641693115234`}, {
+                    120.86710357666016`, 350.61541748046875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    278.3727111816406, 281.2159118652344}, {
+                    278.43971118330956`, 350.74790954589844`}, {
+                    338.5597114562988, 315.9649124145508}, {278.3727111816406,
+                     281.2159118652344}}}]}}, {
+                    ImageSize -> 12, BaselinePosition -> Scaled[0.1], 
+                    ImageSize -> {Automatic, 35}}], 
+                    StyleBox[
+                    "\"AntonAntonov/SalvoCombatModeling\"", FontFamily -> 
+                    Dynamic[
+                    CurrentValue["PanelFontFamily"]], FontSize -> 
+                    0.8 Inherited, ShowStringCharacters -> False, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.25}}, "Rows" -> {{0}}}], "Grid"], 
+                    ButtonFunction :> {}, Evaluator -> None, Active -> False, 
+                    Alignment -> Left, 
+                    Appearance -> {
+                    "Default" -> 
+                    FrontEnd`FileName[{"Typeset", "SummaryBox"}, 
+                    "Panel.9.png"]}, FrameMargins -> {{3, 3}, {3, 0}}, 
+                    BaseStyle -> {Deployed -> False}, 
+                    DefaultBaseStyle -> {Background -> None}, 
+                    BaselinePosition -> Baseline, Method -> "Preemptive"], 
+                    "]"}], "OEM6eJy9kUFLAzEQhdm6iFAR9Cf0BzR3b7o9KFSUpOJBPGSzk+\
+7WbCZkJo39925EEfHey/AO3+M93tiKzqTOt/\
+gBZCs6lVi0raleD8TqQgJhigYe2x0YVtWrPaHLe88QQwTWPKAv/H/nvHGYul/\
+bjOYbGIPTDAWbfWP9omcOdC1EznmZ0dmoR1OsS4OjwHYntGf06E1qQawgODxA91OLxJM2DljcFOjr4\
+F4o7fbY4NhqfsAO3OC3C2WPE6TO7w4B4iTfn+VaVW/TNn+\
+2OFKPsrBMDuhKgZtyXwbuG5we55mo3sQEU7dP3xS8Pw=="}, "ClickToCopyTemplate"], 
+                   LineBreakWithin -> Automatic, LineIndent -> 0, 
+                   StripOnInput -> False], ItemSize -> Fit, StripOnInput -> 
+                  False], "\"\"", 
+                 TagBox[
+                  ButtonBox[
+                   TagBox[
+                    PaneSelectorBox[{False -> GraphicsBox[{
+                    GrayLevel[
+                    NCache[
+                    Rational[64, 85], 0.7529411764705882]], 
+                    
+                    PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                    0.42426406871192845`}, {0.42426406871192845`, 
+                    0.282842712474619}}], 
+                    
+                    PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                    0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                    0.42426406871192845`}}]}, ImageSize -> 18, 
+                    PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                    None], True -> GraphicsBox[{
+                    GrayLevel[
+                    NCache[
+                    Rational[128, 255], 0.5019607843137255]], 
+                    
+                    PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                    0.42426406871192845`}, {0.42426406871192845`, 
+                    0.282842712474619}}], 
+                    
+                    PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                    0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                    0.42426406871192845`}}]}, ImageSize -> 18, 
+                    PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                    None]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    FrameMargins -> 0], 
+                    MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+                   With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+                    EvaluationNotebook[]}, 
+                    CurrentValue[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells] = If[
+                    TrueQ[
+                    MemberQ[
+                    CurrentValue["ModifierKeys"], "Control"]], 
+                    DeleteCases[
+                    Flatten[{
+                    CurrentValue[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                    Cell[
+                    Blank[], "StripeCell", 
+                    BlankNullSequence[]]], 
+                    DeleteCases[
+                    Flatten[{
+                    CurrentValue[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                    Condition[
+                    Pattern[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    Blank[Cell]], 
+                    Not[
+                    FreeQ[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "58f8fe9f-2983-40bb-9b30-7075e6412151"]]]]]], Appearance -> 
+                   None, BoxID -> "58f8fe9f-2983-40bb-9b30-7075e6412151", 
+                   Evaluator -> Automatic, Method -> "Preemptive"], 
+                  MouseAppearanceTag["LinkHand"]]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "Grid"]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+           AutoDelete -> False, 
+           GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+           GridBoxSpacings -> {"Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+           BaselinePosition -> {1, 1}], True -> GridBox[{{
+             OpenerBox[
+              Dynamic[
+               CurrentValue[
+                EvaluationCell[], {TaggingRules, "StripeOpen"}, False]], 
+              Appearance -> Automatic, Enabled -> Automatic, AutoAction -> 
+              False, ContinuousAction -> False], 
+             TagBox[
+              GridBox[{{
+                 StyleBox[
+                  DynamicBox[
+                   ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.924529912948379`16.346362632804503*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                   "System"], FontSlant -> Italic, FontColor -> 
+                  GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                  False], "\"   \"", 
+                 ItemBox[
+                  StyleBox[
+                   TagBox[
+                    GridBox[{{"\"Published to the cloud\"", 
+                    TemplateBox[{"\"  View \[RightGuillemet]\"", {
+                    URL[
+                    "https://www.wolframcloud.com/obj/antononcube/\
+DeployedResources/Paclet/AntonAntonov/SalvoCombatModeling"], None}, 
+                    "https://www.wolframcloud.com/obj/antononcube/\
+DeployedResources/Paclet/AntonAntonov/SalvoCombatModeling", "Hyperlink", {
+                    "HyperlinkActive"}, BaseStyle -> {"Hyperlink"}, 
+                    Alignment -> {Automatic, Baseline}, BaselinePosition -> 
+                    Baseline}, "HyperlinkTemplate"]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
+                   LineBreakWithin -> Automatic, LineIndent -> 0, 
+                   StripOnInput -> False], ItemSize -> Fit, StripOnInput -> 
+                  False], 
+                 ItemBox[
+                  StyleBox[
+                   TemplateBox[{
+                    RowBox[{"ResourceObject", "[", 
+                    ButtonBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    Thickness[0.0025], {
+                    FaceForm[{
+                    RGBColor[
+                    0.9607843137254902, 0.5058823529411764, 
+                    0.19607843137254902`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}}}, {{{205., 22.660200119018555`}, {205., 
+                    212.11320304870605`}, {246.01799774169922`, 
+                    235.79520988464355`}, {369.0710144042969, 
+                    306.8401927947998}, {369.0710144042969, 
+                    117.38719749450684`}, {205., 22.660200119018555`}}, {{
+                    30.928985595703125`, 306.8401927947998}, {
+                    153.98200225830078`, 235.79520988464355`}, {195., 
+                    212.11320304870605`}, {195., 22.660200119018555`}, {
+                    30.928985595703125`, 117.38719749450684`}, {
+                    30.928985595703125`, 306.8401927947998}}, {{200., 
+                    410.22620964050293`}, {364.0710144042969, 
+                    315.5001964569092}, {241.01799774169922`, 
+                    244.45519828796387`}, {200., 220.77320671081543`}, {
+                    158.98200225830078`, 244.45519828796387`}, {
+                    35.928985595703125`, 315.5001964569092}, {200., 
+                    410.22620964050293`}}, CompressedData["
+1:eJxTTMoPSmViYGCQAWIQDQQPlDrLHYB0n8ffYgewSEAmhO9aBaJ/1cmB+XqT
+gsF8tsaHGch8BoYNGcjqGS7lmqOYd/qhKYg+9+8dhH/prQmI9ptyBYV/jmEH
+Cj+CeUEMMr9iq24MsnkV3Eeike2b8aQrGtk9DSrhyiA6e88JMD/BvUgJbG/S
+EzBfQYpBCaKeIROZv2muNDK/YaqzeSayflj4wMyHhR/M/oDHC8uR3fdAaWM5
+svthfJj/YHyY/2F8WPjAzIOFH0p8AQA7u3Ea
+                    "]}]}, {
+                    FaceForm[{
+                    RGBColor[0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{43., 198.67381286621094`}, {107.71399688720703`, 
+                    161.3118133544922}, {107.71399688720703`, 
+                    86.58680725097656}, {43., 123.94882202148438`}, {43., 
+                    198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.3137254901960784, 0.4549019607843137, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{182.77679443359375`, 198.67381286621094`}, {
+                    182.77679443359375`, 123.94882202148438`}, {
+                    118.06279754638672`, 86.58680725097656}, {
+                    118.06279754638672`, 161.3118133544922}, {
+                    182.77679443359375`, 198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.7803921568627451, 0.8627450980392157, 
+                    0.9490196078431372], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{112.8884048461914, 244.9990997314453}, {
+                    177.60240173339844`, 207.63610076904297`}, {
+                    112.8884048461914, 170.27410888671875`}, {
+                    48.174407958984375`, 207.63610076904297`}, {
+                    112.8884048461914, 244.9990997314453}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{130.02911376953125`, 350.11590576171875`}, {
+                    194.80210876464844`, 312.7189064025879}, {
+                    194.80210876464844`, 237.92591094970703`}, {
+                    130.02911376953125`, 275.32291412353516`}, {
+                    130.02911376953125`, 350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.4627450980392157, 0.3607843137254902, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{269.9334716796875, 350.11590576171875`}, {
+                    269.9334716796875, 275.32291412353516`}, {
+                    205.1604766845703, 237.92591094970703`}, {
+                    205.1604766845703, 312.7189064025879}, {269.9334716796875,
+                     350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.8862745098039215, 0.803921568627451, 
+                    0.9529411764705882], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{199.98130798339844`, 396.48345947265625`}, {
+                    264.7543029785156, 359.0864601135254}, {
+                    199.98130798339844`, 321.69046783447266`}, {
+                    135.20831298828125`, 359.0864601135254}, {
+                    199.98130798339844`, 396.48345947265625`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{217.61199951171875`, 199.13890075683594`}, {
+                    281.8990020751953, 162.0229034423828}, {281.8990020751953,
+                     87.7908935546875}, {217.61199951171875`, 
+                    124.90690612792969`}, {217.61199951171875`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.43137254901960786`, 0.6039215686274509, 
+                    0.34509803921568627`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{356.46661376953125`, 199.13890075683594`}, {
+                    356.46661376953125`, 124.90690612792969`}, {
+                    292.1796112060547, 87.7908935546875}, {292.1796112060547, 
+                    162.0229034423828}, {356.46661376953125`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[0.8549019607843137, 0.9450980392156862, 0.8], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{287.039306640625, 245.15859985351562`}, {
+                    351.32630920410156`, 208.0426025390625}, {
+                    287.039306640625, 170.92660522460938`}, {
+                    222.75230407714844`, 208.0426025390625}, {
+                    287.039306640625, 245.15859985351562`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    356.46649169921875`, 215.76849365234375`}, {
+                    296.2834930419922, 250.5924949645996}, {
+                    356.46649169921875`, 285.26649475097656`}, {
+                    356.46649169921875`, 215.76849365234375`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    217.61199951171875`, 114.06449890136719`}, {
+                    277.7949981689453, 79.24049758911133}, {
+                    217.61199951171875`, 44.566497802734375`}, {
+                    217.61199951171875`, 114.06449890136719`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    122.17269897460938`, 78.36309814453125}, {
+                    182.42269897460938`, 113.07109832763672`}, {
+                    182.35969924926758`, 43.614097595214844`}, {
+                    122.17269897460938`, 78.36309814453125}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    103.52159881591797`, 249.46669006347656`}, {
+                    43.27159881591797, 214.7586898803711}, {
+                    43.334598541259766`, 284.21569061279297`}, {
+                    103.52159881591797`, 249.46669006347656`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    120.86710357666016`, 350.61541748046875`}, {
+                    120.80010357499123`, 281.0834197998047}, {
+                    60.68010330200195, 315.86641693115234`}, {
+                    120.86710357666016`, 350.61541748046875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    278.3727111816406, 281.2159118652344}, {
+                    278.43971118330956`, 350.74790954589844`}, {
+                    338.5597114562988, 315.9649124145508}, {278.3727111816406,
+                     281.2159118652344}}}]}}, {
+                    ImageSize -> 12, BaselinePosition -> Scaled[0.1], 
+                    ImageSize -> {Automatic, 35}}], 
+                    StyleBox[
+                    "\"AntonAntonov/SalvoCombatModeling\"", FontFamily -> 
+                    Dynamic[
+                    CurrentValue["PanelFontFamily"]], FontSize -> 
+                    0.8 Inherited, ShowStringCharacters -> False, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.25}}, "Rows" -> {{0}}}], "Grid"], 
+                    ButtonFunction :> {}, Evaluator -> None, Active -> False, 
+                    Alignment -> Left, 
+                    Appearance -> {
+                    "Default" -> 
+                    FrontEnd`FileName[{"Typeset", "SummaryBox"}, 
+                    "Panel.9.png"]}, FrameMargins -> {{3, 3}, {3, 0}}, 
+                    BaseStyle -> {Deployed -> False}, 
+                    DefaultBaseStyle -> {Background -> None}, 
+                    BaselinePosition -> Baseline, Method -> "Preemptive"], 
+                    "]"}], "OEM6eJy9kUFLAzEQhdm6iFAR9Cf0BzR3b7o9KFSUpOJBPGSzk+\
+7WbCZkJo39925EEfHey/AO3+M93tiKzqTOt/\
+gBZCs6lVi0raleD8TqQgJhigYe2x0YVtWrPaHLe88QQwTWPKAv/H/nvHGYul/\
+bjOYbGIPTDAWbfWP9omcOdC1EznmZ0dmoR1OsS4OjwHYntGf06E1qQawgODxA91OLxJM2DljcFOjr4\
+F4o7fbY4NhqfsAO3OC3C2WPE6TO7w4B4iTfn+VaVW/TNn+\
+2OFKPsrBMDuhKgZtyXwbuG5we55mo3sQEU7dP3xS8Pw=="}, "ClickToCopyTemplate"], 
+                   LineBreakWithin -> Automatic, LineIndent -> 0, 
+                   StripOnInput -> False], ItemSize -> Fit, StripOnInput -> 
+                  False], "\"\"", 
+                 TagBox[
+                  ButtonBox[
+                   TagBox[
+                    PaneSelectorBox[{False -> GraphicsBox[{
+                    GrayLevel[
+                    NCache[
+                    Rational[64, 85], 0.7529411764705882]], 
+                    
+                    PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                    0.42426406871192845`}, {0.42426406871192845`, 
+                    0.282842712474619}}], 
+                    
+                    PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                    0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                    0.42426406871192845`}}]}, ImageSize -> 18, 
+                    PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                    None], True -> GraphicsBox[{
+                    GrayLevel[
+                    NCache[
+                    Rational[128, 255], 0.5019607843137255]], 
+                    
+                    PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                    0.42426406871192845`}, {0.42426406871192845`, 
+                    0.282842712474619}}], 
+                    
+                    PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                    0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                    0.42426406871192845`}}]}, ImageSize -> 18, 
+                    PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                    None]}, 
+                    Dynamic[
+                    CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+                    FrameMargins -> 0], 
+                    MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+                   With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+                    EvaluationNotebook[]}, 
+                    CurrentValue[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells] = If[
+                    TrueQ[
+                    MemberQ[
+                    CurrentValue["ModifierKeys"], "Control"]], 
+                    DeleteCases[
+                    Flatten[{
+                    CurrentValue[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                    Cell[
+                    Blank[], "StripeCell", 
+                    BlankNullSequence[]]], 
+                    DeleteCases[
+                    Flatten[{
+                    CurrentValue[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                    Condition[
+                    Pattern[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    Blank[Cell]], 
+                    Not[
+                    FreeQ[
+                    DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "58f8fe9f-2983-40bb-9b30-7075e6412151"]]]]]], Appearance -> 
+                   None, BoxID -> "58f8fe9f-2983-40bb-9b30-7075e6412151", 
+                   Evaluator -> Automatic, Method -> "Preemptive"], 
+                  MouseAppearanceTag["LinkHand"]]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "Grid"]}, {"", 
+             PaneBox[
+              TagBox[
+               GridBox[{{"\"\"", 
+                  StyleBox[
+                   TagBox[
+                    
+                    GridBox[{{
+                    "\"\[FilledVerySmallSquare]\"", "\"Cloud object:\"", 
+                    TemplateBox[{
+                    RowBox[{"CloudObject", "[", 
+                    
+                    TemplateBox[{
+                    "\"https://\[Ellipsis]/antononcube/DeployedResources/\
+Paclet/AntonAntonov/SalvoCombatModeling\"", 
+                    "https://www.wolframcloud.com/obj/antononcube/\
+DeployedResources/Paclet/AntonAntonov/SalvoCombatModeling"}, "HyperlinkURL"], 
+                    "]"}], "OEM6eJy9kbFOAzEMhnXlhJDKUh6hD9DsbHAMRSoCJUUMiCGXc7\
+gruTiKnYa+PQli4QW6WJb1Wb/12TZ0JXW+\
+x28ge0GrR88QQwTWPKEvY9vQpcQK2Jba3USslp3DNDz3BzCsmne7oOUe5uA0Q8UWf9i4HpkD3QqRc9\
+5kdDbq2dTVjcFZYH8Q2jN69Cb1IB4gODzBIIEwRQMkXrRxwOKuQr8Fj0Jpd8QO517zEw7gJv+\
+5VvY8Qep6ewoQS/v1Kneq+Shu/rk40x3VsEwO6EaBK7lvE48dlsd5Jmr3McEP9FOvIQ=="}, 
+                    "ClickToCopyTemplate"]}, {
+                    "\"\[FilledVerySmallSquare]\"", "\"Visit web page:\"", 
+                    TemplateBox[{
+                    TagBox[
+                    
+                    RowBox[{
+                    "\"https://www.wolframcloud.com/\"", "\[Ellipsis]", 
+                    "\"onAntonov/SalvoCombatModeling\""}], Short[#, 0.75]& ], 
+                    "https://www.wolframcloud.com/obj/antononcube/\
+DeployedResources/Paclet/AntonAntonov/SalvoCombatModeling"}, 
+                    "HyperlinkURL"]}, {
+                    "\"\[FilledVerySmallSquare]\"", "\"Resource object:\"", 
+                    TemplateBox[{
+                    RowBox[{"ResourceObject", "[", 
+                    ButtonBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    Thickness[0.0025], {
+                    FaceForm[{
+                    RGBColor[
+                    0.9607843137254902, 0.5058823529411764, 
+                    0.19607843137254902`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}}}, {{{205., 22.660200119018555`}, {205., 
+                    212.11320304870605`}, {246.01799774169922`, 
+                    235.79520988464355`}, {369.0710144042969, 
+                    306.8401927947998}, {369.0710144042969, 
+                    117.38719749450684`}, {205., 22.660200119018555`}}, {{
+                    30.928985595703125`, 306.8401927947998}, {
+                    153.98200225830078`, 235.79520988464355`}, {195., 
+                    212.11320304870605`}, {195., 22.660200119018555`}, {
+                    30.928985595703125`, 117.38719749450684`}, {
+                    30.928985595703125`, 306.8401927947998}}, {{200., 
+                    410.22620964050293`}, {364.0710144042969, 
+                    315.5001964569092}, {241.01799774169922`, 
+                    244.45519828796387`}, {200., 220.77320671081543`}, {
+                    158.98200225830078`, 244.45519828796387`}, {
+                    35.928985595703125`, 315.5001964569092}, {200., 
+                    410.22620964050293`}}, CompressedData["
+1:eJxTTMoPSmViYGCQAWIQDQQPlDrLHYB0n8ffYgewSEAmhO9aBaJ/1cmB+XqT
+gsF8tsaHGch8BoYNGcjqGS7lmqOYd/qhKYg+9+8dhH/prQmI9ptyBYV/jmEH
+Cj+CeUEMMr9iq24MsnkV3Eeike2b8aQrGtk9DSrhyiA6e88JMD/BvUgJbG/S
+EzBfQYpBCaKeIROZv2muNDK/YaqzeSayflj4wMyHhR/M/oDHC8uR3fdAaWM5
+svthfJj/YHyY/2F8WPjAzIOFH0p8AQA7u3Ea
+                    "]}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{43., 198.67381286621094`}, {107.71399688720703`, 
+                    161.3118133544922}, {107.71399688720703`, 
+                    86.58680725097656}, {43., 123.94882202148438`}, {43., 
+                    198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.3137254901960784, 0.4549019607843137, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{182.77679443359375`, 198.67381286621094`}, {
+                    182.77679443359375`, 123.94882202148438`}, {
+                    118.06279754638672`, 86.58680725097656}, {
+                    118.06279754638672`, 161.3118133544922}, {
+                    182.77679443359375`, 198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.7803921568627451, 0.8627450980392157, 
+                    0.9490196078431372], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{112.8884048461914, 244.9990997314453}, {
+                    177.60240173339844`, 207.63610076904297`}, {
+                    112.8884048461914, 170.27410888671875`}, {
+                    48.174407958984375`, 207.63610076904297`}, {
+                    112.8884048461914, 244.9990997314453}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{130.02911376953125`, 350.11590576171875`}, {
+                    194.80210876464844`, 312.7189064025879}, {
+                    194.80210876464844`, 237.92591094970703`}, {
+                    130.02911376953125`, 275.32291412353516`}, {
+                    130.02911376953125`, 350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.4627450980392157, 0.3607843137254902, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{269.9334716796875, 350.11590576171875`}, {
+                    269.9334716796875, 275.32291412353516`}, {
+                    205.1604766845703, 237.92591094970703`}, {
+                    205.1604766845703, 312.7189064025879}, {269.9334716796875,
+                     350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.8862745098039215, 0.803921568627451, 
+                    0.9529411764705882], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{199.98130798339844`, 396.48345947265625`}, {
+                    264.7543029785156, 359.0864601135254}, {
+                    199.98130798339844`, 321.69046783447266`}, {
+                    135.20831298828125`, 359.0864601135254}, {
+                    199.98130798339844`, 396.48345947265625`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{217.61199951171875`, 199.13890075683594`}, {
+                    281.8990020751953, 162.0229034423828}, {281.8990020751953,
+                     87.7908935546875}, {217.61199951171875`, 
+                    124.90690612792969`}, {217.61199951171875`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.43137254901960786`, 0.6039215686274509, 
+                    0.34509803921568627`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{356.46661376953125`, 199.13890075683594`}, {
+                    356.46661376953125`, 124.90690612792969`}, {
+                    292.1796112060547, 87.7908935546875}, {292.1796112060547, 
+                    162.0229034423828}, {356.46661376953125`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[0.8549019607843137, 0.9450980392156862, 0.8], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{287.039306640625, 245.15859985351562`}, {
+                    351.32630920410156`, 208.0426025390625}, {
+                    287.039306640625, 170.92660522460938`}, {
+                    222.75230407714844`, 208.0426025390625}, {
+                    287.039306640625, 245.15859985351562`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    356.46649169921875`, 215.76849365234375`}, {
+                    296.2834930419922, 250.5924949645996}, {
+                    356.46649169921875`, 285.26649475097656`}, {
+                    356.46649169921875`, 215.76849365234375`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    217.61199951171875`, 114.06449890136719`}, {
+                    277.7949981689453, 79.24049758911133}, {
+                    217.61199951171875`, 44.566497802734375`}, {
+                    217.61199951171875`, 114.06449890136719`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    122.17269897460938`, 78.36309814453125}, {
+                    182.42269897460938`, 113.07109832763672`}, {
+                    182.35969924926758`, 43.614097595214844`}, {
+                    122.17269897460938`, 78.36309814453125}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    103.52159881591797`, 249.46669006347656`}, {
+                    43.27159881591797, 214.7586898803711}, {
+                    43.334598541259766`, 284.21569061279297`}, {
+                    103.52159881591797`, 249.46669006347656`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    120.86710357666016`, 350.61541748046875`}, {
+                    120.80010357499123`, 281.0834197998047}, {
+                    60.68010330200195, 315.86641693115234`}, {
+                    120.86710357666016`, 350.61541748046875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    278.3727111816406, 281.2159118652344}, {
+                    278.43971118330956`, 350.74790954589844`}, {
+                    338.5597114562988, 315.9649124145508}, {278.3727111816406,
+                     281.2159118652344}}}]}}, {
+                    ImageSize -> 12, BaselinePosition -> Scaled[0.1], 
+                    ImageSize -> {Automatic, 35}}], 
+                    StyleBox[
+                    "\"AntonAntonov/SalvoCombatModeling\"", FontFamily -> 
+                    Dynamic[
+                    CurrentValue["PanelFontFamily"]], FontSize -> 
+                    0.8 Inherited, ShowStringCharacters -> False, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.25}}, "Rows" -> {{0}}}], "Grid"], 
+                    ButtonFunction :> {}, Evaluator -> None, Active -> False, 
+                    Alignment -> Left, 
+                    Appearance -> {
+                    "Default" -> FrontEnd`FileName[{"Typeset", "SummaryBox"}, 
+                    "Panel.9.png"]}, FrameMargins -> {{3, 3}, {3, 0}}, 
+                    BaseStyle -> {Deployed -> False}, 
+                    DefaultBaseStyle -> {Background -> None}, 
+                    BaselinePosition -> Baseline, Method -> "Preemptive"], 
+                    "]"}], "OEM6eJy9kUFLAzEQhdm6iFAR9Cf0BzR3b7o9KFSUpOJBPGSzk+\
+7WbCZkJo39925EEfHey/AO3+M93tiKzqTOt/\
+gBZCs6lVi0raleD8TqQgJhigYe2x0YVtWrPaHLe88QQwTWPKAv/H/nvHGYul/\
+bjOYbGIPTDAWbfWP9omcOdC1EznmZ0dmoR1OsS4OjwHYntGf06E1qQawgODxA91OLxJM2DljcFOjr4\
+F4o7fbY4NhqfsAO3OC3C2WPE6TO7w4B4iTfn+VaVW/TNn+\
+2OFKPsrBMDuhKgZtyXwbuG5we55mo3sQEU7dP3xS8Pw=="}, "ClickToCopyTemplate"]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {Automatic, Automatic, Fit}, 
+                    "Rows" -> {{Automatic}}}], "Grid"], FontColor -> 
+                   GrayLevel[0.5], FontSize -> 12, StripOnInput -> False]}}, 
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                False, GridBoxDividers -> {
+                 "Columns" -> {{None}}, "RowsIndexed" -> {-1 -> GrayLevel[
+                    Rational[239, 255]]}}, 
+                GridBoxItemSize -> {
+                 "Columns" -> {Automatic, Fit}, "Rows" -> {{Automatic}}}, 
+                GridBoxSpacings -> {
+                 "Columns" -> {1, {}, 1}, "Rows" -> {1, {}, 2}}], "Grid"], 
+              ImageMargins -> 0]}}, 
+           GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> False, 
+           GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+           GridBoxSpacings -> {"Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+           BaselinePosition -> {1, 1}]}, 
+        Dynamic[
+         TrueQ[
+          CurrentValue[
+           EvaluationCell[], {TaggingRules, "StripeOpen"}, False]]], 
+        Alignment -> Automatic, ImageSize -> Automatic, ImageMargins -> 0, 
+        BaseStyle -> {}, DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
+        Baseline], Deployed -> False, StripOnInput -> False], 
+      OpenerView[{
+        Grid[{{
+           Style[
+            Dynamic[
+             DateString[
+              TimeZoneConvert[
+               DateObject[
+               3.924529912948379`16.346362632804503*^9, TimeZone -> 0]], {
+              "MonthName", " ", "DayShort", ", ", "Year", " ", "Hour12Short", 
+               ":", "Minute", " ", "AMPMLowerCase"}], SingleEvaluation -> 
+             True, Evaluator -> "System"], FontSlant -> Italic, FontColor -> 
+            GrayLevel[0.5], FontSize -> 0.9 Inherited], "   ", 
+           Item[
+            Style[
+             Grid[{{"Published to the cloud", 
+                Hyperlink[
+                "  View \[RightGuillemet]", 
+                 "https://www.wolframcloud.com/obj/antononcube/\
+DeployedResources/Paclet/AntonAntonov/SalvoCombatModeling", 
+                 Alignment -> {Automatic, Baseline}, BaselinePosition -> 
+                 Baseline]}}, Spacings -> 0.25, 
+              Alignment -> {Automatic, Baseline}], LineBreakWithin -> 
+             Automatic, LineIndent -> 0], ItemSize -> Fit], 
+           Item[
+            Style[
+             RawBoxes[
+              TemplateBox[{
+                RowBox[{"ResourceObject", "[", 
+                  ButtonBox[
+                   TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    Thickness[0.0025], {
+                    FaceForm[{
+                    RGBColor[
+                    0.9607843137254902, 0.5058823529411764, 
+                    0.19607843137254902`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}}}, {{{205., 22.660200119018555`}, {205., 
+                    212.11320304870605`}, {246.01799774169922`, 
+                    235.79520988464355`}, {369.0710144042969, 
+                    306.8401927947998}, {369.0710144042969, 
+                    117.38719749450684`}, {205., 22.660200119018555`}}, {{
+                    30.928985595703125`, 306.8401927947998}, {
+                    153.98200225830078`, 235.79520988464355`}, {195., 
+                    212.11320304870605`}, {195., 22.660200119018555`}, {
+                    30.928985595703125`, 117.38719749450684`}, {
+                    30.928985595703125`, 306.8401927947998}}, {{200., 
+                    410.22620964050293`}, {364.0710144042969, 
+                    315.5001964569092}, {241.01799774169922`, 
+                    244.45519828796387`}, {200., 220.77320671081543`}, {
+                    158.98200225830078`, 244.45519828796387`}, {
+                    35.928985595703125`, 315.5001964569092}, {200., 
+                    410.22620964050293`}}, CompressedData["
+1:eJxTTMoPSmViYGCQAWIQDQQPlDrLHYB0n8ffYgewSEAmhO9aBaJ/1cmB+XqT
+gsF8tsaHGch8BoYNGcjqGS7lmqOYd/qhKYg+9+8dhH/prQmI9ptyBYV/jmEH
+Cj+CeUEMMr9iq24MsnkV3Eeike2b8aQrGtk9DSrhyiA6e88JMD/BvUgJbG/S
+EzBfQYpBCaKeIROZv2muNDK/YaqzeSayflj4wMyHhR/M/oDHC8uR3fdAaWM5
+svthfJj/YHyY/2F8WPjAzIOFH0p8AQA7u3Ea
+                    "]}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{43., 198.67381286621094`}, {107.71399688720703`, 
+                    161.3118133544922}, {107.71399688720703`, 
+                    86.58680725097656}, {43., 123.94882202148438`}, {43., 
+                    198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.3137254901960784, 0.4549019607843137, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{182.77679443359375`, 198.67381286621094`}, {
+                    182.77679443359375`, 123.94882202148438`}, {
+                    118.06279754638672`, 86.58680725097656}, {
+                    118.06279754638672`, 161.3118133544922}, {
+                    182.77679443359375`, 198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.7803921568627451, 0.8627450980392157, 
+                    0.9490196078431372], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{112.8884048461914, 244.9990997314453}, {
+                    177.60240173339844`, 207.63610076904297`}, {
+                    112.8884048461914, 170.27410888671875`}, {
+                    48.174407958984375`, 207.63610076904297`}, {
+                    112.8884048461914, 244.9990997314453}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{130.02911376953125`, 350.11590576171875`}, {
+                    194.80210876464844`, 312.7189064025879}, {
+                    194.80210876464844`, 237.92591094970703`}, {
+                    130.02911376953125`, 275.32291412353516`}, {
+                    130.02911376953125`, 350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.4627450980392157, 0.3607843137254902, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{269.9334716796875, 350.11590576171875`}, {
+                    269.9334716796875, 275.32291412353516`}, {
+                    205.1604766845703, 237.92591094970703`}, {
+                    205.1604766845703, 312.7189064025879}, {269.9334716796875,
+                     350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.8862745098039215, 0.803921568627451, 
+                    0.9529411764705882], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{199.98130798339844`, 396.48345947265625`}, {
+                    264.7543029785156, 359.0864601135254}, {
+                    199.98130798339844`, 321.69046783447266`}, {
+                    135.20831298828125`, 359.0864601135254}, {
+                    199.98130798339844`, 396.48345947265625`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{217.61199951171875`, 199.13890075683594`}, {
+                    281.8990020751953, 162.0229034423828}, {281.8990020751953,
+                     87.7908935546875}, {217.61199951171875`, 
+                    124.90690612792969`}, {217.61199951171875`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.43137254901960786`, 0.6039215686274509, 
+                    0.34509803921568627`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{356.46661376953125`, 199.13890075683594`}, {
+                    356.46661376953125`, 124.90690612792969`}, {
+                    292.1796112060547, 87.7908935546875}, {292.1796112060547, 
+                    162.0229034423828}, {356.46661376953125`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[0.8549019607843137, 0.9450980392156862, 0.8], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{287.039306640625, 245.15859985351562`}, {
+                    351.32630920410156`, 208.0426025390625}, {
+                    287.039306640625, 170.92660522460938`}, {
+                    222.75230407714844`, 208.0426025390625}, {
+                    287.039306640625, 245.15859985351562`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    356.46649169921875`, 215.76849365234375`}, {
+                    296.2834930419922, 250.5924949645996}, {
+                    356.46649169921875`, 285.26649475097656`}, {
+                    356.46649169921875`, 215.76849365234375`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    217.61199951171875`, 114.06449890136719`}, {
+                    277.7949981689453, 79.24049758911133}, {
+                    217.61199951171875`, 44.566497802734375`}, {
+                    217.61199951171875`, 114.06449890136719`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    122.17269897460938`, 78.36309814453125}, {
+                    182.42269897460938`, 113.07109832763672`}, {
+                    182.35969924926758`, 43.614097595214844`}, {
+                    122.17269897460938`, 78.36309814453125}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    103.52159881591797`, 249.46669006347656`}, {
+                    43.27159881591797, 214.7586898803711}, {
+                    43.334598541259766`, 284.21569061279297`}, {
+                    103.52159881591797`, 249.46669006347656`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    120.86710357666016`, 350.61541748046875`}, {
+                    120.80010357499123`, 281.0834197998047}, {
+                    60.68010330200195, 315.86641693115234`}, {
+                    120.86710357666016`, 350.61541748046875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    278.3727111816406, 281.2159118652344}, {
+                    278.43971118330956`, 350.74790954589844`}, {
+                    338.5597114562988, 315.9649124145508}, {278.3727111816406,
+                     281.2159118652344}}}]}}, {
+                    ImageSize -> 12, BaselinePosition -> Scaled[0.1], 
+                    ImageSize -> {Automatic, 35}}], 
+                    StyleBox[
+                    "\"AntonAntonov/SalvoCombatModeling\"", FontFamily -> 
+                    Dynamic[
+                    CurrentValue["PanelFontFamily"]], FontSize -> 
+                    0.8 Inherited, ShowStringCharacters -> False, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.25}}, "Rows" -> {{0}}}], "Grid"], 
+                   ButtonFunction :> {}, Evaluator -> None, Active -> False, 
+                   Alignment -> Left, 
+                   Appearance -> {
+                    "Default" -> 
+                    FrontEnd`FileName[{"Typeset", "SummaryBox"}, 
+                    "Panel.9.png"]}, FrameMargins -> {{3, 3}, {3, 0}}, 
+                   BaseStyle -> {Deployed -> False}, 
+                   DefaultBaseStyle -> {Background -> None}, BaselinePosition -> 
+                   Baseline, Method -> "Preemptive"], "]"}], 
+                "OEM6eJy9kUFLAzEQhdm6iFAR9Cf0BzR3b7o9KFSUpOJBPGSzk+\
+7WbCZkJo39925EEfHey/AO3+M93tiKzqTOt/\
+gBZCs6lVi0raleD8TqQgJhigYe2x0YVtWrPaHLe88QQwTWPKAv/H/nvHGYul/\
+bjOYbGIPTDAWbfWP9omcOdC1EznmZ0dmoR1OsS4OjwHYntGf06E1qQawgODxA91OLxJM2DljcFOjr4\
+F4o7fbY4NhqfsAO3OC3C2WPE6TO7w4B4iTfn+VaVW/TNn+\
+2OFKPsrBMDuhKgZtyXwbuG5we55mo3sQEU7dP3xS8Pw=="}, "ClickToCopyTemplate"]], 
+             LineBreakWithin -> Automatic, LineIndent -> 0], ItemSize -> Fit],
+            "", 
+           MouseAppearance[
+            Button[
+             MouseAppearance[
+              Mouseover[
+               Graphics[{
+                 GrayLevel[
+                  Rational[64, 85]], 
+                 
+                 Polygon[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                  0.42426406871192845`}, {0.42426406871192845`, 
+                  0.282842712474619}}], 
+                 
+                 Polygon[{{0.42426406871192845`, -0.282842712474619}, {
+                  0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                  0.42426406871192845`}}]}, ImageSize -> 18, PlotRangePadding -> 
+                0, PlotRange -> 0.7, Background -> None], 
+               Graphics[{
+                 GrayLevel[
+                  Rational[128, 255]], 
+                 
+                 Polygon[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                  0.42426406871192845`}, {0.42426406871192845`, 
+                  0.282842712474619}}], 
+                 
+                 Polygon[{{0.42426406871192845`, -0.282842712474619}, {
+                  0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                  0.42426406871192845`}}]}, ImageSize -> 18, PlotRangePadding -> 
+                0, PlotRange -> 0.7, Background -> None]], "LinkHand"], 
+             
+             With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+               EvaluationNotebook[]}, 
+              CurrentValue[
+               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                DockedCells] = If[
+                TrueQ[
+                 MemberQ[
+                  CurrentValue["ModifierKeys"], "Control"]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Cell[
+                  Blank[], "StripeCell", 
+                  BlankNullSequence[]]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Condition[
+                  Pattern[
+                  DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                   Blank[Cell]], 
+                  Not[
+                   FreeQ[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "58f8fe9f-2983-40bb-9b30-7075e6412151"]]]]]], Appearance -> 
+             None, BoxID -> "58f8fe9f-2983-40bb-9b30-7075e6412151"], 
+            "LinkHand"]}}, Alignment -> {Left, Baseline}], 
+        Grid[{{"", 
+           Style[
+            Grid[{{"\[FilledVerySmallSquare]", "Cloud object:", 
+               RawBoxes[
+                TemplateBox[{
+                  RowBox[{"CloudObject", "[", 
+                    
+                    TemplateBox[{
+                    "\"https://\[Ellipsis]/antononcube/DeployedResources/\
+Paclet/AntonAntonov/SalvoCombatModeling\"", 
+                    "https://www.wolframcloud.com/obj/antononcube/\
+DeployedResources/Paclet/AntonAntonov/SalvoCombatModeling"}, "HyperlinkURL"], 
+                    "]"}], "OEM6eJy9kbFOAzEMhnXlhJDKUh6hD9DsbHAMRSoCJUUMiCGXc7\
+gruTiKnYa+PQli4QW6WJb1Wb/12TZ0JXW+\
+x28ge0GrR88QQwTWPKEvY9vQpcQK2Jba3USslp3DNDz3BzCsmne7oOUe5uA0Q8UWf9i4HpkD3QqRc9\
+5kdDbq2dTVjcFZYH8Q2jN69Cb1IB4gODzBIIEwRQMkXrRxwOKuQr8Fj0Jpd8QO517zEw7gJv+\
+5VvY8Qep6ewoQS/v1Kneq+Shu/rk40x3VsEwO6EaBK7lvE48dlsd5Jmr3McEP9FOvIQ=="}, 
+                 "ClickToCopyTemplate"]]}, {
+              "\[FilledVerySmallSquare]", "Visit web page:", 
+               Hyperlink[
+                RawBoxes[
+                 TagBox[
+                  
+                  RowBox[{
+                   "\"https://www.wolframcloud.com/\"", "\[Ellipsis]", 
+                    "\"onAntonov/SalvoCombatModeling\""}], Short[#, 0.75]& ]],
+                 "https://www.wolframcloud.com/obj/antononcube/\
+DeployedResources/Paclet/AntonAntonov/SalvoCombatModeling"]}, {
+              "\[FilledVerySmallSquare]", "Resource object:", 
+               RawBoxes[
+                TemplateBox[{
+                  RowBox[{"ResourceObject", "[", 
+                    ButtonBox[
+                    TagBox[
+                    GridBox[{{
+                    GraphicsBox[{
+                    Thickness[0.0025], {
+                    FaceForm[{
+                    RGBColor[
+                    0.9607843137254902, 0.5058823529411764, 
+                    0.19607843137254902`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}}}, {{{205., 22.660200119018555`}, {205., 
+                    212.11320304870605`}, {246.01799774169922`, 
+                    235.79520988464355`}, {369.0710144042969, 
+                    306.8401927947998}, {369.0710144042969, 
+                    117.38719749450684`}, {205., 22.660200119018555`}}, {{
+                    30.928985595703125`, 306.8401927947998}, {
+                    153.98200225830078`, 235.79520988464355`}, {195., 
+                    212.11320304870605`}, {195., 22.660200119018555`}, {
+                    30.928985595703125`, 117.38719749450684`}, {
+                    30.928985595703125`, 306.8401927947998}}, {{200., 
+                    410.22620964050293`}, {364.0710144042969, 
+                    315.5001964569092}, {241.01799774169922`, 
+                    244.45519828796387`}, {200., 220.77320671081543`}, {
+                    158.98200225830078`, 244.45519828796387`}, {
+                    35.928985595703125`, 315.5001964569092}, {200., 
+                    410.22620964050293`}}, CompressedData["
+1:eJxTTMoPSmViYGCQAWIQDQQPlDrLHYB0n8ffYgewSEAmhO9aBaJ/1cmB+XqT
+gsF8tsaHGch8BoYNGcjqGS7lmqOYd/qhKYg+9+8dhH/prQmI9ptyBYV/jmEH
+Cj+CeUEMMr9iq24MsnkV3Eeike2b8aQrGtk9DSrhyiA6e88JMD/BvUgJbG/S
+EzBfQYpBCaKeIROZv2muNDK/YaqzeSayflj4wMyHhR/M/oDHC8uR3fdAaWM5
+svthfJj/YHyY/2F8WPjAzIOFH0p8AQA7u3Ea
+                    "]}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{43., 198.67381286621094`}, {107.71399688720703`, 
+                    161.3118133544922}, {107.71399688720703`, 
+                    86.58680725097656}, {43., 123.94882202148438`}, {43., 
+                    198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.3137254901960784, 0.4549019607843137, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{182.77679443359375`, 198.67381286621094`}, {
+                    182.77679443359375`, 123.94882202148438`}, {
+                    118.06279754638672`, 86.58680725097656}, {
+                    118.06279754638672`, 161.3118133544922}, {
+                    182.77679443359375`, 198.67381286621094`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.7803921568627451, 0.8627450980392157, 
+                    0.9490196078431372], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{112.8884048461914, 244.9990997314453}, {
+                    177.60240173339844`, 207.63610076904297`}, {
+                    112.8884048461914, 170.27410888671875`}, {
+                    48.174407958984375`, 207.63610076904297`}, {
+                    112.8884048461914, 244.9990997314453}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{130.02911376953125`, 350.11590576171875`}, {
+                    194.80210876464844`, 312.7189064025879}, {
+                    194.80210876464844`, 237.92591094970703`}, {
+                    130.02911376953125`, 275.32291412353516`}, {
+                    130.02911376953125`, 350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.4627450980392157, 0.3607843137254902, 
+                    0.611764705882353], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{269.9334716796875, 350.11590576171875`}, {
+                    269.9334716796875, 275.32291412353516`}, {
+                    205.1604766845703, 237.92591094970703`}, {
+                    205.1604766845703, 312.7189064025879}, {269.9334716796875,
+                     350.11590576171875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.8862745098039215, 0.803921568627451, 
+                    0.9529411764705882], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{199.98130798339844`, 396.48345947265625`}, {
+                    264.7543029785156, 359.0864601135254}, {
+                    199.98130798339844`, 321.69046783447266`}, {
+                    135.20831298828125`, 359.0864601135254}, {
+                    199.98130798339844`, 396.48345947265625`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{217.61199951171875`, 199.13890075683594`}, {
+                    281.8990020751953, 162.0229034423828}, {281.8990020751953,
+                     87.7908935546875}, {217.61199951171875`, 
+                    124.90690612792969`}, {217.61199951171875`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.43137254901960786`, 0.6039215686274509, 
+                    0.34509803921568627`], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{356.46661376953125`, 199.13890075683594`}, {
+                    356.46661376953125`, 124.90690612792969`}, {
+                    292.1796112060547, 87.7908935546875}, {292.1796112060547, 
+                    162.0229034423828}, {356.46661376953125`, 
+                    199.13890075683594`}}}]}, {
+                    FaceForm[{
+                    RGBColor[0.8549019607843137, 0.9450980392156862, 0.8], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}}}, {{{287.039306640625, 245.15859985351562`}, {
+                    351.32630920410156`, 208.0426025390625}, {
+                    287.039306640625, 170.92660522460938`}, {
+                    222.75230407714844`, 208.0426025390625}, {
+                    287.039306640625, 245.15859985351562`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    356.46649169921875`, 215.76849365234375`}, {
+                    296.2834930419922, 250.5924949645996}, {
+                    356.46649169921875`, 285.26649475097656`}, {
+                    356.46649169921875`, 215.76849365234375`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6627450980392157, 0.803921568627451, 
+                    0.5686274509803921], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    217.61199951171875`, 114.06449890136719`}, {
+                    277.7949981689453, 79.24049758911133}, {
+                    217.61199951171875`, 44.566497802734375`}, {
+                    217.61199951171875`, 114.06449890136719`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    122.17269897460938`, 78.36309814453125}, {
+                    182.42269897460938`, 113.07109832763672`}, {
+                    182.35969924926758`, 43.614097595214844`}, {
+                    122.17269897460938`, 78.36309814453125}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.5529411764705883, 0.6745098039215687, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    103.52159881591797`, 249.46669006347656`}, {
+                    43.27159881591797, 214.7586898803711}, {
+                    43.334598541259766`, 284.21569061279297`}, {
+                    103.52159881591797`, 249.46669006347656`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    120.86710357666016`, 350.61541748046875`}, {
+                    120.80010357499123`, 281.0834197998047}, {
+                    60.68010330200195, 315.86641693115234`}, {
+                    120.86710357666016`, 350.61541748046875`}}}]}, {
+                    FaceForm[{
+                    RGBColor[
+                    0.6901960784313725, 0.5882352941176471, 
+                    0.8117647058823529], 
+                    Opacity[1.]}], 
+                    
+                    FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                    278.3727111816406, 281.2159118652344}, {
+                    278.43971118330956`, 350.74790954589844`}, {
+                    338.5597114562988, 315.9649124145508}, {278.3727111816406,
+                     281.2159118652344}}}]}}, {
+                    ImageSize -> 12, BaselinePosition -> Scaled[0.1], 
+                    ImageSize -> {Automatic, 35}}], 
+                    StyleBox[
+                    "\"AntonAntonov/SalvoCombatModeling\"", FontFamily -> 
+                    Dynamic[
+                    CurrentValue["PanelFontFamily"]], FontSize -> 
+                    0.8 Inherited, ShowStringCharacters -> False, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.25}}, "Rows" -> {{0}}}], "Grid"], 
+                    ButtonFunction :> {}, Evaluator -> None, Active -> False, 
+                    Alignment -> Left, 
+                    Appearance -> {
+                    "Default" -> 
+                    FrontEnd`FileName[{"Typeset", "SummaryBox"}, 
+                    "Panel.9.png"]}, FrameMargins -> {{3, 3}, {3, 0}}, 
+                    BaseStyle -> {Deployed -> False}, 
+                    DefaultBaseStyle -> {Background -> None}, 
+                    BaselinePosition -> Baseline, Method -> "Preemptive"], 
+                    "]"}], "OEM6eJy9kUFLAzEQhdm6iFAR9Cf0BzR3b7o9KFSUpOJBPGSzk+\
+7WbCZkJo39925EEfHey/AO3+M93tiKzqTOt/\
+gBZCs6lVi0raleD8TqQgJhigYe2x0YVtWrPaHLe88QQwTWPKAv/H/nvHGYul/\
+bjOYbGIPTDAWbfWP9omcOdC1EznmZ0dmoR1OsS4OjwHYntGf06E1qQawgODxA91OLxJM2DljcFOjr4\
+F4o7fbY4NhqfsAO3OC3C2WPE6TO7w4B4iTfn+VaVW/TNn+\
+2OFKPsrBMDuhKgZtyXwbuG5we55mo3sQEU7dP3xS8Pw=="}, "ClickToCopyTemplate"]]}}, 
+             Alignment -> Left, 
+             ItemSize -> {{Automatic, Automatic, Fit}, Automatic}], FontColor -> 
+            GrayLevel[0.5], FontSize -> 12]}}, 
+         ItemSize -> {{Automatic, Fit}, Automatic}, Alignment -> Left, 
+         Dividers -> {None, {-1 -> GrayLevel[
+              Rational[239, 255]]}}, Spacings -> {{1, {}, 1}, {1, {}, 2}}]}, 
+       Dynamic[
+        CurrentValue[
+         EvaluationCell[], {TaggingRules, "StripeOpen"}, False]]]], "Text", 
+     FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> False]], 
+   "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
+   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]]},
 TaggingRules->{
  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "2023.03.03", "CreationTimestamp" -> 
@@ -3622,23 +6739,39 @@ Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
    "LastBuiltArchive" -> 
     "/Volumes/Macintosh \
 HD/Users/antonov/WL-SalvoCombatModeling-paclet/build/AntonAntonov__\
-SalvoCombatModeling-1.0.0.paclet", "FileHashes" -> 
-    ByteArray[{56, 67, 58, 120, 156, 115, 100, 215, 13, 86, 115, 201, 79, 46, 
-      205, 77, 205, 43, 73, 44, 201, 204, 207, 211, 119, 205, 75, 207, 201, 
-      44, 206, 208, 247, 204, 75, 73, 173, 208, 47, 78, 77, 7, 73, 21, 199, 
-      27, 58, 50, 233, 6, 179, 5, 231, 151, 22, 37, 167, 22, 179, 248, 229, 
-      231, 165, 2, 185, 33, 137, 69, 233, 169, 37, 62, 239, 21, 30, 217, 109, 
-      108, 119, 100, 209, 13, 214, 32, 198, 44, 189, 244, 212, 60, 60, 166, 
-      177, 126, 152, 241, 104, 129, 228, 179, 18, 221, 96, 109, 236, 166, 5, 
-      23, 164, 230, 228, 144, 224, 60, 201, 46, 213, 46, 123, 231, 123, 121, 
-      186, 193, 186, 68, 27, 72, 180, 27, 101, 189, 83, 139, 242, 82, 115, 
-      244, 131, 19, 115, 202, 242, 157, 243, 115, 147, 18, 75, 124, 243, 83, 
-      82, 115, 50, 243, 210, 245, 202, 115, 144, 140, 240, 249, 191, 159, 117,
-       202, 111, 134, 168, 50, 132, 41, 8, 17, 222, 128, 196, 228, 156, 212, 
-      18, 207, 188, 180, 124, 52, 93, 246, 229, 78, 181, 166, 51, 110, 201, 
-      35, 116, 33, 68, 4, 33, 186, 124, 19, 243, 50, 211, 82, 139, 75, 80, 
-      117, 162, 59, 249, 226, 237, 237, 243, 22, 54, 30, 148, 6, 0, 243, 152, 
-      183, 1}]}},
+SalvoCombatModeling-1.0.0.paclet", "FileHashes" -> ByteArray[CompressedData["
+1:eJwBrQRS+yFib1JiAQAAAKAEAAA4Qzp4nJ2XfUwbZRjA4wZEnRswh2GKjpbw
+MeFtR4GVjW/KaImlYl8Cc0a6o31bblzvSu9uQCBsC1NcwSmIzI9kOC1+sMlg
+LCFu04xpnEuMDsUtRkcUmPgJooBD4mIB3XXXcvT4q83Te3+/e9/nnj7PZcUC
+mJlDGVkrIhmMwSlSvoO0EDhdJlezuAnRcg1ikJ2yIBJRLA0xYi+loqylGJNP
+mRCBkxYZWZq1CsAASLF2I9KGn/v+pnwmbIcrUojZLYjRRhvuT7p37Bk1gFLv
+ojzShKrkhi0yo5l2Q9F+OopEHIfue/nVl04F7wYwSohDI8v8T7QhXoA1ET6c
+3tOQ5ecrK0GAtUf7/sSa4lEpgDG+sGSuoxSg/RZTFwSujyoBTPRO0yMzsiPS
+iAowiys9sNpaShG0PBsxGC8VQ2cP96wpOWDj4Lm7kg2NzFQagKmi4CrMhjMY
+kYMID8nfxJWs2vThXE6isX69LmTfYZd2+0okBTTOU5w/xqa994YhiFP8cTHs
+5H09keoV7qOwzPOwnE/8+O7YjeAnOUn/Vw3Jz0uktQAmiZJ4OyXwYWhxSduk
+hKNvYKIcktNt94ilqzGrlU834XdKS8ZPK92eySJZP3OhQgagWhTds9gXypzn
+q5k639UdEbKX83Xc0XRX+fFBBsAEUT59GcVj12fErZdGKvQc+2DUscYtZ55W
+AJgiir1w+zmY1RXkOS6Z/UaLfglwc4yMb1AEpShCAcwQ78ilXFAdZkWP8Txv
+xrZ/o5n7KY/zRCX6VztSG+QA5or36Kj5S3OQGSfx+W80T3ddt7oz9EhMAKeL
+VGmeG3uovlhsKS7oCpHdyldEOKaN5zb+tZZTvHJ5oufI48dddZMmXlGE2XGs
+lODnZ33vCfX+8dk6zmIKLG9u/KjVlZ/slVv0LIH4G4rfltKxM6bfj1PNvBYU
+vLtVg8QWJsQtHoUZ1vLzIY2z4m6OfvPTTVcrdCdZsYVSiLE8dkwl67zy3WQY
+xw66WmN/SklXiG0duzz/DVFGplX1ZYcbPLdd9cnW4WvVAD7sHQ4RZjeWLfa6
+pMVujgT6XP0s1tykObVKDE9oOgjZ6V/3+aUTmQBu9pFH4wK4qreOGi7MdOUA
+CHzBmXFEmGhZJSGALFJ+Vpy8rjNxyfTcjsTnP/NdqTFhrvQIkkfnMof9WwNd
+HVfmC/nWVKMQYKZ+oDpgHwnEfGRW2nEGyQjKWC7AHEhpGb2sa/AHMHoJpg0R
+hI/j4EhY5/QX+6vqfIIploEN2ObiBySSB3yCJSwD6y4Z/DM4OiAQwNhlYT5N
+qxsdkY4M1RApCig0soZ/S944Gj4DRAGVAsD2kk3vKAefrREF3CYA7AMfs4ba
+6Yil688TuMxkPfS6821pry0FwAcfQXYSEXJvbzO3FZpW3dwyu1oyGcdRuMja
+AsxIICaPNFO8Vfm//+q82HdmK7eKiwQvrsrHSNyMaEa4sNOnrr34Q7uzHMAI
+PaIXL5G7DQDZLGGZb26kbA9Nue9du6/L9g9oiQvkWFxE4pX138F6kLrbkrWP
+9mar3J7vWxHvJD1L097uKeOFg5u3N51129//kX8BKiFbbMiqRcc=
+      "]]}, 
+  "Openers" -> {
+   "PrimaryExamplesSection" -> Open, 
+    "ExampleSection" -> {"2" -> Closed, "3" -> Closed, "1" -> Closed}}, 
+  "Paclet" -> "None"},
 CreateCellID->True,
 DynamicEvaluationTimeout->60,
 FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
@@ -3963,6 +7096,7 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                     15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
                     17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
                     12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
+                    
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
                      0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
                     0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
@@ -5872,6 +9006,7 @@ h/Fh4QMzDxZ+6PEFAOibv7E=
                 FaceForm[{
                   RGBColor[0.6902, 0.58824, 0.81176], 
                   Opacity[1.]}], 
+                
                 FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{120.87,
                   350.62}, {120.8, 281.08}, {60.68, 315.87}, {120.87, 
                  350.62}}}]}, {
@@ -10748,6 +13883,7 @@ directory.\""}, "PacletDirectoryChooserErrorTemplate"]], "AttachedMessage"],
                     GraphicsBox[{
                     Thickness[0.02439], 
                     StyleBox[{
+                    
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
                     0}}}, {{{12.383, 36.391}, {35.711, 36.391}, {35.711, 
                     13.063}, {12.383, 13.063}, {12.383, 36.391}}}]}, {
