@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 BeginPackage["AntonAntonov`SalvoCombatModeling`"];
 
 (*{\[Beta], \[CapitalPsi], B, \[Gamma], \[CapitalTheta], \[Zeta], \[Sigma], \[Tau], \[Rho], \[Delta], \[CapitalDelta]};*)
@@ -9,6 +11,7 @@ BeginPackage["AntonAntonov`SalvoCombatModeling`"];
 \[Sigma]::usage = "Scouting effectiveness.";
 \[Tau]::usage = "Training effectiveness.";
 \[Rho]::usage = "Distraction factor.";
+\[CurlyEpsilon]::usage = "Offensive effectiveness factor.";
 \[Delta]::usage = "Defender alertness.";
 \[CapitalDelta]::usage = "Number of unit out of action.";
 
@@ -73,6 +76,10 @@ SalvoVariable[s_Symbol, A_, B_, i_, j_] /; SymbolName[s] == "\[Rho]" :=
     s[A, B, i, j] ->
         StringTemplate["\[Rho]: Distraction factor of unit `A`[`i`] against `B`[`j`]. [0,1]"][<|"A" -> A, "B" -> B, "j" -> j, "i" -> i|>];
 
+SalvoVariable[s_Symbol, B_, A_, j_, i_] /; SymbolName[s] == "\[CurlyEpsilon]" :=
+    s[B, A, j, i] ->
+        StringTemplate["\[CurlyEpsilon]: Offensive effectiveness of `B`[`j`] against `A`[`i`]. [0,1]"][<|"A" -> A, "B" -> B, "j" -> j, "i" -> i|>];
+
 SalvoVariable[s_Symbol, A_, B_, i_, j_] /; SymbolName[s] == "\[Delta]" :=
     s[A, B, i, j] ->
         StringTemplate["\[Delta]: Defender alertness or readiness of unit `A`[`i`] against `B`[`j`]. {[0,1]}"][<|"A" -> A, "B" -> B, "j" -> j, "i" -> i|>];
@@ -120,7 +127,7 @@ GenerateVariables[A_Symbol, B_Symbol, contextName_String : "`AntonAntonov`SalvoC
 
 Clear[MakeVarRules, MakeVarRulesRec];
 MakeVarRulesRec[{A_, m_Integer}, {B_, n_Integer}] :=
-    Block[{lsGenVars = {\[Beta], \[CapitalPsi], \[Gamma], \[CapitalTheta], \[Zeta], \[Sigma], \[Tau], \[Rho], \[Delta]}},
+    Block[{lsGenVars = {\[Beta], \[CapitalPsi], \[Gamma], \[CapitalTheta], \[Zeta], \[Sigma], \[Tau], \[Rho], \[CurlyEpsilon], \[Delta]}},
       Table[
         Switch[v,
           \[Zeta], SalvoVariable[v, A, i],
@@ -152,27 +159,36 @@ SalvoDamage[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}] :=
 
 Clear[HeterogeneousSalvoModel];
 
-SyntaxInformation[HeterogeneousSalvoModel] = {"ArgumentsPattern" -> {{_?SalvoForceNameQ, _Integer}, {{_?SalvoForceNameQ, _Integer}}}};
+SyntaxInformation[HeterogeneousSalvoModel] = {"ArgumentsPattern" -> {{_?SalvoForceNameQ, _Integer}, {{_?SalvoForceNameQ, _Integer}}, OptionsPattern[]}};
 
-HeterogeneousSalvoModel[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}] :=
-    Block[{vecA, vecB, matOffenseA, matDefenseA, matOffenseB, matDefenseB, nameA, nameB},
+Options[HeterogeneousSalvoModel] = {"OffensiveEffectivenessTerms" -> False};
+
+HeterogeneousSalvoModel[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}, opts:OptionsPattern[]] :=
+    Block[{epsQ, vecA, vecB, matOffenseA, matDefenseA, matOffenseB, matDefenseB, nameA, nameB, res},
+
+      epsQ = TrueQ[OptionValue[HeterogeneousSalvoModel, "OffensiveEffectivenessTerms"]];
+
       vecA = Array[A, m];
       vecB = Array[B, n];
+
       matOffenseA =
           Table[\[Beta][B, A, j, i] * \[Rho][A, B, i, j] * \[Sigma][B, A, j, i] * \[Tau][B, A, j, i] * \[CapitalPsi][B, A, j, i] * 1 / \[Zeta][A, i], {i, m}, {j, n}];
       matDefenseA =
           DiagonalMatrix[
             Total /@ Table[\[Gamma][A, B, i, j] * \[Delta][A, B, i, j] * \[CapitalTheta][A, B, i, j] * \[Tau][A, B, i, j] * 1 / \[Zeta][A, i], {i, m}, {j, n}]
           ];
+
       matOffenseB =
           Table[\[Beta][A, B, j, i] * \[Rho][B, A, i, j] * \[Sigma][A, B, j, i] * \[Tau][A, B, 1 j, i] * \[CapitalPsi][A, B, j, i] * 1 / \[Zeta][B, i], {i, n}, {j, m}];
       matDefenseB =
           DiagonalMatrix[
             Total /@ Table[\[Gamma][B, A, i, j] * \[Delta][B, A, i, j] * \[CapitalTheta][B, A, i, j] * \[Tau][B, A, i, j] * 1 / \[Zeta][B, i], {i, n}, {j, m}]
           ];
+
       nameA = If[Head[A] === Symbol, SymbolName[A], A];
       nameB = If[Head[B] === Symbol, SymbolName[B], B];
-      <|
+
+      res = <|
         nameA -> <|
           "Units" -> vecA,
           "OffenseMatrix" -> matOffenseA,
@@ -183,7 +199,18 @@ HeterogeneousSalvoModel[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_
           "OffenseMatrix" -> matOffenseB,
           "DefenseMatrix" -> matDefenseB
         |>
-      |>
+      |>;
+
+      If[epsQ,
+        (*
+          Assuming this is enough. Otherwise:
+          (1) Simplify with assumptions has to be used;
+          (2) direct replacement in the formulas above has to be used.
+        *)
+        res //. {(\[Sigma][b_, a_, j_, i_] * \[Tau][b_, a_, j_, i_] * \[Rho][a_, b_, i_, j_] ):> \[CurlyEpsilon][b, a, j, i]},
+        (*ELSE*)
+        res
+      ]
     ];
 
 (*=================================================================*)
