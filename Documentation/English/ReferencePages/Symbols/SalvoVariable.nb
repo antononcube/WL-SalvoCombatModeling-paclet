@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     17449,        485]
-NotebookOptionsPosition[     11599,        359]
-NotebookOutlinePosition[     12393,        385]
-CellTagsIndexPosition[     12314,        380]
+NotebookDataLength[     41722,       1067]
+NotebookOptionsPosition[     34453,        908]
+NotebookOutlinePosition[     35284,        935]
+CellTagsIndexPosition[     35205,        930]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,13 +24,56 @@ Cell["SalvoVariable", "ObjectName",
  CellID->328419185,ExpressionUUID->"13e48037-0c6f-4dca-a569-41599c55dff4"],
 
 Cell[TextData[{
- Cell["   ", "ModInfo",ExpressionUUID->"6448c896-029f-472f-a7b5-1b39874cee6b"],
- "Gives rules for salvo combat modeling variables."
+ Cell["      ", "ModInfo",ExpressionUUID->
+  "d011436b-bd80-414e-90a5-191c0199ece9"],
+ Cell[BoxData[
+  RowBox[{"SalvoVariable", "[", 
+   RowBox[{
+    StyleBox["s", "TI"], ",", 
+    StyleBox["f1", "TI"], ",", 
+    StyleBox["f2", "TI"], ",", 
+    StyleBox["i1", "TI"], ",", 
+    StyleBox["i2", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+  "5a7d8f61-18ff-48e7-a94a-2faa6ab18c2b"],
+ "\[LineSeparator]gives rules for the variable ",
+ Cell[BoxData[
+  StyleBox["s", "TI"]], "InlineFormula",ExpressionUUID->
+  "b253596d-c804-4ed1-9505-8f5efb8f1167"],
+ " for the units ",
+ Cell[BoxData[
+  StyleBox["i1", "TI"]], "InlineFormula",ExpressionUUID->
+  "fa81013d-ac16-4374-92e3-78a10f85a9b5"],
+ " and ",
+ Cell[BoxData[
+  StyleBox["i2", "TI"]], "InlineFormula",ExpressionUUID->
+  "e7d64c4e-bd7d-46ff-ae3b-918090f3c9c4"],
+ " of the forces ",
+ Cell[BoxData[
+  StyleBox["f1", "TI"]], "InlineFormula",ExpressionUUID->
+  "6c96de72-5366-46be-a365-07bf5f181249"],
+ " and ",
+ Cell[BoxData[
+  StyleBox["f2", "TI"]], "InlineFormula",ExpressionUUID->
+  "35a68273-5a5e-40f1-af5a-f51ca907e888"]
 }], "Usage",
+ CellChangeTimes->{{3.9245976428748903`*^9, 3.924597757729953*^9}},
  CellID->708269505,ExpressionUUID->"630afc81-0485-494f-b174-ef9b4575adb6"],
 
-Cell["XXXX", "Notes",
- CellID->383715214,ExpressionUUID->"10d65a30-f44f-4670-88b7-8e9d2adfa24c"]
+Cell["\<\
+Gives variable (model parameter) definitions for specified unit indexes of \
+the specified forces.\
+\>", "Notes",
+ CellChangeTimes->{{3.9245972441477413`*^9, 3.924597271077112*^9}, {
+  3.9245973343290443`*^9, 3.924597346431232*^9}, {3.9245977704027433`*^9, 
+  3.924597786826028*^9}},
+ CellID->383715214,ExpressionUUID->"10d65a30-f44f-4670-88b7-8e9d2adfa24c"],
+
+Cell["\<\
+The unit indexes can be symbols, but most often the function is used with \
+positive integer indexes.\
+\>", "Notes",
+ CellChangeTimes->{{3.924597790565434*^9, 3.924597837410674*^9}},
+ CellID->1112163167,ExpressionUUID->"914bc36e-934e-4b3b-a630-7c85b0eb2b41"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -51,10 +94,7 @@ Cell[TextData[{
  CellID->208209757,ExpressionUUID->"45b93267-85cd-4c56-84b1-76bdfb82c1aa"],
 
 Cell[TextData[{
- Cell[BoxData[
-  TagBox[
-   FrameBox["\<\"XXXX\"\>"],
-   "FunctionPlaceholder"]], "InlineSeeAlsoFunction",
+ Cell[BoxData["SalvoVariableRules"], "InlineSeeAlsoFunction",
   TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
   "0220707f-c71c-4f43-a2f8-21772506ec02"],
  Cell[BoxData[
@@ -63,9 +103,11 @@ Cell[TextData[{
    " \[FilledVerySmallSquare] ", "InlineSeparator"]],ExpressionUUID->
     "e628efa9-6205-4b1d-b4a9-db7017dc241d"], 
    DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
-     FrontEndObject[
-      LinkObject["i7bzb_shm", 209, 9]], 22], $CellContext`cellobj$$ = 
-    CellObject[6753]}, 
+    "4e686dac-7d30-48a1-be98-e72c3d34ae3f", 
+     "bd995533-0872-44b0-8eec-1dc4782212dc"], $CellContext`cellobj$$ = 
+    CellObject[
+    "7eac7acc-c794-412c-8344-c9bf7a28d401", 
+     "64bf1ff8-cdff-49e2-8deb-2dece9898a84"]}, 
     TemplateBox[{
       GraphicsBox[{{
          Thickness[0.06], 
@@ -90,6 +132,7 @@ Cell[TextData[{
   "InlineListingAddButton",ExpressionUUID->
   "7eac7acc-c794-412c-8344-c9bf7a28d401"]
 }], "SeeAlso",
+ CellChangeTimes->{{3.924597357311762*^9, 3.924597366614273*^9}},
  CellID->1130524936,ExpressionUUID->"f26b72af-c12a-4c71-8931-cb11ea2e7c3c"]
 }, Open  ]],
 
@@ -164,8 +207,11 @@ Needs[\[Ellipsis]].", "MoreInfoText"], BaseStyle -> "IFrameBox"]],
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<AntonAntonov`SalvoCombatModeling`\>\"", 
   "]"}]], "ExampleInitialization",
+ CellChangeTimes->{{3.924597405802478*^9, 3.92459740802558*^9}},
  CellID->1267475778,ExpressionUUID->"1415ca18-8079-4f5e-a09c-5a3d65b4180b"]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  InterpretationBox[GridBox[{
@@ -180,6 +226,42 @@ Cell[BoxData[
    }],
   $Line = 0; Null]], "PrimaryExamplesSection",
  CellID->1575106253,ExpressionUUID->"c0976068-2e69-4487-a9a5-b5f8a0f6c290"],
+
+Cell[TextData[{
+ "Here we define a \"staying power\" variable for the ",
+ Cell[BoxData[
+ "3"], "InlineFormula",ExpressionUUID->"23801ca8-c046-47e8-98ef-a96e8b4265b6"],
+ "-rd unit of the force ",
+ Cell[BoxData[
+ "A"], "InlineFormula",ExpressionUUID->"a679646d-636e-47b6-89f9-b9c6f995d669"],
+ ":"
+}], "ExampleText",
+ CellChangeTimes->{{3.924597450946211*^9, 3.9245974965967827`*^9}, {
+  3.924597564102037*^9, 3.924597567597703*^9}},
+ CellID->923533951,ExpressionUUID->"539bbefb-abf7-4e79-b62d-ff9dc596007c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SalvoVariable", "[", 
+  RowBox[{"\[Zeta]", ",", "A", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.924597372509101*^9, 3.924597372609902*^9}, {
+  3.924597436319564*^9, 3.924597445049868*^9}, {3.924597569903879*^9, 
+  3.924597569969455*^9}},
+ CellLabel->"In[5]:=",
+ CellID->1478558720,ExpressionUUID->"9508a316-8cae-496d-8fa2-6d833217dc8b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Zeta]", "[", 
+   RowBox[{"A", ",", "3"}], "]"}], 
+  "\[Rule]", "\<\"\[Zeta]: Staying power of A[3] unit, {hits}\"\>"}]], \
+"Output",
+ CellChangeTimes->{3.924597445494595*^9, 3.924597570429661*^9},
+ CellLabel->"Out[5]=",
+ CellID->409502016,ExpressionUUID->"1d5092d1-4a7c-414e-bed7-dace6c12443e"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -198,12 +280,44 @@ Cell[TextData[{
  CellTags->"ExtendedExamples",
  CellID->779877602,ExpressionUUID->"f26b716d-803d-4d8e-86ad-f9e13773282a"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  InterpretationBox[Cell[
   "Scope", "ExampleSection",ExpressionUUID->
    "1a312ffc-1078-4177-bfc2-5f715b1b8b0d"],
   $Line = 0; Null]], "ExampleSection",
  CellID->1310159173,ExpressionUUID->"13082964-3823-492f-b15e-8b741eed986e"],
+
+Cell["\<\
+Colors or emojis (e.g. flag emojis) can be used to specify the force:\
+\>", "ExampleText",
+ CellChangeTimes->{{3.924597512909791*^9, 3.924597541441283*^9}},
+ CellID->1966114776,ExpressionUUID->"e6f4be93-a037-4581-852d-7bfedc55aa4a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SalvoVariable", "[", 
+  RowBox[{
+  "\[Beta]", ",", "\"\<\|01f534\>\"", ",", "\"\<\|01f535\>\"", ",", "2", ",", 
+   "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.924597543084866*^9, 3.924597612407483*^9}},
+ CellLabel->"In[7]:=",
+ CellID->639840870,ExpressionUUID->"2a923f61-481e-4787-9fa7-b614ba857ded"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Beta]", "[", 
+   RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", "3"}], 
+   "]"}], "\[Rule]", "\<\"\[Beta]: Offensive combat potential of \|01f534[2] \
+units against \|01f535[3]. (hits /shooting unit)\"\>"}]], "Output",
+ CellChangeTimes->{{3.924597554919771*^9, 3.924597576855475*^9}, 
+   3.924597612812727*^9},
+ CellLabel->"Out[7]=",
+ CellID->40067963,ExpressionUUID->"969b64b8-5a06-4e70-8a8d-017dffd299d5"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[BoxData[
  InterpretationBox[Cell[
@@ -243,12 +357,445 @@ Cell[BoxData[
   $Line = 0; Null]], "ExampleSection",
  CellID->363831589,ExpressionUUID->"287577c7-aba6-47a1-a06c-499f3a28d5a6"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  InterpretationBox[Cell[
   "Properties & Relations", "ExampleSection",ExpressionUUID->
    "6bc0f15c-a71a-49ca-b45b-8b6f099083ee"],
   $Line = 0; Null]], "ExampleSection",
  CellID->1031573314,ExpressionUUID->"f6dd8f8a-3738-44b4-a2a7-e07da2cf5c9f"],
+
+Cell[TextData[{
+ "The function ",
+ Cell[BoxData[
+  ButtonBox["SalvoVariableRules",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:AntonAntonov/SalvoCombatModeling/ref/SalvoVariableRules"]], 
+  "InlineFormula",ExpressionUUID->"1c5632df-adb9-49ae-b185-6c59d7256dd7"],
+ " can be used to generate all variables for given force names and their \
+sizes:"
+}], "ExampleText",
+ CellChangeTimes->{{3.924597892240979*^9, 3.9245979311822853`*^9}},
+ CellID->1439310712,ExpressionUUID->"adce0be4-2f67-4fd1-8045-f09144ee6a31"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SalvoVariableRules", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<\|01f534\>\"", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<\|01f535\>\"", ",", "1"}], "}"}]}], "]"}], "//", 
+  "ColumnForm"}]], "Input",
+ CellChangeTimes->{{3.924597868391366*^9, 3.924597881599002*^9}, {
+  3.924597942035557*^9, 3.92459794544559*^9}},
+ CellLabel->"In[9]:=",
+ CellID->907213252,ExpressionUUID->"037a6d55-60d7-44dd-b9bd-944580269ee0"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{
+      RowBox[{"\[Beta]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Beta]: Offensive combat potential of \|01f534[1] \
+units against \|01f535[1]. (hits /shooting unit)\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Beta]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Beta]: Offensive combat potential of \|01f534[2] \
+units against \|01f535[1]. (hits /shooting unit)\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Beta]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Beta]: Offensive combat potential of \|01f535[1] \
+units against \|01f534[1]. (hits /shooting unit)\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Beta]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "2"}], "]"}], 
+      "\[Rule]", "\<\"\[Beta]: Offensive combat potential of \|01f535[1] \
+units against \|01f534[2]. (hits /shooting unit)\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Gamma]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Gamma]: Defensive combat power of side \|01f534[1] \
+against \|01f535[1] units, {shots /defending units}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Gamma]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Gamma]: Defensive combat power of side \|01f534[2] \
+against \|01f535[1] units, {shots /defending units}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Gamma]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Gamma]: Defensive combat power of side \|01f535[1] \
+against \|01f534[1] units, {shots /defending units}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Gamma]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "2"}], "]"}], 
+      "\[Rule]", "\<\"\[Gamma]: Defensive combat power of side \|01f535[1] \
+against \|01f534[2] units, {shots /defending units}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Delta]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Delta]: Defender alertness or readiness of unit \
+\|01f534[1] against \|01f535[1]. {[0,1]}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Delta]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Delta]: Defender alertness or readiness of unit \
+\|01f534[2] against \|01f535[1]. {[0,1]}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Delta]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Delta]: Defender alertness or readiness of unit \
+\|01f535[1] against \|01f534[1]. {[0,1]}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Delta]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "2"}], "]"}], 
+      "\[Rule]", "\<\"\[Delta]: Defender alertness or readiness of unit \
+\|01f535[1] against \|01f534[2]. {[0,1]}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CurlyEpsilon]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[CurlyEpsilon]: Offensive effectiveness of \|01f534[1] \
+against \|01f535[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CurlyEpsilon]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[CurlyEpsilon]: Offensive effectiveness of \|01f534[2] \
+against \|01f535[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CurlyEpsilon]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[CurlyEpsilon]: Offensive effectiveness of \|01f535[1] \
+against \|01f534[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CurlyEpsilon]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "2"}], "]"}], 
+      "\[Rule]", "\<\"\[CurlyEpsilon]: Offensive effectiveness of \|01f535[1] \
+against \|01f534[2]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Zeta]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Zeta]: Staying power of \|01f534[1] unit, \
+{hits}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Zeta]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "2"}], "]"}], 
+      "\[Rule]", "\<\"\[Zeta]: Staying power of \|01f534[2] unit, \
+{hits}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Zeta]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Zeta]: Staying power of \|01f535[1] unit, \
+{hits}\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CapitalTheta]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[CapitalTheta]: Fraction of \|01f534[1] units that \
+engage \|01f535[1] units. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CapitalTheta]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[CapitalTheta]: Fraction of \|01f534[2] units that \
+engage \|01f535[1] units. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CapitalTheta]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[CapitalTheta]: Fraction of \|01f535[1] units that \
+engage \|01f534[1] units. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CapitalTheta]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "2"}], "]"}], 
+      "\[Rule]", "\<\"\[CapitalTheta]: Fraction of \|01f535[1] units that \
+engage \|01f534[2] units. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Rho]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Rho]: Distraction factor of unit \|01f534[1] against \
+\|01f535[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Rho]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Rho]: Distraction factor of unit \|01f534[2] against \
+\|01f535[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Rho]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Rho]: Distraction factor of unit \|01f535[1] against \
+\|01f534[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Rho]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "2"}], "]"}], 
+      "\[Rule]", "\<\"\[Rho]: Distraction factor of unit \|01f535[1] against \
+\|01f534[2]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Sigma]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Sigma]: Scouting effectiveness of unit \|01f534[1] \
+against \|01f535[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Sigma]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Sigma]: Scouting effectiveness of unit \|01f534[2] \
+against \|01f535[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Sigma]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Sigma]: Scouting effectiveness of unit \|01f535[1] \
+against \|01f534[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Sigma]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "2"}], "]"}], 
+      "\[Rule]", "\<\"\[Sigma]: Scouting effectiveness of unit \|01f535[1] \
+against \|01f534[2]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Tau]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Tau]: Training effectiveness of unit \|01f534[1] \
+against \|01f535[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Tau]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Tau]: Training effectiveness of unit \|01f534[2] \
+against \|01f535[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Tau]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[Tau]: Training effectiveness of unit \|01f535[1] \
+against \|01f534[1]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[Tau]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "2"}], "]"}], 
+      "\[Rule]", "\<\"\[Tau]: Training effectiveness of unit \|01f535[1] \
+against \|01f534[2]. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CapitalPsi]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[CapitalPsi]: Fraction of \|01f534[1] units that \
+engage \|01f535[1] units. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CapitalPsi]", "[", 
+       RowBox[{"\<\"\|01f534\"\>", ",", "\<\"\|01f535\"\>", ",", "2", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[CapitalPsi]: Fraction of \|01f534[2] units that \
+engage \|01f535[1] units. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CapitalPsi]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "1"}], "]"}], 
+      "\[Rule]", "\<\"\[CapitalPsi]: Fraction of \|01f535[1] units that \
+engage \|01f534[1] units. [0,1]\"\>"}]},
+    {
+     RowBox[{
+      RowBox[{"\[CapitalPsi]", "[", 
+       RowBox[{"\<\"\|01f535\"\>", ",", "\<\"\|01f534\"\>", ",", "1", ",", 
+        "2"}], "]"}], 
+      "\[Rule]", "\<\"\[CapitalPsi]: Fraction of \|01f535[1] units that \
+engage \|01f534[2] units. [0,1]\"\>"}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+  ColumnForm[{
+   AntonAntonov`SalvoCombatModeling`\[Beta]["\|01f534", "\|01f535", 1, 1] -> 
+    "\[Beta]: Offensive combat potential of \|01f534[1] units against \
+\|01f535[1]. (hits /shooting unit)", 
+    AntonAntonov`SalvoCombatModeling`\[Beta]["\|01f534", "\|01f535", 2, 1] -> 
+    "\[Beta]: Offensive combat potential of \|01f534[2] units against \
+\|01f535[1]. (hits /shooting unit)", 
+    AntonAntonov`SalvoCombatModeling`\[Beta]["\|01f535", "\|01f534", 1, 1] -> 
+    "\[Beta]: Offensive combat potential of \|01f535[1] units against \
+\|01f534[1]. (hits /shooting unit)", 
+    AntonAntonov`SalvoCombatModeling`\[Beta]["\|01f535", "\|01f534", 1, 2] -> 
+    "\[Beta]: Offensive combat potential of \|01f535[1] units against \
+\|01f534[2]. (hits /shooting unit)", 
+    AntonAntonov`SalvoCombatModeling`\[Gamma]["\|01f534", "\|01f535", 1, 1] -> 
+    "\[Gamma]: Defensive combat power of side \|01f534[1] against \|01f535[1] \
+units, {shots /defending units}", 
+    AntonAntonov`SalvoCombatModeling`\[Gamma]["\|01f534", "\|01f535", 2, 1] -> 
+    "\[Gamma]: Defensive combat power of side \|01f534[2] against \|01f535[1] \
+units, {shots /defending units}", 
+    AntonAntonov`SalvoCombatModeling`\[Gamma]["\|01f535", "\|01f534", 1, 1] -> 
+    "\[Gamma]: Defensive combat power of side \|01f535[1] against \|01f534[1] \
+units, {shots /defending units}", 
+    AntonAntonov`SalvoCombatModeling`\[Gamma]["\|01f535", "\|01f534", 1, 2] -> 
+    "\[Gamma]: Defensive combat power of side \|01f535[1] against \|01f534[2] \
+units, {shots /defending units}", 
+    AntonAntonov`SalvoCombatModeling`\[Delta]["\|01f534", "\|01f535", 1, 1] -> 
+    "\[Delta]: Defender alertness or readiness of unit \|01f534[1] against \
+\|01f535[1]. {[0,1]}", 
+    AntonAntonov`SalvoCombatModeling`\[Delta]["\|01f534", "\|01f535", 2, 1] -> 
+    "\[Delta]: Defender alertness or readiness of unit \|01f534[2] against \
+\|01f535[1]. {[0,1]}", 
+    AntonAntonov`SalvoCombatModeling`\[Delta]["\|01f535", "\|01f534", 1, 1] -> 
+    "\[Delta]: Defender alertness or readiness of unit \|01f535[1] against \
+\|01f534[1]. {[0,1]}", 
+    AntonAntonov`SalvoCombatModeling`\[Delta]["\|01f535", "\|01f534", 1, 2] -> 
+    "\[Delta]: Defender alertness or readiness of unit \|01f535[1] against \
+\|01f534[2]. {[0,1]}", 
+    AntonAntonov`SalvoCombatModeling`\[CurlyEpsilon][
+     "\|01f534", "\|01f535", 1, 1] -> 
+    "\[CurlyEpsilon]: Offensive effectiveness of \|01f534[1] against \
+\|01f535[1]. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[CurlyEpsilon][
+     "\|01f534", "\|01f535", 2, 1] -> 
+    "\[CurlyEpsilon]: Offensive effectiveness of \|01f534[2] against \
+\|01f535[1]. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[CurlyEpsilon][
+     "\|01f535", "\|01f534", 1, 1] -> 
+    "\[CurlyEpsilon]: Offensive effectiveness of \|01f535[1] against \
+\|01f534[1]. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[CurlyEpsilon][
+     "\|01f535", "\|01f534", 1, 2] -> 
+    "\[CurlyEpsilon]: Offensive effectiveness of \|01f535[1] against \
+\|01f534[2]. [0,1]", AntonAntonov`SalvoCombatModeling`\[Zeta]["\|01f534", 1] -> 
+    "\[Zeta]: Staying power of \|01f534[1] unit, {hits}", 
+    AntonAntonov`SalvoCombatModeling`\[Zeta]["\|01f534", 2] -> 
+    "\[Zeta]: Staying power of \|01f534[2] unit, {hits}", 
+    AntonAntonov`SalvoCombatModeling`\[Zeta]["\|01f535", 1] -> 
+    "\[Zeta]: Staying power of \|01f535[1] unit, {hits}", 
+    AntonAntonov`SalvoCombatModeling`\[CapitalTheta][
+     "\|01f534", "\|01f535", 1, 1] -> 
+    "\[CapitalTheta]: Fraction of \|01f534[1] units that engage \|01f535[1] \
+units. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[CapitalTheta][
+     "\|01f534", "\|01f535", 2, 1] -> 
+    "\[CapitalTheta]: Fraction of \|01f534[2] units that engage \|01f535[1] \
+units. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[CapitalTheta][
+     "\|01f535", "\|01f534", 1, 1] -> 
+    "\[CapitalTheta]: Fraction of \|01f535[1] units that engage \|01f534[1] \
+units. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[CapitalTheta][
+     "\|01f535", "\|01f534", 1, 2] -> 
+    "\[CapitalTheta]: Fraction of \|01f535[1] units that engage \|01f534[2] \
+units. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[Rho]["\|01f534", "\|01f535", 1, 1] -> 
+    "\[Rho]: Distraction factor of unit \|01f534[1] against \|01f535[1]. \
+[0,1]", AntonAntonov`SalvoCombatModeling`\[Rho]["\|01f534", "\|01f535", 2, 1] -> 
+    "\[Rho]: Distraction factor of unit \|01f534[2] against \|01f535[1]. \
+[0,1]", AntonAntonov`SalvoCombatModeling`\[Rho]["\|01f535", "\|01f534", 1, 1] -> 
+    "\[Rho]: Distraction factor of unit \|01f535[1] against \|01f534[1]. \
+[0,1]", AntonAntonov`SalvoCombatModeling`\[Rho]["\|01f535", "\|01f534", 1, 2] -> 
+    "\[Rho]: Distraction factor of unit \|01f535[1] against \|01f534[2]. \
+[0,1]", AntonAntonov`SalvoCombatModeling`\[Sigma][
+     "\|01f534", "\|01f535", 1, 1] -> 
+    "\[Sigma]: Scouting effectiveness of unit \|01f534[1] against \
+\|01f535[1]. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[Sigma]["\|01f534", "\|01f535", 2, 1] -> 
+    "\[Sigma]: Scouting effectiveness of unit \|01f534[2] against \
+\|01f535[1]. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[Sigma]["\|01f535", "\|01f534", 1, 1] -> 
+    "\[Sigma]: Scouting effectiveness of unit \|01f535[1] against \
+\|01f534[1]. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[Sigma]["\|01f535", "\|01f534", 1, 2] -> 
+    "\[Sigma]: Scouting effectiveness of unit \|01f535[1] against \
+\|01f534[2]. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[Tau]["\|01f534", "\|01f535", 1, 1] -> 
+    "\[Tau]: Training effectiveness of unit \|01f534[1] against \|01f535[1]. \
+[0,1]", AntonAntonov`SalvoCombatModeling`\[Tau]["\|01f534", "\|01f535", 2, 1] -> 
+    "\[Tau]: Training effectiveness of unit \|01f534[2] against \|01f535[1]. \
+[0,1]", AntonAntonov`SalvoCombatModeling`\[Tau]["\|01f535", "\|01f534", 1, 1] -> 
+    "\[Tau]: Training effectiveness of unit \|01f535[1] against \|01f534[1]. \
+[0,1]", AntonAntonov`SalvoCombatModeling`\[Tau]["\|01f535", "\|01f534", 1, 2] -> 
+    "\[Tau]: Training effectiveness of unit \|01f535[1] against \|01f534[2]. \
+[0,1]", AntonAntonov`SalvoCombatModeling`\[CapitalPsi][
+     "\|01f534", "\|01f535", 1, 1] -> 
+    "\[CapitalPsi]: Fraction of \|01f534[1] units that engage \|01f535[1] \
+units. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[CapitalPsi][
+     "\|01f534", "\|01f535", 2, 1] -> 
+    "\[CapitalPsi]: Fraction of \|01f534[2] units that engage \|01f535[1] \
+units. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[CapitalPsi][
+     "\|01f535", "\|01f534", 1, 1] -> 
+    "\[CapitalPsi]: Fraction of \|01f535[1] units that engage \|01f534[1] \
+units. [0,1]", 
+    AntonAntonov`SalvoCombatModeling`\[CapitalPsi][
+     "\|01f535", "\|01f534", 1, 2] -> 
+    "\[CapitalPsi]: Fraction of \|01f535[1] units that engage \|01f534[2] \
+units. [0,1]"}],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.924597881948752*^9, 3.924597945997631*^9},
+ CellLabel->"Out[9]=",
+ CellID->678692314,ExpressionUUID->"175dc703-67fc-47bd-b3d5-e1c4941f76c1"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[BoxData[
  InterpretationBox[Cell[
@@ -279,7 +826,7 @@ Cell["Metadata", "MetadataSection",
 
 Cell[TextData[{
  "New in: ",
- Cell["XX", "HistoryData",
+ Cell["1.0.2", "HistoryData",
   CellTags->"New",ExpressionUUID->"e9edf0c3-f4f3-4dbd-8667-6c4ddadae71f"],
  " | Modified in: ",
  Cell[" ", "HistoryData",
@@ -289,6 +836,8 @@ Cell[TextData[{
   CellTags->"Obsolete",ExpressionUUID->
   "3d3a965c-3198-4f47-87e6-985fb096171b"]
 }], "History",
+ CellChangeTimes->{{3.864923683926749*^9, 3.864923685610183*^9}, {
+  3.924597965613655*^9, 3.924597969779242*^9}},
  CellID->1477245812,ExpressionUUID->"dcad016f-7ec7-403b-9fd5-1e3f50c68273"],
 
 Cell[CellGroupData[{
@@ -357,10 +906,11 @@ Cell[BoxData[""], "Template",
 }, Closed]]
 }, Open  ]]
 },
-WindowSize->{700, 770},
-WindowMargins->{{5, Automatic}, {Automatic, 0}},
+WindowSize->{1164, 1031},
+WindowMargins->{{Automatic, 1042}, {Automatic, 87}},
 TaggingRules-><|"Paclet" -> "AntonAntonov/SalvoCombatModeling"|>,
 CellContext->"Global`",
+Magnification:>1.25 Inherited,
 FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
   CharacterEncoding -> "UTF-8"],
@@ -372,124 +922,154 @@ ExpressionUUID->"eb8ef6e9-05f0-4432-95fb-86e6a88dbd2d"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[5766, 185, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"f26b716d-803d-4d8e-86ad-f9e13773282a",
+  Cell[8795, 267, 487, 13, 72, "ExtendedExamplesSection",ExpressionUUID->"f26b716d-803d-4d8e-86ad-f9e13773282a",
    CellTags->"ExtendedExamples",
    CellID->779877602]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 12121, 373}
+ {"ExtendedExamples", 35012, 923}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 110, 1, 74, "ObjectName",ExpressionUUID->"13e48037-0c6f-4dca-a569-41599c55dff4",
+Cell[580, 22, 110, 1, 92, "ObjectName",ExpressionUUID->"13e48037-0c6f-4dca-a569-41599c55dff4",
  CellID->328419185],
-Cell[693, 25, 235, 4, 61, "Usage",ExpressionUUID->"630afc81-0485-494f-b174-ef9b4575adb6",
+Cell[693, 25, 1244, 34, 99, "Usage",ExpressionUUID->"630afc81-0485-494f-b174-ef9b4575adb6",
  CellID->708269505],
-Cell[931, 31, 96, 1, 27, "Notes",ExpressionUUID->"10d65a30-f44f-4670-88b7-8e9d2adfa24c",
- CellID->383715214]
+Cell[1940, 61, 368, 7, 33, "Notes",ExpressionUUID->"10d65a30-f44f-4670-88b7-8e9d2adfa24c",
+ CellID->383715214],
+Cell[2311, 70, 268, 5, 33, "Notes",ExpressionUUID->"914bc36e-934e-4b3b-a630-7c85b0eb2b41",
+ CellID->1112163167]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1064, 37, 458, 13, 40, "SeeAlsoSection",ExpressionUUID->"45b93267-85cd-4c56-84b1-76bdfb82c1aa",
+Cell[2616, 80, 458, 13, 50, "SeeAlsoSection",ExpressionUUID->"45b93267-85cd-4c56-84b1-76bdfb82c1aa",
  CellID->208209757],
-Cell[1525, 52, 1544, 40, 26, "SeeAlso",ExpressionUUID->"f26b72af-c12a-4c71-8931-cb11ea2e7c3c",
+Cell[3077, 95, 1675, 40, 30, "SeeAlso",ExpressionUUID->"f26b72af-c12a-4c71-8931-cb11ea2e7c3c",
  CellID->1130524936]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3106, 97, 436, 12, 41, "TechNotesSection",ExpressionUUID->"be55ca3f-3a9a-4eed-8b82-43c924e462c7",
+Cell[4789, 140, 436, 12, 51, "TechNotesSection",ExpressionUUID->"be55ca3f-3a9a-4eed-8b82-43c924e462c7",
  CellID->1944774343],
-Cell[3545, 111, 101, 1, 19, "Tutorials",ExpressionUUID->"6ce2edb4-93fb-4485-832d-09635fad742e",
+Cell[5228, 154, 101, 1, 24, "Tutorials",ExpressionUUID->"6ce2edb4-93fb-4485-832d-09635fad742e",
  CellID->1121275461]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3683, 117, 118, 1, 40, "MoreAboutSection",ExpressionUUID->"0f2cd230-811d-4f59-8e01-bf8d516b39ca",
+Cell[5366, 160, 118, 1, 50, "MoreAboutSection",ExpressionUUID->"0f2cd230-811d-4f59-8e01-bf8d516b39ca",
  CellID->1107670602],
-Cell[3804, 120, 99, 1, 19, "MoreAbout",ExpressionUUID->"878d42ca-464d-4b1e-8d3a-dbffa176c0eb",
+Cell[5487, 163, 99, 1, 24, "MoreAbout",ExpressionUUID->"878d42ca-464d-4b1e-8d3a-dbffa176c0eb",
  CellID->84071971]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3940, 126, 473, 13, 40, "RelatedLinksSection",ExpressionUUID->"695a2734-2691-4f69-a637-6464c229c870",
+Cell[5623, 169, 473, 13, 50, "RelatedLinksSection",ExpressionUUID->"695a2734-2691-4f69-a637-6464c229c870",
  CellID->2100860518],
-Cell[4416, 141, 103, 1, 19, "RelatedLinks",ExpressionUUID->"d8066408-f653-4f80-b78d-f6965cc70928",
+Cell[6099, 184, 103, 1, 24, "RelatedLinks",ExpressionUUID->"d8066408-f653-4f80-b78d-f6965cc70928",
  CellID->236602052]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4556, 147, 531, 14, 70, "ExamplesInitializationSection",ExpressionUUID->"79416be9-840e-4c54-9e7b-255117b8e8a8",
+Cell[6239, 190, 531, 14, 87, "ExamplesInitializationSection",ExpressionUUID->"79416be9-840e-4c54-9e7b-255117b8e8a8",
  CellID->1578457367],
-Cell[5090, 163, 193, 3, 47, "ExampleInitialization",ExpressionUUID->"1415ca18-8079-4f5e-a09c-5a3d65b4180b",
+Cell[6773, 206, 258, 4, 57, "ExampleInitialization",ExpressionUUID->"1415ca18-8079-4f5e-a09c-5a3d65b4180b",
  CellID->1267475778]
 }, Open  ]],
-Cell[5298, 169, 443, 12, 73, "PrimaryExamplesSection",ExpressionUUID->"c0976068-2e69-4487-a9a5-b5f8a0f6c290",
- CellID->1575106253],
 Cell[CellGroupData[{
-Cell[5766, 185, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"f26b716d-803d-4d8e-86ad-f9e13773282a",
+Cell[7068, 215, 443, 12, 90, "PrimaryExamplesSection",ExpressionUUID->"c0976068-2e69-4487-a9a5-b5f8a0f6c290",
+ CellID->1575106253],
+Cell[7514, 229, 505, 11, 30, "ExampleText",ExpressionUUID->"539bbefb-abf7-4e79-b62d-ff9dc596007c",
+ CellID->923533951],
+Cell[CellGroupData[{
+Cell[8044, 244, 368, 7, 33, "Input",ExpressionUUID->"9508a316-8cae-496d-8fa2-6d833217dc8b",
+ CellID->1478558720],
+Cell[8415, 253, 331, 8, 32, "Output",ExpressionUUID->"1d5092d1-4a7c-414e-bed7-dace6c12443e",
+ CellID->409502016]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8795, 267, 487, 13, 72, "ExtendedExamplesSection",ExpressionUUID->"f26b716d-803d-4d8e-86ad-f9e13773282a",
  CellTags->"ExtendedExamples",
  CellID->779877602],
-Cell[6256, 200, 242, 5, 35, "ExampleSection",ExpressionUUID->"13082964-3823-492f-b15e-8b741eed986e",
+Cell[CellGroupData[{
+Cell[9307, 284, 242, 5, 43, "ExampleSection",ExpressionUUID->"13082964-3823-492f-b15e-8b741eed986e",
  CellID->1310159173],
-Cell[6501, 207, 265, 5, 23, "ExampleSection",ExpressionUUID->"5b66d47f-1046-4c56-9f5e-d0f3c9a04efb",
+Cell[9552, 291, 242, 4, 30, "ExampleText",ExpressionUUID->"e6f4be93-a037-4581-852d-7bfedc55aa4a",
+ CellID->1966114776],
+Cell[CellGroupData[{
+Cell[9819, 299, 326, 7, 38, "Input",ExpressionUUID->"2a923f61-481e-4787-9fa7-b614ba857ded",
+ CellID->639840870],
+Cell[10148, 308, 465, 9, 61, "Output",ExpressionUUID->"969b64b8-5a06-4e70-8a8d-017dffd299d5",
+ CellID->40067963]
+}, Open  ]]
+}, Open  ]],
+Cell[10640, 321, 265, 5, 43, "ExampleSection",ExpressionUUID->"5b66d47f-1046-4c56-9f5e-d0f3c9a04efb",
  CellID->1695387920],
 Cell[CellGroupData[{
-Cell[6791, 216, 244, 5, 23, "ExampleSection",ExpressionUUID->"cb4f8592-f363-4673-9346-2ec70811b234",
+Cell[10930, 330, 244, 5, 27, "ExampleSection",ExpressionUUID->"cb4f8592-f363-4673-9346-2ec70811b234",
  CellID->1571743044],
-Cell[7038, 223, 245, 5, 26, "ExampleSubsection",ExpressionUUID->"89b1eeb7-2c2f-4b85-beb6-ededf369cdfb",
+Cell[11177, 337, 245, 5, 32, "ExampleSubsection",ExpressionUUID->"89b1eeb7-2c2f-4b85-beb6-ededf369cdfb",
  CellID->88998761],
-Cell[7286, 230, 247, 5, 22, "ExampleSubsection",ExpressionUUID->"28c49486-f784-4617-9865-dff09f690baa",
+Cell[11425, 344, 247, 5, 26, "ExampleSubsection",ExpressionUUID->"28c49486-f784-4617-9865-dff09f690baa",
  CellID->1153557815]
 }, Open  ]],
-Cell[7548, 238, 248, 5, 35, "ExampleSection",ExpressionUUID->"287577c7-aba6-47a1-a06c-499f3a28d5a6",
+Cell[11687, 352, 248, 5, 43, "ExampleSection",ExpressionUUID->"287577c7-aba6-47a1-a06c-499f3a28d5a6",
  CellID->363831589],
-Cell[7799, 245, 259, 5, 23, "ExampleSection",ExpressionUUID->"f6dd8f8a-3738-44b4-a2a7-e07da2cf5c9f",
+Cell[CellGroupData[{
+Cell[11960, 361, 259, 5, 27, "ExampleSection",ExpressionUUID->"f6dd8f8a-3738-44b4-a2a7-e07da2cf5c9f",
  CellID->1031573314],
-Cell[8061, 252, 252, 5, 23, "ExampleSection",ExpressionUUID->"4f912b68-0353-4dfb-9607-7e6abbc1bc42",
+Cell[12222, 368, 514, 12, 54, "ExampleText",ExpressionUUID->"adce0be4-2f67-4fd1-8045-f09144ee6a31",
+ CellID->1439310712],
+Cell[CellGroupData[{
+Cell[12761, 384, 475, 12, 38, "Input",ExpressionUUID->"037a6d55-60d7-44dd-b9bd-944580269ee0",
+ CellID->907213252],
+Cell[13239, 398, 17531, 397, 1062, "Output",ExpressionUUID->"175dc703-67fc-47bd-b3d5-e1c4941f76c1",
+ CellID->678692314]
+}, Open  ]]
+}, Open  ]],
+Cell[30797, 799, 252, 5, 43, "ExampleSection",ExpressionUUID->"4f912b68-0353-4dfb-9607-7e6abbc1bc42",
  CellID->1017206167],
-Cell[8316, 259, 255, 5, 23, "ExampleSection",ExpressionUUID->"a6a6043c-1f98-47a0-a421-2bdb80b3e786",
+Cell[31052, 806, 255, 5, 27, "ExampleSection",ExpressionUUID->"a6a6043c-1f98-47a0-a421-2bdb80b3e786",
  CellID->66735002],
-Cell[8574, 266, 249, 5, 23, "ExampleSection",ExpressionUUID->"97bfb0c5-f33b-4baf-bd44-600d078f544d",
+Cell[31310, 813, 249, 5, 27, "ExampleSection",ExpressionUUID->"97bfb0c5-f33b-4baf-bd44-600d078f544d",
  CellID->628714880]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8860, 276, 111, 1, 72, "MetadataSection",ExpressionUUID->"81c0cb01-df86-4097-8518-6fab662a57c9",
+Cell[31596, 823, 111, 1, 90, "MetadataSection",ExpressionUUID->"81c0cb01-df86-4097-8518-6fab662a57c9",
  CellID->1191444920],
-Cell[8974, 279, 477, 12, 26, "History",ExpressionUUID->"dcad016f-7ec7-403b-9fd5-1e3f50c68273",
+Cell[31710, 826, 595, 14, 33, "History",ExpressionUUID->"dcad016f-7ec7-403b-9fd5-1e3f50c68273",
  CellID->1477245812],
 Cell[CellGroupData[{
-Cell[9476, 295, 485, 13, 21, "CategorizationSection",ExpressionUUID->"e7fa419c-45c5-42fe-921e-5897e04107cb",
+Cell[32330, 844, 485, 13, 27, "CategorizationSection",ExpressionUUID->"e7fa419c-45c5-42fe-921e-5897e04107cb",
  CellID->1011919317],
-Cell[9964, 310, 135, 2, 35, "Categorization",ExpressionUUID->"ad4f3462-e424-4db3-aad5-dfedf5514e98",
+Cell[32818, 859, 135, 2, 43, "Categorization",ExpressionUUID->"ad4f3462-e424-4db3-aad5-dfedf5514e98",
  CellID->1404960226],
-Cell[10102, 314, 160, 2, 35, "Categorization",ExpressionUUID->"f7dc32e8-3150-46fe-ae3c-d41e64e859a6",
+Cell[32956, 863, 160, 2, 43, "Categorization",ExpressionUUID->"f7dc32e8-3150-46fe-ae3c-d41e64e859a6",
  CellID->991326685],
-Cell[10265, 318, 158, 2, 35, "Categorization",ExpressionUUID->"5a1be3bc-4a58-433d-8ac5-9a2b92011342",
+Cell[33119, 867, 158, 2, 43, "Categorization",ExpressionUUID->"5a1be3bc-4a58-433d-8ac5-9a2b92011342",
  CellID->1049461369],
-Cell[10426, 322, 171, 2, 35, "Categorization",ExpressionUUID->"d8cc5fd4-8d77-46dd-9c39-7a7c81071215",
+Cell[33280, 871, 171, 2, 43, "Categorization",ExpressionUUID->"d8cc5fd4-8d77-46dd-9c39-7a7c81071215",
  CellID->1014035972]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[10634, 329, 108, 1, 21, "KeywordsSection",ExpressionUUID->"8247958b-1556-4253-987a-d7a48ee8202a",
+Cell[33488, 878, 108, 1, 26, "KeywordsSection",ExpressionUUID->"8247958b-1556-4253-987a-d7a48ee8202a",
  CellID->4507837],
-Cell[10745, 332, 99, 1, 70, "Keywords",ExpressionUUID->"09243f11-ae69-4d34-875d-d42f3c32c64f",
+Cell[33599, 881, 99, 1, 87, "Keywords",ExpressionUUID->"09243f11-ae69-4d34-875d-d42f3c32c64f",
  CellID->601288814]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[10881, 338, 120, 1, 21, "TemplatesSection",ExpressionUUID->"e6b71e86-f512-408a-9b5e-ae66845400af",
+Cell[33735, 887, 120, 1, 26, "TemplatesSection",ExpressionUUID->"e6b71e86-f512-408a-9b5e-ae66845400af",
  CellID->1950537763],
-Cell[11004, 341, 149, 2, 70, "Template",ExpressionUUID->"fab4446c-b164-470d-8765-670f26c90643",
+Cell[33858, 890, 149, 2, 87, "Template",ExpressionUUID->"fab4446c-b164-470d-8765-670f26c90643",
  CellID->1350311286],
-Cell[11156, 345, 136, 2, 70, "Template",ExpressionUUID->"71c8805b-2ba1-4a54-a650-47591fcfdfd1",
+Cell[34010, 894, 136, 2, 87, "Template",ExpressionUUID->"71c8805b-2ba1-4a54-a650-47591fcfdfd1",
  CellID->74602306],
-Cell[11295, 349, 136, 2, 70, "Template",ExpressionUUID->"3b33b271-130a-4f43-a845-b68f69e96e21",
+Cell[34149, 898, 136, 2, 87, "Template",ExpressionUUID->"3b33b271-130a-4f43-a845-b68f69e96e21",
  CellID->1857990741],
-Cell[11434, 353, 137, 2, 70, "Template",ExpressionUUID->"7d8ac29f-bc84-4bc5-9bf5-aeb2014f2c3b",
+Cell[34288, 902, 137, 2, 87, "Template",ExpressionUUID->"7d8ac29f-bc84-4bc5-9bf5-aeb2014f2c3b",
  CellID->690672960]
 }, Closed]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

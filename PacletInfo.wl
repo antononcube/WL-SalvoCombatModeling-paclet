@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Anton Antonov",
     "License" -> "MIT",
     "PublisherID" -> "AntonAntonov",
-    "Version" -> "1.0.0",
+    "Version" -> "1.0.3",
     "WolframVersion" -> "13.1+",
     "PrimaryContext" -> "AntonAntonov`SalvoCombatModeling`",
     "DocumentationURL" -> "https://resources.wolframcloud.com/PacletRepository/resources",
