@@ -1,0 +1,4473 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    190175,       4465]
+NotebookOptionsPosition[    180098,       4233]
+NotebookOutlinePosition[    180674,       4252]
+CellTagsIndexPosition[    180631,       4249]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Battle of Coronel", "Title",
+ CellChangeTimes->{3.9245935702134123`*^9},
+ CellID->1076243878,ExpressionUUID->"119a112c-7325-4c11-9845-ec2802e136dd"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.924537843915556*^9, 3.924537846278673*^9}},
+ CellID->1450961467,ExpressionUUID->"f70547e6-4069-435c-9141-9fb2bc59db51"],
+
+Cell[TextData[{
+ "In this notebook we calibrate the Heterogeneous Salvo Combat Model (HSCM), \
+[MJ1, AAp1], to the First World War ",
+ ButtonBox["Battle of Coronel",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://en.wikipedia.org/wiki/Battle_of_Coronel"], None},
+  ButtonNote->"https://en.wikipedia.org/wiki/Battle_of_Coronel"],
+ ", [Wk1]. Our goal is to exemplify the usage of the functionalities of the \
+paclet \"SalvoCombatModeling\", [AAp1]. We closely follow the Section B of \
+Chapter III of [MJ1]. The calibration data used in [MJ1] is taken from \
+[TB1]."
+}], "Text",
+ CellChangeTimes->{{3.92459303652308*^9, 3.9245930687633247`*^9}, {
+  3.924593191562131*^9, 3.9245932002911377`*^9}, {3.924593504873698*^9, 
+  3.9245935257792463`*^9}, {3.92459356612011*^9, 3.924593566120319*^9}},
+ CellID->1931813168,ExpressionUUID->"89b34a05-ffcf-4882-8b73-135f338f83a6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",
+ CellChangeTimes->{{3.924537850510499*^9, 3.924537850868805*^9}, {
+  3.924593538006299*^9, 3.924593539253375*^9}},
+ CellID->107682769,ExpressionUUID->"bb86c51c-8a4c-495b-ba9e-089848d6604b"],
+
+Cell[CellGroupData[{
+
+Cell["Here we load the paclet:", "MathCaption",
+ CellChangeTimes->{{3.924591930311389*^9, 3.924591934994787*^9}},
+ CellID->548449090,ExpressionUUID->"321ee7a0-3faa-43fc-b4fc-97a56fd8466a"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<AntonAntonov`SalvoCombatModeling`\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.924537852390079*^9, 3.924537869465052*^9}},
+ CellLabel->"In[7]:=",
+ CellID->784042706,ExpressionUUID->"4266de73-c827-4318-b920-4eb9b7c7a80f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The battle", "Section",
+ CellChangeTimes->{{3.924558233451538*^9, 3.924558236716146*^9}},
+ CellID->446101750,ExpressionUUID->"514f77a6-32f2-427d-91d5-8b35c5df10ad"],
+
+Cell["\<\
+The Battle of Coronel was a First World War Imperial German Navy victory over \
+the Royal Navy on 1 November 1914, off the coast of central Chile near the \
+city of Coronel. \
+\>", "Text",
+ CellChangeTimes->{3.924591661313377*^9},
+ CellID->766700573,ExpressionUUID->"84a0bb36-f8e3-47f5-aff5-1f3d18280bae"],
+
+Cell[TextData[{
+ ButtonBox["The Battle of Coronel",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://en.wikipedia.org/wiki/Battle_of_Coronel"], None},
+  ButtonNote->"https://en.wikipedia.org/wiki/Battle_of_Coronel"],
+ " is a First World War naval engagement between three British ships {Good \
+Hope, Monmouth, and Glasgow) and four German ships (Scharnhorst, Gneisenau, \
+Leipzig, and Dresden).  The battle happened on 1 November 1914, off the coast \
+of central Chile near the city of Coronel."
+}], "Text",
+ CellChangeTimes->{{3.924558247433133*^9, 3.924558269843501*^9}, {
+  3.924591708623155*^9, 3.924591730448061*^9}, {3.924591797169749*^9, 
+  3.924591800005353*^9}},
+ CellID->1034648411,ExpressionUUID->"d2e95184-2041-41bd-b88c-d6d770c13bc3"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The Scharnhorst and Gneisenau are the first ships to open fire at Good Hope \
+and Monmouth; the three British ships soon afterwards return fire. Dresden \
+and Leipzig open fire on Glasgow, driving her out of the engagement. At the \
+end of the battle, both Good Hope and Monmouth are sunk, while Glasgow, \
+Scharnhorst, and Gneisenau were damaged.\
+\>", "Text",
+ CellChangeTimes->{{3.924558247433133*^9, 3.924558269843501*^9}, 
+   3.924591708623155*^9},
+ CellID->1160753918,ExpressionUUID->"4a15e8bf-ce95-4b33-87ba-cd6cd896ca93"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Dataset", "[", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Good Hope\>\"", ",", " ", "\"\<Monmouth\>\"", ",", 
+        "\"\<Glasgow\>\"", ",", "\"\<Scharnhorst\>\"", ",", " ", 
+        "\"\<Gneisenau\>\"", ",", " ", "\"\<Leipzig\>\"", ",", "  ", 
+        "\"\<Dresden\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+       "0", ",", "0", ",", "15", ",", "28", ",", "28", ",", "2", ",", "2"}], 
+       "}"}]}], "}"}], "]"}], "]"}], "[", 
+  RowBox[{"All", ",", 
+   RowBox[{
+    RowBox[{"AssociationThread", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<Ship\>\"", ",", "\"\<Duration of fire\>\""}], "}"}], ",", 
+      "#"}], "]"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.924558331348816*^9, 3.924558440790978*^9}},
+ CellLabel->"In[218]:=",
+ CellID->1049650478,ExpressionUUID->"98edd0f9-ca89-4645-9d25-87f5f01577b9"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> {<|"Ship" -> "Good Hope", "Duration of fire" -> 0|>, <|
+       "Ship" -> "Monmouth", "Duration of fire" -> 0|>, <|
+       "Ship" -> "Glasgow", "Duration of fire" -> 15|>, <|
+       "Ship" -> "Scharnhorst", "Duration of fire" -> 28|>, <|
+       "Ship" -> "Gneisenau", "Duration of fire" -> 28|>, <|
+       "Ship" -> "Leipzig", "Duration of fire" -> 2|>, <|
+       "Ship" -> "Dresden", "Duration of fire" -> 2|>}, "AllowEmbedding" -> 
+     True, "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Ship"} -> 
+        1, {All, "Duration of fire"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Ship" -> TypeSystem`PackageScope`AtomShape[123.20000000000002`], 
+            "Duration of fire" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 7, 
+        DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Ship", "Duration of fire"}, {
+         TypeSystem`Atom[String], 
+         TypeSystem`Atom[Integer]}], 7], "Meta" -> <||>, "RowTarget" -> 20, 
+     "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Ship"} -> 
+        1, {All, "Duration of fire"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Ship" -> TypeSystem`PackageScope`AtomShape[123.20000000000002`], 
+            "Duration of fire" -> TypeSystem`PackageScope`AtomShape[34]|>], 
+          DirectedInfinity[1], 2, {All}]], 7, 
+        DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+       TypeSystem`Struct[{"Ship", "Duration of fire"}, {
+         TypeSystem`Atom[String], 
+         TypeSystem`Atom[Integer]}], 7], "Path" -> {}, "DisplayedRowCount" -> 
+     7, "DisplayedColumnCount" -> 2, "DataRowCount" -> 7, "DataColumnCount" -> 
+     2, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
+     "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{
+     TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Ship", 
+                  Style[
+                  "Ship", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Ship"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Ship"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Duration of fire", 
+                  Style[
+                  "Duration of fire", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Duration of fire"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Duration of fire"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+            Item[
+             Pane[
+              Annotation["Good Hope", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Ship"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{123.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["0"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Duration of fire"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["Monmouth", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Ship"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{123.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["0"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Duration of fire"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["Glasgow", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Ship"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{123.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["15"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Duration of fire"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["Scharnhorst", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Ship"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{123.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["28"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Duration of fire"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["Gneisenau", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Ship"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{123.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["28"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Duration of fire"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["Leipzig", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Ship"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{123.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Duration of fire"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["Dresden", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Ship"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{123.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes["2"], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Duration of fire"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{34, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{257., {144.193115234375, 150.806884765625}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{257., {144.193115234375, 150.806884765625}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.924558406464332*^9, 3.92455844130036*^9}},
+ CellLabel->"Out[218]=",
+ CellID->2044907288,ExpressionUUID->"c58429de-fb66-43c0-a118-16c8fb2f992f"]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The following graph shows which ship shot at which ships and total fire \
+duration (in minutes):\
+\>", "Text",
+ CellChangeTimes->{{3.924558777383728*^9, 3.924558815161772*^9}, {
+  3.924593022877747*^9, 3.924593027038763*^9}},
+ CellID->428502828,ExpressionUUID->"87cd07a5-53e5-4487-a42f-2b9f1acfdcb8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graph", "[", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Scharnhorst\>\"", ",", "\"\<Good Hope\>\"", ",", "28"}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Scharnhorst\>\"", ",", "\"\<Monmouth\>\"", ",", "28"}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Gneisenau\>\"", ",", "\"\<Good Hope\>\"", ",", "28"}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Gneisenau\>\"", ",", "\"\<Monmouth\>\"", ",", "28"}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Leipzig\>\"", ",", "\"\<Glasgow\>\"", ",", "2"}], "]"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Dresden\>\"", ",", "\"\<Glasgow\>\"", ",", "2"}], "]"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Glasgow\>\"", ",", "\"\<Scharnhorst\>\"", ",", "15"}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Glasgow\>\"", ",", "\"\<Gneisenau\>\"", ",", "15"}], "]"}],
+      ",", "\[IndentingNewLine]", 
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Glasgow\>\"", ",", "\"\<Leipzig\>\"", ",", "15"}], "]"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"DirectedEdge", "[", 
+      RowBox[{"\"\<Glasgow\>\"", ",", "\"\<Dresden\>\"", ",", "15"}], "]"}]}],
+     "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"VertexLabels", "->", "\"\<Name\>\""}], ",", "\[IndentingNewLine]", 
+   RowBox[{"VertexLabelStyle", "->", 
+    RowBox[{"Directive", "[", 
+     RowBox[{"Blue", ",", "Bold", ",", "20"}], "]"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"EdgeLabels", "->", "\"\<EdgeTag\>\""}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"EdgeLabelStyle", "->", 
+    RowBox[{"Directive", "[", 
+     RowBox[{"Red", ",", "Italic", ",", "20", ",", 
+      RowBox[{"Background", "->", "Yellow"}]}], "]"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ImageSize", "->", "1000"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.924558459037916*^9, 3.92455871969341*^9}, {
+  3.924558764259104*^9, 3.924558775155569*^9}, {3.924558818616824*^9, 
+  3.924558825942538*^9}, {3.924558886825367*^9, 3.9245590062079988`*^9}},
+ CellLabel->"In[232]:=",
+ CellID->1334361805,ExpressionUUID->"e48e23b0-a6d2-4081-bca2-81bb5f923252"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{
+      "Scharnhorst", "Good Hope", "Monmouth", "Gneisenau", "Leipzig", 
+       "Glasgow", "Dresden"}, {{{1, 2}, {1, 3}, {4, 2}, {4, 3}, {5, 6}, {7, 
+       6}, {6, 1}, {6, 4}, {6, 5}, {6, 7}}, Null, {28, 28, 28, 28, 2, 2, 15, 
+       15, 15, 15}}, {EdgeLabels -> {"EdgeTag"}, EdgeLabelStyle -> {
+         Directive[
+          RGBColor[1, 0, 0], Italic, 20, Background -> RGBColor[1, 1, 0]]}, 
+       ImageSize -> 1000, VertexLabels -> {"Name"}, VertexLabelStyle -> {
+         Directive[
+          RGBColor[0, 0, 1], Bold, 20]}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[
+        Medium], {
+         ArrowBox[{{0.6969512523331924, 0.3621515148851534}, {
+          0.0007460705717994287, 1.1087849666154312`}}, 
+          0.027264895911935344`], InsetBox[
+          StyleBox["28",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {0.34884866145249593, 0.7354682407502924},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         ArrowBox[{{0.6969512523331924, 0.3621515148851534}, {0., 
+          0.17529878509949226`}}, 0.027264895911935344`], InsetBox[
+          StyleBox["28",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {0.3484756261665962, 0.26872514999232283},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         ArrowBox[{{0.6977813346547459, 0.9210805018575301}, {
+          0.0007460705717994287, 1.1087849666154312`}}, 
+          0.027264895911935344`], InsetBox[
+          StyleBox["28",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {0.34926370261327266, 1.0149327342364807},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         ArrowBox[{{0.6977813346547459, 0.9210805018575301}, {0., 
+          0.17529878509949226`}}, 0.027264895911935344`], InsetBox[
+          StyleBox["28",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {0.34889066732737295, 0.5481896434785112},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         ArrowBox[
+          BezierCurveBox[{{2.5946298275675836`, 0.}, {2.0671892642355085`, 
+           0.18197918204277297`}, {1.750726968071136, 0.6415023976166748}}], 
+          0.027264895911935344`], InsetBox[
+          StyleBox["2",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {2.1277732299861922, 0.26167799864358604},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         ArrowBox[{{1.750726968071136, 0.6415023976166748}, {
+          0.6969512523331924, 0.3621515148851534}}, 0.027264895911935344`], 
+         InsetBox[
+          StyleBox["15",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {1.2238391102021642, 0.5018269562509141},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         ArrowBox[{{1.750726968071136, 0.6415023976166748}, {
+          0.6977813346547459, 0.9210805018575301}}, 0.027264895911935344`], 
+         InsetBox[
+          StyleBox["15",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {1.224254151362941, 0.7812914497371024},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         ArrowBox[
+          BezierCurveBox[{{1.750726968071136, 0.6415023976166748}, {
+           2.2781675314032106`, 0.45952321557389864`}, {2.5946298275675836`, 
+           0.}}], 0.027264895911935344`], InsetBox[
+          StyleBox["15",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {2.217583565652527, 0.3798243989730889},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         ArrowBox[
+          BezierCurveBox[{{1.750726968071136, 0.6415023976166748}, {
+           2.067454063660322, 1.1012762084342678`}, {2.595256478252253, 
+           1.2832998919071192`}}], 0.027264895911935344`], InsetBox[
+          StyleBox["15",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {2.1280658985613634, 1.0215182104745755},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}, {
+         ArrowBox[
+          BezierCurveBox[{{2.595256478252253, 1.2832998919071192`}, {
+           2.278529382663077, 0.823526081089526}, {1.750726968071136, 
+           0.6415023976166748}}], 0.027264895911935344`], InsetBox[
+          StyleBox["2",
+           StripOnInput->False,
+           LineColor->RGBColor[1, 0, 0],
+           FrontFaceColor->RGBColor[1, 0, 0],
+           BackFaceColor->RGBColor[1, 0, 0],
+           GraphicsColor->RGBColor[1, 0, 0],
+           FontSize->20,
+           FontSlant->Italic,
+           FontColor->RGBColor[1, 0, 0],
+           Background->RGBColor[1, 1, 0]], {2.2179175477620254, 0.9032840790492187},
+           ImageScaled[{0.5, 0.5}],
+          BaseStyle->"Graphics"]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {
+         DiskBox[{0.6969512523331924, 0.3621515148851534}, 
+          0.027264895911935344], InsetBox[
+          StyleBox["\<\"Scharnhorst\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontSize->20,
+           FontWeight->Bold,
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{2, 2}, {0.7242161482451278, 0.3894164107970888}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.0007460705717994287, 1.1087849666154312`}, 
+          0.027264895911935344], InsetBox[
+          StyleBox["\<\"Good Hope\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontSize->20,
+           FontWeight->Bold,
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{2, 2}, {0.028010966483734773, 1.1360498625273665}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0., 0.17529878509949226`}, 0.027264895911935344], InsetBox[
+          StyleBox["\<\"Monmouth\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontSize->20,
+           FontWeight->Bold,
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{2, 2}, {0.027264895911935344, 0.2025636810114276}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.6977813346547459, 0.9210805018575301}, 
+          0.027264895911935344], InsetBox[
+          StyleBox["\<\"Gneisenau\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontSize->20,
+           FontWeight->Bold,
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{2, 2}, {0.7250462305666813, 0.9483453977694655}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.5946298275675836`, 0.}, 0.027264895911935344], InsetBox[
+          StyleBox["\<\"Leipzig\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontSize->20,
+           FontWeight->Bold,
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{2, 2}, {2.621894723479519, 0.027264895911935344}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.750726968071136, 0.6415023976166748}, 
+          0.027264895911935344], InsetBox[
+          StyleBox["\<\"Glasgow\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontSize->20,
+           FontWeight->Bold,
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{2, 2}, {1.7779918639830712, 0.6687672935286102}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.595256478252253, 1.2832998919071192`}, 
+          0.027264895911935344], InsetBox[
+          StyleBox["\<\"Dresden\"\>",
+           StripOnInput->False,
+           LineColor->RGBColor[0, 0, 1],
+           FrontFaceColor->RGBColor[0, 0, 1],
+           BackFaceColor->RGBColor[0, 0, 1],
+           GraphicsColor->RGBColor[0, 0, 1],
+           FontSize->20,
+           FontWeight->Bold,
+           FontColor->RGBColor[0, 0, 1]], 
+          Offset[{2, 2}, {2.6225213741641884, 1.3105647878190545}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->"NetworkGraphics",
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  ImageSize->1000]], "Output",
+ CellChangeTimes->{{3.924558602381938*^9, 3.924558720628018*^9}, 
+   3.924558767799871*^9, {3.924558990201562*^9, 3.924559006792789*^9}},
+ CellLabel->"Out[232]=",
+ CellID->447131014,ExpressionUUID->"90ffdc90-0a1c-4634-a219-cc683d23a8fd"]
+}, {2}]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Model", "Section",
+ CellChangeTimes->{{3.924537877351811*^9, 3.92453788949161*^9}},
+ CellID->885671445,ExpressionUUID->"ce297411-c1ca-4105-8760-c88b76afb0b6"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "The British ships are in ",
+ StyleBox["Good Hope",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["Monmouth",
+  FontSlant->"Italic"],
+ ", and ",
+ StyleBox["Glasgow",
+  FontSlant->"Italic"],
+ ". They correspond to the indices 1, ,2, and 3 respectively."
+}], "Text",
+ CellChangeTimes->{{3.924558001786982*^9, 3.924558095523641*^9}},
+ CellID->1270818758,ExpressionUUID->"56ee6e3b-fb66-4f37-8e17-08b212ce15b6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AssociationThread", "[", 
+  RowBox[{
+   RowBox[{"Range", "[", "3", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Good Hope\>\"", ",", " ", "\"\<Monmouth\>\"", ",", 
+     "\"\<Glasgow\>\""}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.924558102779193*^9, 3.924558127652775*^9}},
+ CellLabel->"In[213]:=",
+ CellID->1925996291,ExpressionUUID->"f0f5a026-7e7c-4961-a6a0-05455700fbe7"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"1", "\[Rule]", "\<\"Good Hope\"\>"}], ",", 
+   RowBox[{"2", "\[Rule]", "\<\"Monmouth\"\>"}], ",", 
+   RowBox[{"3", "\[Rule]", "\<\"Glasgow\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.924558128423804*^9},
+ CellLabel->"Out[213]=",
+ CellID->1198651606,ExpressionUUID->"9c601781-7529-425f-bd52-58a405f4b891"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "The German ships are ",
+ StyleBox["Scharnhorst",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["Gneisenau",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["Leipzig",
+  FontSlant->"Italic"],
+ ", and ",
+ StyleBox["Dresden",
+  FontSlant->"Italic"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.924558139476947*^9, 3.924558183873079*^9}},
+ CellID->193449535,ExpressionUUID->"f6cc4bf2-d548-44e1-9eff-2850b45f5ae3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AssociationThread", "[", 
+  RowBox[{
+   RowBox[{"Range", "[", "4", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Scharnhorst\>\"", ",", " ", "\"\<Gneisenau\>\"", ",", " ", 
+     "\"\<Leipzig\>\"", ",", "  ", "\"\<Dresden\>\""}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.924558102779193*^9, 3.924558135440244*^9}, {
+  3.9245581917558513`*^9, 3.924558204985837*^9}},
+ CellLabel->"In[214]:=",
+ CellID->16093187,ExpressionUUID->"149fa4a6-c0fd-4c7a-843b-b8620535ea95"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"1", "\[Rule]", "\<\"Scharnhorst\"\>"}], ",", 
+   RowBox[{"2", "\[Rule]", "\<\"Gneisenau\"\>"}], ",", 
+   RowBox[{"3", "\[Rule]", "\<\"Leipzig\"\>"}], ",", 
+   RowBox[{"4", "\[Rule]", "\<\"Dresden\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.924558207736903*^9},
+ CellLabel->"Out[214]=",
+ CellID->2042738034,ExpressionUUID->"9c8b3476-ecdf-443d-9f1d-27e3d7d6b728"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Remark:",
+  FontWeight->"Bold"],
+ " The Battle of Coronel is modeled with a \"typical\" salvo model -- the \
+ships use \"continuous fire.\" Hence, there are no interceptors and or, in \
+model terms, defense terms or matrices."
+}], "Text",
+ CellChangeTimes->{{3.9245932202705927`*^9, 3.9245933121138353`*^9}},
+ CellID->1403219518,ExpressionUUID->"3d29f1b0-b7ad-4ff4-be8e-ae51b28e0d5c"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Here is the model (for 3 ",
+ StyleBox["B",
+  FontWeight->"Bold"],
+ "ritish ships and 4 ",
+ StyleBox["G",
+  FontWeight->"Bold"],
+ "erman ships):"
+}], "Text",
+ CellChangeTimes->{{3.924559065586156*^9, 3.924559099403516*^9}},
+ CellID->477072849,ExpressionUUID->"738705aa-82fa-41e8-95e5-aadb0df6c935"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m", "=", 
+  RowBox[{"HeterogeneousSalvoModel", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"B", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"G", ",", "4"}], "}"}], ",", 
+    RowBox[{"\"\<OffensiveEffectivenessTerms\>\"", "->", "True"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.92453791091365*^9, 3.924537915669574*^9}, {
+  3.9245380036177998`*^9, 3.924538007967881*^9}, {3.924538341607421*^9, 
+  3.924538343373604*^9}, {3.924538385134502*^9, 3.924538396925156*^9}, {
+  3.924540496987265*^9, 3.924540497280364*^9}, {3.924542015403583*^9, 
+  3.9245420316250277`*^9}, {3.924555676784894*^9, 3.924555677234193*^9}},
+ CellLabel->"In[208]:=",
+ CellID->1606918892,ExpressionUUID->"7277f8d5-8d77-49f4-a740-f4e8bdde0303"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"B\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"B", "[", "1", "]"}], ",", 
+         RowBox[{"B", "[", "2", "]"}], ",", 
+         RowBox[{"B", "[", "3", "]"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "1"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "2"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "3"}], "]"}]]}], "}"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "1"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "1"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "1"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "1"}], "]"}]]}], ",", "0", ",", "0"}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", 
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "2"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "2"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "2"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "2"}], "]"}]]}], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", 
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "3"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "3"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "3"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"B", ",", "3"}], "]"}]]}]}], "}"}]}], "}"}]}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"G\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"G", "[", "1", "]"}], ",", 
+         RowBox[{"G", "[", "2", "]"}], ",", 
+         RowBox[{"G", "[", "3", "]"}], ",", 
+         RowBox[{"G", "[", "4", "]"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "1"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "2"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "3"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "4"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "4"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "4"}], "]"}]]}], "}"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "1"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "1"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "1"}], "]"}]]}], ",", "0", ",", "0", ",", 
+           "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", 
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "2"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "2"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "2"}], "]"}]]}], ",", "0", ",", "0"}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", 
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "3"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "3"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "3"}], "]"}]]}], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", 
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "4"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "4"}], "]"}]], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"\[Gamma]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Delta]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[CapitalTheta]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], " ", 
+              RowBox[{"\[Tau]", "[", 
+               RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}]}], 
+             RowBox[{"\[Zeta]", "[", 
+              RowBox[{"G", ",", "4"}], "]"}]]}]}], "}"}]}], "}"}]}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.924538397431439*^9, 3.924540497595512*^9, 3.9245420320701327`*^9, 
+   3.9245422167728653`*^9, {3.924542260411112*^9, 3.924542289209425*^9}, 
+   3.924552894870934*^9, 3.924553682774563*^9, {3.92455567749655*^9, 
+   3.9245556941125507`*^9}, {3.924557337207683*^9, 3.924557355905614*^9}},
+ CellLabel->"Out[208]=",
+ CellID->731473172,ExpressionUUID->"42695f31-abb8-49c7-81ab-c75aedf3d707"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Remove the defense matrices:", "Text",
+ CellChangeTimes->{{3.924557893300592*^9, 3.924557941483294*^9}},
+ CellID->1673206376,ExpressionUUID->"cb2c1e39-362a-41fd-a38e-94985a11ab00"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m", "=", 
+  RowBox[{"Cancel", "[", 
+   RowBox[{"m", "//.", 
+    RowBox[{
+     RowBox[{"\[Gamma]", "[", "___", "]"}], "->", "0"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.924557932620723*^9, 3.924557934769902*^9}},
+ CellLabel->"In[211]:=",
+ CellID->281203967,ExpressionUUID->"174e4c29-bb2d-4c6e-b548-b89d31d868b6"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"B\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"B", "[", "1", "]"}], ",", 
+         RowBox[{"B", "[", "2", "]"}], ",", 
+         RowBox[{"B", "[", "3", "]"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "1"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "2"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"B", ",", "3"}], "]"}]]}], "}"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"G\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"G", "[", "1", "]"}], ",", 
+         RowBox[{"G", "[", "2", "]"}], ",", 
+         RowBox[{"G", "[", "3", "]"}], ",", 
+         RowBox[{"G", "[", "4", "]"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "1"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "1"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "2"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "2"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "3"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "3"}], "]"}]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "4"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "4"}], "]"}]], ",", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"\[Beta]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CurlyEpsilon]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}], " ", 
+             RowBox[{"\[CapitalPsi]", "[", 
+              RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}]}], 
+            RowBox[{"\[Zeta]", "[", 
+             RowBox[{"G", ",", "4"}], "]"}]]}], "}"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.92455793709266*^9},
+ CellLabel->"Out[211]=",
+ CellID->1731049969,ExpressionUUID->"800401b1-9ab2-411b-8970-985e63c047f9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Put tooltip interpretations of the terms:", "Text",
+ CellChangeTimes->{{3.924557893300592*^9, 3.924557977801947*^9}},
+ CellID->1795863074,ExpressionUUID->"5e699ee7-cb33-4568-bbc9-957b1a7fb389"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"vrules", "=", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "->", 
+         RowBox[{"Tooltip", "[", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], ",", 
+           InterpretationBox[
+            DynamicModuleBox[{Typeset`open = False}, 
+             TemplateBox[{"Expression", 
+               RowBox[{
+                 DynamicBox[
+                  FEPrivate`FrontEndResource["FEBitmaps", "IconizeEllipsis"]],
+                  "\[Rule]", 
+                 DynamicBox[
+                  FEPrivate`FrontEndResource[
+                  "FEBitmaps", "IconizeEllipsis"]]}], 
+               GridBox[{{
+                  RowBox[{
+                    TagBox["\"Head: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["Rule", "IconizedItem"]}]}, {
+                  RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["384", "IconizedItem"]}]}}, 
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+                "Column", 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               Dynamic[Typeset`open]},
+              "IconizedObject"]],
+            
+            TooltipStyle -> {
+             FontSize -> 16, Background -> LightYellow, CellFrameColor -> 
+              Orange, CellFrame -> 3},
+            SelectWithContents->True,
+            Selectable->False]}], "]"}]}], "&"}], ",", 
+       RowBox[{"SalvoVariableRules", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"B", ",", "3"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"G", ",", "4"}], "}"}]}], "]"}]}], "]"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ReplaceAll", "[", 
+    RowBox[{"m", ",", "vrules"}], "]"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.92453842406498*^9, 3.924538428675167*^9}, {
+  3.924538485841568*^9, 3.924538491049264*^9}, {3.924542510715288*^9, 
+  3.924542605272594*^9}, {3.924552433225202*^9, 3.924552442731936*^9}, {
+  3.924552491044332*^9, 3.924552546907593*^9}, {3.924552619464468*^9, 
+  3.924552621126337*^9}, {3.924552681403521*^9, 3.924552682887186*^9}, {
+  3.924552731376384*^9, 3.924552803915984*^9}, {3.9245528758067102`*^9, 
+  3.924552880889098*^9}, {3.924557930512307*^9, 3.924557930977956*^9}},
+ CellLabel->"In[212]:=",
+ CellID->188026133,ExpressionUUID->"037eba6c-2956-4567-a205-6c188ccdcda3"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"B\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"B", "[", "1", "]"}], ",", 
+         RowBox[{"B", "[", "2", "]"}], ",", 
+         RowBox[{"B", "[", "3", "]"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[1] units against \
+B[1]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[1] units against \
+B[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[1] against \
+B[1]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[1] against \
+B[1]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[1] units that engage B[1] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[1] units that engage B[1] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "1"}], "]"}],
+              "\"\[Zeta]: Staying power of B[1] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[1] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[2] units against \
+B[1]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[2] units against \
+B[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[2] against \
+B[1]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[2] against \
+B[1]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[2] units that engage B[1] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[2] units that engage B[1] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "1"}], "]"}],
+              "\"\[Zeta]: Staying power of B[1] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[1] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[3] units against \
+B[1]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[3] units against \
+B[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[3] against \
+B[1]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[3] against \
+B[1]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[3] units that engage B[1] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[3] units that engage B[1] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "1"}], "]"}],
+              "\"\[Zeta]: Staying power of B[1] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[1] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[4] units against \
+B[1]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[4] units against \
+B[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[4] against \
+B[1]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[4] against \
+B[1]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[4] units that engage B[1] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[4] units that engage B[1] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "1"}], "]"}],
+              "\"\[Zeta]: Staying power of B[1] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[1] unit, {hits}", 
+              "Tooltip"]& ]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[1] units against \
+B[2]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[1] units against \
+B[2]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[1] against \
+B[2]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[1] against \
+B[2]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[1] units that engage B[2] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[1] units that engage B[2] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "2"}], "]"}],
+              "\"\[Zeta]: Staying power of B[2] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[2] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[2] units against \
+B[2]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[2] units against \
+B[2]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[2] against \
+B[2]. [0,1]\"",
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[2] against \
+B[2]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[2] units that engage B[2] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[2] units that engage B[2] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "2"}], "]"}],
+              "\"\[Zeta]: Staying power of B[2] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[2] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[3] units against \
+B[2]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[3] units against \
+B[2]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[3] against \
+B[2]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[3] against \
+B[2]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[3] units that engage B[2] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[3] units that engage B[2] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "2"}], "]"}],
+              "\"\[Zeta]: Staying power of B[2] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[2] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[4] units against \
+B[2]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[4] units against \
+B[2]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[4] against \
+B[2]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[4] against \
+B[2]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[4] units that engage B[2] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[4] units that engage B[2] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "2"}], "]"}],
+              "\"\[Zeta]: Staying power of B[2] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[2] unit, {hits}", 
+              "Tooltip"]& ]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[1] units against \
+B[3]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[1] units against \
+B[3]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[1] against \
+B[3]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[1] against \
+B[3]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[1] units that engage B[3] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[1] units that engage B[3] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "3"}], "]"}],
+              "\"\[Zeta]: Staying power of B[3] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[3] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[2] units against \
+B[3]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[2] units against \
+B[3]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[2] against \
+B[3]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[2] against \
+B[3]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[2] units that engage B[3] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[2] units that engage B[3] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "3"}], "]"}],
+              "\"\[Zeta]: Staying power of B[3] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[3] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[3] units against \
+B[3]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[3] units against \
+B[3]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[3] against \
+B[3]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[3] against \
+B[3]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[3] units that engage B[3] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[3] units that engage B[3] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "3"}], "]"}],
+              "\"\[Zeta]: Staying power of B[3] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[3] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of G[4] units against \
+B[3]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of G[4] units against \
+B[3]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of G[4] against \
+B[3]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of G[4] against \
+B[3]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of G[4] units that engage B[3] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of G[4] units that engage B[3] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"B", ",", "3"}], "]"}],
+              "\"\[Zeta]: Staying power of B[3] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of B[3] unit, {hits}", 
+              "Tooltip"]& ]]}], "}"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"G\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Units\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"G", "[", "1", "]"}], ",", 
+         RowBox[{"G", "[", "2", "]"}], ",", 
+         RowBox[{"G", "[", "3", "]"}], ",", 
+         RowBox[{"G", "[", "4", "]"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"OffenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[1] units against \
+G[1]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[1] units against \
+G[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[1] against \
+G[1]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[1] against \
+G[1]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "1"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[1] units that engage G[1] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[1] units that engage G[1] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "1"}], "]"}],
+              "\"\[Zeta]: Staying power of G[1] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[1] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[2] units against \
+G[1]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[2] units against \
+G[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[2] against \
+G[1]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[2] against \
+G[1]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "1"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[2] units that engage G[1] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[2] units that engage G[1] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "1"}], "]"}],
+              "\"\[Zeta]: Staying power of G[1] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[1] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[3] units against \
+G[1]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[3] units against \
+G[1]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[3] against \
+G[1]. [0,1]\"",
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[3] against \
+G[1]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "1"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[3] units that engage G[1] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[3] units that engage G[1] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "1"}], "]"}],
+              "\"\[Zeta]: Staying power of G[1] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[1] unit, {hits}", 
+              "Tooltip"]& ]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[1] units against \
+G[2]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[1] units against \
+G[2]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[1] against \
+G[2]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[1] against \
+G[2]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "2"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[1] units that engage G[2] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[1] units that engage G[2] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "2"}], "]"}],
+              "\"\[Zeta]: Staying power of G[2] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[2] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[2] units against \
+G[2]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[2] units against \
+G[2]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[2] against \
+G[2]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[2] against \
+G[2]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "2"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[2] units that engage G[2] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[2] units that engage G[2] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "2"}], "]"}],
+              "\"\[Zeta]: Staying power of G[2] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[2] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[3] units against \
+G[2]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[3] units against \
+G[2]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[3] against \
+G[2]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[3] against \
+G[2]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "2"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[3] units that engage G[2] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[3] units that engage G[2] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "2"}], "]"}],
+              "\"\[Zeta]: Staying power of G[2] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[2] unit, {hits}", 
+              "Tooltip"]& ]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[1] units against \
+G[3]. (hits /shooting unit)\"",
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[1] units against \
+G[3]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[1] against \
+G[3]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[1] against \
+G[3]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "3"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[1] units that engage G[3] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[1] units that engage G[3] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "3"}], "]"}],
+              "\"\[Zeta]: Staying power of G[3] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[3] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[2] units against \
+G[3]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[2] units against \
+G[3]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[2] against \
+G[3]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[2] against \
+G[3]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "3"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[2] units that engage G[3] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[2] units that engage G[3] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "3"}], "]"}],
+              "\"\[Zeta]: Staying power of G[3] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[3] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[3] units against \
+G[3]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[3] units against \
+G[3]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[3] against \
+G[3]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[3] against \
+G[3]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "3"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[3] units that engage G[3] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[3] units that engage G[3] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "3"}], "]"}],
+              "\"\[Zeta]: Staying power of G[3] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[3] unit, {hits}", 
+              "Tooltip"]& ]]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[1] units against \
+G[4]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[1] units against \
+G[4]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[1] against \
+G[4]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[1] against \
+G[4]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "1", ",", "4"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[1] units that engage G[4] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[1] units that engage G[4] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "4"}], "]"}],
+              "\"\[Zeta]: Staying power of G[4] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[4] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[2] units against \
+G[4]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[2] units against \
+G[4]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[2] against \
+G[4]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[2] against \
+G[4]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "2", ",", "4"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[2] units that engage G[4] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[2] units that engage G[4] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "4"}], "]"}],
+              "\"\[Zeta]: Staying power of G[4] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[4] unit, {hits}", 
+              "Tooltip"]& ]], ",", 
+           FractionBox[
+            RowBox[{
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[Beta]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}],
+               
+               "\"\[Beta]: Offensive combat potential of B[3] units against \
+G[4]. (hits /shooting unit)\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[Beta]: Offensive combat potential of B[3] units against \
+G[4]. (hits /shooting unit)", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CurlyEpsilon]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}],
+               
+               "\"\[CurlyEpsilon]: Offensive effectiveness of B[3] against \
+G[4]. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CurlyEpsilon]: Offensive effectiveness of B[3] against \
+G[4]. [0,1]", "Tooltip"]& ], " ", 
+             TagBox[
+              TooltipBox[
+               RowBox[{"\[CapitalPsi]", "[", 
+                RowBox[{"B", ",", "G", ",", "3", ",", "4"}], "]"}],
+               
+               "\"\[CapitalPsi]: Fraction of B[3] units that engage G[4] \
+units. [0,1]\"",
+               
+               TooltipStyle->{
+                FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                 CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+              
+              Annotation[#, 
+               "\[CapitalPsi]: Fraction of B[3] units that engage G[4] units. \
+[0,1]", "Tooltip"]& ]}], 
+            TagBox[
+             TooltipBox[
+              RowBox[{"\[Zeta]", "[", 
+               RowBox[{"G", ",", "4"}], "]"}],
+              "\"\[Zeta]: Staying power of G[4] unit, {hits}\"",
+              
+              TooltipStyle->{
+               FontSize -> 16, Background -> RGBColor[1, 1, 0.85], 
+                CellFrameColor -> RGBColor[1, 0.5, 0], CellFrame -> 3}],
+             
+             Annotation[#, "\[Zeta]: Staying power of G[4] unit, {hits}", 
+              "Tooltip"]& ]]}], "}"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"DefenseMatrix\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.92453843055956*^9, 3.924538491554433*^9, 3.924541191935597*^9, 
+   3.9245424621669807`*^9, {3.924542522238809*^9, 3.924542569119193*^9}, 
+   3.924552444058297*^9, {3.924552507453654*^9, 3.924552547538995*^9}, 
+   3.9245526218133693`*^9, 3.924552683281251*^9, {3.924552761526389*^9, 
+   3.9245527810007567`*^9}, 3.92455281447221*^9, {3.9245528813537703`*^9, 
+   3.924552900824824*^9}, 3.924553686290423*^9, 3.924555698016232*^9, {
+   3.924557339612596*^9, 3.924557359451127*^9}, 3.924557956393983*^9},
+ CellLabel->"Out[212]=",
+ CellID->1206772594,ExpressionUUID->"4ac38cca-a9ad-4c4a-bd76-868bcbc639d8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Concrete parameter values", "Subsection",
+ CellChangeTimes->{{3.924557826936365*^9, 3.924557834732136*^9}},
+ CellID->1391425090,ExpressionUUID->"6899e24c-16a5-4d20-b4f4-e877269b5607"],
+
+Cell[CellGroupData[{
+
+Cell["Setting the parameter values as in [MJ1]:", "Text",
+ CellChangeTimes->{{3.924557820434804*^9, 3.924557859639855*^9}},
+ CellID->1732055447,ExpressionUUID->"1d7aa20d-7b04-4767-8bb8-76bb6b8d7c4d"],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", 
+  RowBox[{
+  "\[Beta]", ",", "\[Zeta]", ",", "\[CurlyEpsilon]", ",", "\[CapitalPsi]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.924557304302195*^9, 3.924557350515336*^9}},
+ CellLabel->"In[206]:=",
+ CellID->1515062644,ExpressionUUID->"f791d433-30f0-443f-84d3-b4ba4da48455"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]", "[", 
+    RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], "=", "2.16"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]", "[", 
+    RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], "=", "2.16"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Beta]", "[", 
+     RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], "=", "2.16"}], ";"}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]", "[", 
+    RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], "=", "2.16"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]", "[", 
+    RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], "=", "2.16"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Beta]", "[", 
+     RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], "=", "2.16"}], ";"}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]", "[", 
+    RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], "=", "2.165"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]", "[", 
+    RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], "=", "2.165"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Beta]", "[", 
+     RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], "=", "2.165"}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]", "[", 
+    RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], "=", "2.165"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]", "[", 
+    RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], "=", "2.165"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Beta]", "[", 
+    RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], "=", "2.165"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.92455402444487*^9, 3.924554085890543*^9}, {
+  3.924554130123604*^9, 3.924554135726166*^9}, {3.924554180861304*^9, 
+  3.924554270412828*^9}, {3.924555220502748*^9, 3.9245552723783712`*^9}},
+ CellLabel->"In[112]:=",
+ CellID->944255229,ExpressionUUID->"847844c5-4712-4b78-bb22-aa9d4561ea80"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Zeta]", "[", 
+    RowBox[{"B", ",", "1"}], "]"}], "=", "1.605"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Zeta]", "[", 
+    RowBox[{"B", ",", "2"}], "]"}], "=", "1.605"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Zeta]", "[", 
+    RowBox[{"B", ",", "3"}], "]"}], "=", "1.23"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.92455429374993*^9, 3.924554347726355*^9}, {
+  3.924554386897663*^9, 3.924554400553323*^9}, {3.9245544741756773`*^9, 
+  3.9245545009713182`*^9}},
+ CellLabel->"In[124]:=",
+ CellID->193482473,ExpressionUUID->"61315845-d83f-490c-bb53-7e713e7fd00a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], "=", "0.028"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], "=", "0.028"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], "=", "0.028"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], "=", "0.028"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], "=", "0.028"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[CurlyEpsilon]", "[", 
+     RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], "=", "0.028"}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], "=", "0.012"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], "=", "0.012"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], "=", "0.012"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], "=", "0.012"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], "=", "0.012"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CurlyEpsilon]", "[", 
+    RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], "=", "0.012"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.924554411629966*^9, 3.924554413435399*^9}, {
+   3.92455452061386*^9, 3.9245545921424*^9}, 3.92455463256954*^9, {
+   3.924554697151152*^9, 3.924554753779128*^9}, {3.924554802692205*^9, 
+   3.9245548228091*^9}, {3.924554992731926*^9, 3.924555057807616*^9}},
+ CellLabel->"In[127]:=",
+ CellID->569682153,ExpressionUUID->"2860d32d-7a3e-4f22-8e0e-3d5a838a144b"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "1", ",", "1"}], "]"}], "=", "0.5"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "1", ",", "2"}], "]"}], "=", "0.5"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "2", ",", "1"}], "]"}], "=", "0.5"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[CapitalPsi]", "[", 
+     RowBox[{"G", ",", "B", ",", "2", ",", "2"}], "]"}], "=", "0.5"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "3", ",", "1"}], "]"}], "=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "3", ",", "2"}], "]"}], "=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "4", ",", "1"}], "]"}], "=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[CapitalPsi]", "[", 
+     RowBox[{"G", ",", "B", ",", "4", ",", "2"}], "]"}], "=", "0"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "1", ",", "3"}], "]"}], "=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "2", ",", "3"}], "]"}], "=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "3", ",", "3"}], "]"}], "=", "1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", "[", 
+    RowBox[{"G", ",", "B", ",", "4", ",", "3"}], "]"}], "=", "1"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.924555354353381*^9, 3.924555478195562*^9}, {
+  3.924555732382519*^9, 3.924555762825056*^9}, {3.9245569723982053`*^9, 
+  3.924557007744754*^9}, {3.924557208943527*^9, 3.924557216837734*^9}},
+ CellLabel->"In[189]:=",
+ CellID->1165847145,ExpressionUUID->"ba7cf2e8-690a-4275-88c5-ef353ac24a26"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Damage calculations", "Subsection",
+ CellChangeTimes->{{3.9245591267847567`*^9, 3.924559130881229*^9}},
+ CellID->752170787,ExpressionUUID->"e8abae64-28ac-4406-9b06-766c8c2c1d16"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", "[", "\"\<B\>\"", "]"}], "[", "\"\<OffenseMatrix\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[201]:=",
+ CellID->1645670867,ExpressionUUID->"e8012ce8-4cad-42c0-b905-2475225e51ad"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "0.0188411214953271`", ",", "0.0188411214953271`", ",", "0.`", ",", 
+     "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.0188411214953271`", ",", "0.0188411214953271`", ",", "0.`", ",", 
+     "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.`", ",", "0.021121951219512197`", ",", 
+     "0.021121951219512197`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.92455565849419*^9, 3.924555713919799*^9, {3.9245569868492937`*^9, 
+   3.9245570095322866`*^9}, 3.924557219282662*^9},
+ CellLabel->"Out[201]=",
+ CellID->1348371956,ExpressionUUID->"0ea99327-59e0-419c-ac5b-6056aa4542ed"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalDelta]B", "=", 
+  RowBox[{"Total", "/@", 
+   RowBox[{
+    RowBox[{"m", "[", "\"\<B\>\"", "]"}], "[", "\"\<OffenseMatrix\>\"", 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.924555152506504*^9, 3.924555195907096*^9}, {
+  3.924555492821253*^9, 3.924555501055841*^9}, {3.9245555957170897`*^9, 
+  3.924555612817139*^9}},
+ CellLabel->"In[202]:=",
+ CellID->1840021348,ExpressionUUID->"9cc1e742-7ada-458c-8795-553468bd6583"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.0376822429906542`", ",", "0.0376822429906542`", ",", 
+   "0.04224390243902439`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.924555196424177*^9, 3.924555276660734*^9, 3.924555413123882*^9, {
+   3.924555454957821*^9, 3.924555501588028*^9}, 3.92455561348124*^9, 
+   3.924555715301112*^9, 3.924555764364822*^9, 3.924557014077018*^9, 
+   3.924557222655882*^9},
+ CellLabel->"Out[202]=",
+ CellID->1474279036,ExpressionUUID->"f548482c-c477-4025-87fa-1c48cd9541b2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+How many salvos to achieve total damage of Good Hope and Monmouth:\
+\>", "Text",
+ CellChangeTimes->{{3.9245577132536287`*^9, 3.924557749129469*^9}},
+ CellID->541438966,ExpressionUUID->"2a71bc5e-1b5c-4fa5-9981-5144816047db"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "/", 
+  RowBox[{"\[CapitalDelta]B", "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.924556725389687*^9, 3.92455673231203*^9}},
+ CellLabel->"In[160]:=",
+ CellID->1076489223,ExpressionUUID->"89dcd96a-af92-409b-9136-5fa8984ce163"],
+
+Cell[BoxData["26.537698412698415`"], "Output",
+ CellChangeTimes->{3.924556732659406*^9},
+ CellLabel->"Out[160]=",
+ CellID->4644986,ExpressionUUID->"5140d4f3-8a0b-4c6c-b657-1f5d8da35ebb"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+That is close to the 28 min of fire by Scharnhorst and Gneisenau at Good Hope \
+and Monmouth.\
+\>", "Text",
+ CellChangeTimes->{{3.9245577708876886`*^9, 3.924557810577164*^9}},
+ CellID->758868410,ExpressionUUID->"ff22812f-e13b-4258-8194-41f43e162646"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Total damage of on Glasgow -- Leipzig and Dresden fire for 2 min at Glasgow:\
+\>", "Text",
+ CellChangeTimes->{{3.9245576544488983`*^9, 3.924557705748562*^9}},
+ CellID->395987337,ExpressionUUID->"daf72129-6a01-48fc-960e-3b38c917a00b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[CapitalDelta]B", "[", 
+   RowBox[{"[", "3", "]"}], "]"}], "*", "2"}]], "Input",
+ CellChangeTimes->{{3.924557562089535*^9, 3.924557572860485*^9}},
+ CellLabel->"In[210]:=",
+ CellID->307350906,ExpressionUUID->"eae25973-acbc-4c1f-bd51-d6efca3fdc77"],
+
+Cell[BoxData["0.08448780487804879`"], "Output",
+ CellChangeTimes->{3.924557573160594*^9},
+ CellLabel->"Out[210]=",
+ CellID->948506107,ExpressionUUID->"2c5c72a4-6b05-4322-b816-9d262c755118"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["References", "Section",
+ CellChangeTimes->{{3.92455786485077*^9, 3.924557868247281*^9}},
+ CellID->771028668,ExpressionUUID->"1c07bbb2-0d20-43d1-b107-c1e877a6f69b"],
+
+Cell[CellGroupData[{
+
+Cell["Articles, theses", "Subsection",
+ CellChangeTimes->{{3.924592009548806*^9, 3.924592029403762*^9}},
+ CellID->762497078,ExpressionUUID->"5f0b512a-0c67-4f6f-874a-6084c2038ac9"],
+
+Cell[TextData[{
+ "[MJ1] Michael D. Johns, Steven E. Pilnick, Wayne P. Hughes, ",
+ ButtonBox["\"Heterogeneous Salvo Model for the Navy After Next\"",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://apps.dtic.mil/sti/citations/ADA386434"], None},
+  ButtonNote->"https://apps.dtic.mil/sti/citations/ADA386434"],
+ ", (2000), Defense Technical Information Center."
+}], "Text",
+ CellChangeTimes->{{3.92459237098551*^9, 3.924592473272551*^9}, {
+  3.924593443271825*^9, 3.924593443272114*^9}},
+ CellID->1253468297,ExpressionUUID->"937724eb-8b2d-42ac-bb84-d0e756d658a9"],
+
+Cell[TextData[{
+ "[TB1] Thomas R. Beall, ",
+ ButtonBox["\"The Development of a Naval Battle Model and Its Validation \
+Using Historical Data\"",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://apps.dtic.mil/sti/citations/ADA226615"], None},
+  ButtonNote->"https://apps.dtic.mil/sti/citations/ADA226615"],
+ ", (1990),  Defense Technical Information Center."
+}], "Text",
+ CellChangeTimes->{{3.92459237098551*^9, 3.924592473272551*^9}, {
+  3.924593444439396*^9, 3.9245934971776867`*^9}},
+ CellID->514989527,ExpressionUUID->"8475f3b8-0f71-4916-ba88-74e7136e2ca3"],
+
+Cell[TextData[{
+ "[Wk1] Wikipedia entry, ",
+ ButtonBox["Salvo combat model",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://en.wikipedia.org/wiki/Salvo_combat_model"], None},
+  ButtonNote->"https://en.wikipedia.org/wiki/Salvo_combat_model"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.924592487400959*^9, 3.924592506360616*^9}},
+ CellID->227090609,ExpressionUUID->"bd325f57-fec3-4a03-a1e9-cb7e1de4dec5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Paclets", "Subsection",
+ CellChangeTimes->{{3.9245921377868347`*^9, 3.92459214253878*^9}},
+ CellID->633424744,ExpressionUUID->"117160cc-267f-4933-b8d6-c8600b7ecc42"],
+
+Cell["\<\
+[AAp1] Anton  Antonov, \"SalvoCombatModeling\", (2024), Wolfram Language \
+Paclet Repository.\
+\>", "Text",
+ CellChangeTimes->{{3.924592145031393*^9, 3.924592175180691*^9}},
+ CellID->893234229,ExpressionUUID->"2657040f-3671-4306-a360-b8a12c9ac756"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Guides", "TutorialMoreAboutSection",
+ CellChangeTimes->{{3.843042384656711*^9, 3.843042386024461*^9}},
+ CellID->415968072,ExpressionUUID->"d4b980ce-57e0-4e6b-97bc-7821409b03c1"],
+
+Cell["Heterogeneous Salvo Combat Modeling ", "TutorialMoreAbout",
+ CellChangeTimes->{{3.92459295744632*^9, 3.924592979398966*^9}},
+ CellID->1116115119,ExpressionUUID->"55948454-5467-441e-9259-2d25ef551fdb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tech Notes", "RelatedTutorialsSection",
+ CellID->277148488,ExpressionUUID->"3a74c8d8-f3a4-4276-9104-d7dba836b3e3"],
+
+Cell["XXXX", "RelatedTutorials",
+ CellID->142607473,ExpressionUUID->"72ef8202-5808-4891-a691-c10203c9702a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Metadata", "MetadataSection",
+ CellID->212048659,ExpressionUUID->"8690afc6-e2a1-4880-9f1a-754b162bb699"],
+
+Cell[TextData[{
+ "New in: ",
+ Cell["1,0,0", "HistoryData",
+  CellTags->"New",ExpressionUUID->"2cd7d78c-0bf0-4476-8b33-98f80d3443f2"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"87a40c45-7ec5-4898-ad3f-c4fddcc0c1d4"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->
+  "26e27c64-378c-4a51-aaa5-7d5456646747"]
+}], "History",
+ CellChangeTimes->{{3.9245929126047707`*^9, 3.924592915371539*^9}},
+ CellID->1226441440,ExpressionUUID->"26f86464-e23b-4112-b44a-83ef7731ddb6"],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1253238174,ExpressionUUID->"f8d980f5-e33f-4a32-993d-258a134da925"],
+
+Cell["Tech Note", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->654380642,ExpressionUUID->"7b13f96c-6100-4113-86e8-eb891e582323"],
+
+Cell["AntonAntonov/SalvoCombatModeling", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->911693807,ExpressionUUID->"5550f626-7303-4b1d-9c93-db51facca9ac"],
+
+Cell["AntonAntonov`SalvoCombatModeling`", "Categorization",
+ CellLabel->"Context",
+ CellID->541992904,ExpressionUUID->"68a71252-544d-442a-84c2-1b32246e43bf"],
+
+Cell["AntonAntonov/SalvoCombatModeling/tutorial/TheBattleofCoronel", \
+"Categorization",
+ CellLabel->"URI",
+ CellID->1796590601,ExpressionUUID->"57a7f9e1-299b-4d84-89a1-661d274ec30c"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1678154187,ExpressionUUID->"43f7f351-fa47-44df-92f9-e9e08f4ee429"],
+
+Cell["XXXX", "Keywords",
+ CellID->1834684858,ExpressionUUID->"8ab2a3b7-1ca7-4160-956a-ad5a8fd24d61"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{1492, 1274},
+WindowMargins->{{Automatic, 871}, {Automatic, 35}},
+TaggingRules-><|"Paclet" -> "AntonAntonov/SalvoCombatModeling"|>,
+Magnification:>1.25 Inherited,
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TechNotePageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"07cc168e-e577-4906-a9e9-8f0d764655d0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 154, 2, 141, "Title",ExpressionUUID->"119a112c-7325-4c11-9845-ec2802e136dd",
+ CellID->1076243878],
+Cell[CellGroupData[{
+Cell[759, 28, 173, 2, 58, "Section",ExpressionUUID->"f70547e6-4069-435c-9141-9fb2bc59db51",
+ CellID->1450961467],
+Cell[935, 32, 878, 16, 102, "Text",ExpressionUUID->"89b34a05-ffcf-4882-8b73-135f338f83a6",
+ CellID->1931813168]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1850, 53, 214, 3, 58, "Section",ExpressionUUID->"bb86c51c-8a4c-495b-ba9e-089848d6604b",
+ CellID->107682769],
+Cell[CellGroupData[{
+Cell[2089, 60, 188, 2, 52, "MathCaption",ExpressionUUID->"321ee7a0-3faa-43fc-b4fc-97a56fd8466a",
+ CellID->548449090],
+Cell[2280, 64, 265, 5, 33, "Input",ExpressionUUID->"4266de73-c827-4318-b920-4eb9b7c7a80f",
+ CellID->784042706]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2594, 75, 170, 2, 58, "Section",ExpressionUUID->"514f77a6-32f2-427d-91d5-8b35c5df10ad",
+ CellID->446101750],
+Cell[2767, 79, 315, 6, 55, "Text",ExpressionUUID->"84a0bb36-f8e3-47f5-aff5-1f3d18280bae",
+ CellID->766700573],
+Cell[3085, 87, 757, 14, 78, "Text",ExpressionUUID->"d2e95184-2041-41bd-b88c-d6d770c13bc3",
+ CellID->1034648411],
+Cell[CellGroupData[{
+Cell[3867, 105, 539, 9, 102, "Text",ExpressionUUID->"4a15e8bf-ce95-4b33-87ba-cd6cd896ca93",
+ CellID->1160753918],
+Cell[CellGroupData[{
+Cell[4431, 118, 970, 25, 65, "Input",ExpressionUUID->"98edd0f9-ca89-4645-9d25-87f5f01577b9",
+ CellID->1049650478],
+Cell[5404, 145, 31312, 570, 310, "Output",ExpressionUUID->"c58429de-fb66-43c0-a118-16c8fb2f992f",
+ CellID->2044907288]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36762, 721, 310, 6, 31, "Text",ExpressionUUID->"87cd07a5-53e5-4487-a42f-2b9f1acfdcb8",
+ CellID->428502828],
+Cell[CellGroupData[{
+Cell[37097, 731, 2532, 52, 458, "Input",ExpressionUUID->"e48e23b0-a6d2-4081-bca2-81bb5f923252",
+ CellID->1334361805],
+Cell[39632, 785, 12026, 276, 634, "Output",ExpressionUUID->"90ffdc90-0a1c-4634-a219-cc683d23a8fd",
+ CellID->447131014]
+}, {2}]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51716, 1068, 164, 2, 58, "Section",ExpressionUUID->"ce297411-c1ca-4105-8760-c88b76afb0b6",
+ CellID->885671445],
+Cell[CellGroupData[{
+Cell[51905, 1074, 418, 13, 55, "Text",ExpressionUUID->"56ee6e3b-fb66-4f37-8e17-08b212ce15b6",
+ CellID->1270818758],
+Cell[CellGroupData[{
+Cell[52348, 1091, 413, 10, 33, "Input",ExpressionUUID->"f0f5a026-7e7c-4961-a6a0-05455700fbe7",
+ CellID->1925996291],
+Cell[52764, 1103, 399, 9, 32, "Output",ExpressionUUID->"9c601781-7529-425f-bd52-58a405f4b891",
+ CellID->1198651606]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53212, 1118, 410, 16, 31, "Text",ExpressionUUID->"f6cc4bf2-d548-44e1-9eff-2850b45f5ae3",
+ CellID->193449535],
+Cell[CellGroupData[{
+Cell[53647, 1138, 503, 12, 33, "Input",ExpressionUUID->"149fa4a6-c0fd-4c7a-843b-b8620535ea95",
+ CellID->16093187],
+Cell[54153, 1152, 456, 10, 32, "Output",ExpressionUUID->"9c8b3476-ecdf-443d-9f1d-27e3d7d6b728",
+ CellID->2042738034]
+}, Open  ]]
+}, Open  ]],
+Cell[54636, 1166, 411, 8, 55, "Text",ExpressionUUID->"3d29f1b0-b7ad-4ff4-be8e-ae51b28e0d5c",
+ CellID->1403219518],
+Cell[CellGroupData[{
+Cell[55072, 1178, 315, 10, 31, "Text",ExpressionUUID->"738705aa-82fa-41e8-95e5-aadb0df6c935",
+ CellID->477072849],
+Cell[CellGroupData[{
+Cell[55412, 1192, 760, 16, 33, "Input",ExpressionUUID->"7277f8d5-8d77-49f4-a740-f4e8bdde0303",
+ CellID->1606918892],
+Cell[56175, 1210, 28325, 608, 2333, "Output",ExpressionUUID->"42695f31-abb8-49c7-81ab-c75aedf3d707",
+ CellID->731473172]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[84549, 1824, 186, 2, 31, "Text",ExpressionUUID->"cb2c1e39-362a-41fd-a38e-94985a11ab00",
+ CellID->1673206376],
+Cell[CellGroupData[{
+Cell[84760, 1830, 340, 8, 33, "Input",ExpressionUUID->"174e4c29-bb2d-4c6e-b548-b89d31d868b6",
+ CellID->281203967],
+Cell[85103, 1840, 13733, 306, 1278, "Output",ExpressionUUID->"800401b1-9ab2-411b-8970-985e63c047f9",
+ CellID->1731049969]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98885, 2152, 199, 2, 31, "Text",ExpressionUUID->"5e699ee7-cb33-4568-bbc9-957b1a7fb389",
+ CellID->1795863074],
+Cell[CellGroupData[{
+Cell[99109, 2158, 2792, 66, 163, "Input",ExpressionUUID->"037eba6c-2956-4567-a205-6c188ccdcda3",
+ CellID->188026133],
+Cell[101904, 2226, 60825, 1486, 1278, "Output",ExpressionUUID->"4ac38cca-a9ad-4c4a-bd76-868bcbc639d8",
+ CellID->1206772594]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[162778, 3718, 189, 2, 53, "Subsection",ExpressionUUID->"6899e24c-16a5-4d20-b4f4-e877269b5607",
+ CellID->1391425090],
+Cell[CellGroupData[{
+Cell[162992, 3724, 199, 2, 31, "Text",ExpressionUUID->"1d7aa20d-7b04-4767-8bb8-76bb6b8d7c4d",
+ CellID->1732055447],
+Cell[163194, 3728, 315, 7, 33, "Input",ExpressionUUID->"f791d433-30f0-443f-84d3-b4ba4da48455",
+ CellID->1515062644],
+Cell[163512, 3737, 2284, 68, 370, "Input",ExpressionUUID->"847844c5-4712-4b78-bb22-aa9d4561ea80",
+ CellID->944255229],
+Cell[165799, 3807, 669, 19, 82, "Input",ExpressionUUID->"61315845-d83f-490c-bb53-7e713e7fd00a",
+ CellID->193482473],
+Cell[166471, 3828, 2375, 67, 322, "Input",ExpressionUUID->"2860d32d-7a3e-4f22-8e0e-3d5a838a144b",
+ CellID->569682153],
+Cell[168849, 3897, 2284, 67, 346, "Input",ExpressionUUID->"ba7cf2e8-690a-4275-88c5-ef353ac24a26",
+ CellID->1165847145]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[171182, 3970, 184, 2, 53, "Subsection",ExpressionUUID->"e8abae64-28ac-4406-9b06-766c8c2c1d16",
+ CellID->752170787],
+Cell[CellGroupData[{
+Cell[171391, 3976, 214, 5, 33, "Input",ExpressionUUID->"e8012ce8-4cad-42c0-b905-2475225e51ad",
+ CellID->1645670867],
+Cell[171608, 3983, 690, 19, 57, "Output",ExpressionUUID->"0ea99327-59e0-419c-ac5b-6056aa4542ed",
+ CellID->1348371956]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[172335, 4007, 451, 10, 33, "Input",ExpressionUUID->"9cc1e742-7ada-458c-8795-553468bd6583",
+ CellID->1840021348],
+Cell[172789, 4019, 502, 11, 32, "Output",ExpressionUUID->"f548482c-c477-4025-87fa-1c48cd9541b2",
+ CellID->1474279036]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[173328, 4035, 233, 4, 31, "Text",ExpressionUUID->"2a71bc5e-1b5c-4fa5-9981-5144816047db",
+ CellID->541438966],
+Cell[CellGroupData[{
+Cell[173586, 4043, 282, 6, 33, "Input",ExpressionUUID->"89dcd96a-af92-409b-9136-5fa8984ce163",
+ CellID->1076489223],
+Cell[173871, 4051, 186, 3, 32, "Output",ExpressionUUID->"5140d4f3-8a0b-4c6c-b657-1f5d8da35ebb",
+ CellID->4644986]
+}, Open  ]]
+}, Open  ]],
+Cell[174084, 4058, 260, 5, 31, "Text",ExpressionUUID->"ff22812f-e13b-4258-8194-41f43e162646",
+ CellID->758868410],
+Cell[CellGroupData[{
+Cell[174369, 4067, 243, 4, 31, "Text",ExpressionUUID->"daf72129-6a01-48fc-960e-3b38c917a00b",
+ CellID->395987337],
+Cell[CellGroupData[{
+Cell[174637, 4075, 282, 6, 33, "Input",ExpressionUUID->"eae25973-acbc-4c1f-bd51-d6efca3fdc77",
+ CellID->307350906],
+Cell[174922, 4083, 189, 3, 32, "Output",ExpressionUUID->"2c5c72a4-6b05-4322-b816-9d262c755118",
+ CellID->948506107]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[175184, 4094, 169, 2, 58, "Section",ExpressionUUID->"1c07bbb2-0d20-43d1-b107-c1e877a6f69b",
+ CellID->771028668],
+Cell[CellGroupData[{
+Cell[175378, 4100, 179, 2, 53, "Subsection",ExpressionUUID->"5f0b512a-0c67-4f6f-874a-6084c2038ac9",
+ CellID->762497078],
+Cell[175560, 4104, 572, 11, 55, "Text",ExpressionUUID->"937724eb-8b2d-42ac-bb84-d0e756d658a9",
+ CellID->1253468297],
+Cell[176135, 4117, 570, 12, 55, "Text",ExpressionUUID->"8475f3b8-0f71-4916-ba88-74e7136e2ca3",
+ CellID->514989527],
+Cell[176708, 4131, 411, 10, 31, "Text",ExpressionUUID->"bd325f57-fec3-4a03-a1e9-cb7e1de4dec5",
+ CellID->227090609]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[177156, 4146, 171, 2, 53, "Subsection",ExpressionUUID->"117160cc-267f-4933-b8d6-c8600b7ecc42",
+ CellID->633424744],
+Cell[177330, 4150, 258, 5, 31, "Text",ExpressionUUID->"2657040f-3671-4306-a360-b8a12c9ac756",
+ CellID->893234229]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[177637, 4161, 191, 2, 93, "TutorialMoreAboutSection",ExpressionUUID->"d4b980ce-57e0-4e6b-97bc-7821409b03c1",
+ CellID->415968072],
+Cell[177831, 4165, 206, 2, 30, "TutorialMoreAbout",ExpressionUUID->"55948454-5467-441e-9259-2d25ef551fdb",
+ CellID->1116115119]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[178074, 4172, 128, 1, 93, "RelatedTutorialsSection",ExpressionUUID->"3a74c8d8-f3a4-4276-9104-d7dba836b3e3",
+ CellID->277148488],
+Cell[178205, 4175, 107, 1, 30, "RelatedTutorials",ExpressionUUID->"72ef8202-5808-4891-a691-c10203c9702a",
+ CellID->142607473]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[178361, 4182, 110, 1, 90, "MetadataSection",ExpressionUUID->"8690afc6-e2a1-4880-9f1a-754b162bb699",
+ CellID->212048659],
+Cell[178474, 4185, 548, 13, 33, "History",ExpressionUUID->"26f86464-e23b-4112-b44a-83ef7731ddb6",
+ CellID->1226441440],
+Cell[CellGroupData[{
+Cell[179047, 4202, 123, 1, 27, "CategorizationSection",ExpressionUUID->"f8d980f5-e33f-4a32-993d-258a134da925",
+ CellID->1253238174],
+Cell[179173, 4205, 137, 2, 87, "Categorization",ExpressionUUID->"7b13f96c-6100-4113-86e8-eb891e582323",
+ CellID->654380642],
+Cell[179313, 4209, 160, 2, 87, "Categorization",ExpressionUUID->"5550f626-7303-4b1d-9c93-db51facca9ac",
+ CellID->911693807],
+Cell[179476, 4213, 157, 2, 87, "Categorization",ExpressionUUID->"68a71252-544d-442a-84c2-1b32246e43bf",
+ CellID->541992904],
+Cell[179636, 4217, 183, 3, 87, "Categorization",ExpressionUUID->"57a7f9e1-299b-4d84-89a1-661d274ec30c",
+ CellID->1796590601]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[179856, 4225, 111, 1, 26, "KeywordsSection",ExpressionUUID->"43f7f351-fa47-44df-92f9-e9e08f4ee429",
+ CellID->1678154187],
+Cell[179970, 4228, 100, 1, 87, "Keywords",ExpressionUUID->"8ab2a3b7-1ca7-4160-956a-ad5a8fd24d61",
+ CellID->1834684858]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
