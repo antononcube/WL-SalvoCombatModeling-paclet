@@ -33,6 +33,7 @@ PacletObject[
           "AntonAntonov`SalvoCombatModeling`\[Rho]",
           "AntonAntonov`SalvoCombatModeling`\[Sigma]",
           "AntonAntonov`SalvoCombatModeling`\[Tau]",
+          "AntonAntonov`SalvoCombatModeling`\[CurlyEpsilon]",
           "AntonAntonov`SalvoCombatModeling`\[CapitalPsi]"
         }
       },
