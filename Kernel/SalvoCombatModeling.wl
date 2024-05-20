@@ -153,14 +153,14 @@ SalvoVariableRules[{A_, m_Integer}, {B_, n_Integer}] :=
 
 Clear[SalvoTerms];
 
-SyntaxInformation[SalvoTerms] = {"ArgumentsPattern" -> {{_Symbol, _Integer}, {{_Symbol, _Integer}}}};
+SyntaxInformation[SalvoTerms] = {"ArgumentsPattern" -> {{_, _}, {{_, _}}}};
 
 SalvoTerms[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}] :=
     Table[(\[Sigma][B, A, j, i] * \[Tau][B, A, j, i] * \[Rho][A, B, i, j] * \[Beta][ B, A, j, i] * \[CapitalPsi][B, A, j, i] * B[j] - \[Delta][A, B, i, j] * \[Tau][A, B, i, j] * \[Gamma][A, B, i, j] * \[CapitalTheta][A, B, i, j] * A[i]) * 1 / \[Zeta][A, i], {i, m}, {j, n}];
 
 Clear[SalvoDamage];
 
-SyntaxInformation[SalvoDamage] = {"ArgumentsPattern" -> {{_Symbol, _Integer}, {{_Symbol, _Integer}}}};
+SyntaxInformation[SalvoDamage] = {"ArgumentsPattern" -> {{_, _}, {{_, _}}}};
 
 SalvoDamage[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}] := Total[Flatten@ SalvoTerms[{A, m}, {B, n}]];
 
@@ -170,7 +170,7 @@ SalvoDamage[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}] :=
 
 Clear[HeterogeneousSalvoModel];
 
-SyntaxInformation[HeterogeneousSalvoModel] = {"ArgumentsPattern" -> {{_?SalvoForceNameQ, _Integer}, {{_?SalvoForceNameQ, _Integer}}, OptionsPattern[]}};
+SyntaxInformation[HeterogeneousSalvoModel] = {"ArgumentsPattern" -> {{_, _}, {{_, _}}, OptionsPattern[]}};
 
 Options[HeterogeneousSalvoModel] = {"OffensiveEffectivenessTerms" -> False};
 
@@ -257,6 +257,8 @@ SalvoNotionDefinitions[___] := (
 (*=================================================================*)
 
 Clear[SalvoModelTooltips];
+
+SyntaxInformation[SalvoModelTooltips] = {"ArgumentsPattern" -> {_, _., _., OptionsPattern[]}};
 
 Options[SalvoModelTooltips] =
     Join[
