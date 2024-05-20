@@ -16,21 +16,23 @@ BeginPackage["AntonAntonov`SalvoCombatModeling`"];
 \[CapitalDelta]::usage = "Number of unit out of action.";
 
 SalvoForceNameQ::usage = "Check is the argument suitable to be salvo combat model force name.";
+SalvoModelQ::usage = "Check is the argument a salvo combat model data structure.";
 SalvoVariable::usage = "Gives rules for salvo combat modeling variables.";
 SalvoVariableRules::usage = "Salvo variable rules.";
-
 (*GenerateVariables::usage = "Generate variables for give fighting sides.";*)
 SalvoTerms::usage = "Salvo terms.";
 SalvoDamage::usage = "Salvo damage.";
 
 HeterogeneousSalvoModel::usage = "Creates heterogeneous salvo combat model matrices.";
+SalvoModel::usage = "Synonym of HeterogeneousSalvoModel.";
 
 SalvoNotionDefinitions::usage = "Model notions definitions dataset.";
+SalvoModelTooltips::usage = "Add tooltips to a salvo model.";
 
 Begin["`Private`"];
 
 (*=================================================================*)
-(* Generic variable definitions                                    *)
+(* Predicates                                                      *)
 (*=================================================================*)
 
 Clear[SalvoForceNameQ];
@@ -38,6 +40,15 @@ SalvoForceNameQ[x_?AtomQ] := True;
 SalvoForceNameQ[x_RGBColor] := True;
 SalvoForceNameQ[___] := False;
 
+Clear[SalvoModelQ];
+SalvoModelQ[m_?AssociationQ] :=
+    Apply[And, AssociationQ /@ Values[m]] &&
+        Apply[And, Map[Sort[#] == Sort[{"Units", "OffenseMatrix", "DefenseMatrix"}]&, Keys /@ Values[m]]];
+SalvoModelQ[___] := False;
+
+(*=================================================================*)
+(* Generic variable definitions                                    *)
+(*=================================================================*)
 
 Clear[SalvoVariable];
 
@@ -163,7 +174,7 @@ SyntaxInformation[HeterogeneousSalvoModel] = {"ArgumentsPattern" -> {{_?SalvoFor
 
 Options[HeterogeneousSalvoModel] = {"OffensiveEffectivenessTerms" -> False};
 
-HeterogeneousSalvoModel[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}, opts:OptionsPattern[]] :=
+HeterogeneousSalvoModel[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}, opts : OptionsPattern[]] :=
     Block[{epsQ, vecA, vecB, matOffenseA, matDefenseA, matOffenseB, matDefenseB, nameA, nameB, res},
 
       epsQ = TrueQ[OptionValue[HeterogeneousSalvoModel, "OffensiveEffectivenessTerms"]];
@@ -207,11 +218,13 @@ HeterogeneousSalvoModel[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_
           (1) Simplify with assumptions has to be used;
           (2) direct replacement in the formulas above has to be used.
         *)
-        res //. {(\[Sigma][b_, a_, j_, i_] * \[Tau][b_, a_, j_, i_] * \[Rho][a_, b_, i_, j_] ):> \[CurlyEpsilon][b, a, j, i]},
+        res //. {(\[Sigma][b_, a_, j_, i_] * \[Tau][b_, a_, j_, i_] * \[Rho][a_, b_, i_, j_] ) :> \[CurlyEpsilon][b, a, j, i]},
         (*ELSE*)
         res
       ]
     ];
+
+SalvoModel = HeterogeneousSalvoModel;
 
 (*=================================================================*)
 (* Notion definitions                                              *)
@@ -238,6 +251,53 @@ SalvoNotionDefinitions[___] := (
   Message[SalvoNotionDefinitions::noargs];
   $Failed
 );
+
+(*=================================================================*)
+(* Tooltips                                                        *)
+(*=================================================================*)
+
+Clear[SalvoModelTooltips];
+
+Options[SalvoModelTooltips] =
+    Join[
+      Options[SalvoVariableRules],
+      {TooltipStyle -> {FontSize -> 16, Background -> LightYellow, CellFrameColor -> Orange, CellFrame -> 3} }
+    ];
+
+SalvoModelTooltips[{A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}, opts : OptionsPattern[]] :=
+    Block[{model},
+      model = HeterogeneousSalvoModel[{A, m}, {B, n}, FilterRules[{opts}, Options[SalvoModelTooltips]]];
+      SalvoModelTooltips[model, opts]
+    ];
+
+SalvoModelTooltips[model_?SalvoModelQ, opts : OptionsPattern[]] :=
+    Block[{spec, spec2},
+      (* The following code seems very contrived... *)
+
+      (* Get symbol _names_ and corresponding force sizes *)
+      spec = Transpose[{Keys[model], Length[model[#]["Units"]]& /@ Keys[model]}];
+
+      (* Find all symbols in the model that correspond to the model symbol names *)
+      spec2 = Map[Union @ Cases[model, x_Symbol /; SymbolName[x] == #[[1]], Infinity]&, spec];
+
+      (* Replace symbol names with symbols *)
+      spec = MapThread[ If[Length[#2] > 0 && !TrueQ[#1[[1]] === #2[[1]]], {#2[[1]], #1[[2]]}, #1]&, {spec, spec2}];
+
+      (* Delegate *)
+      SalvoModelTooltips[model, Sequence @@ spec]
+    ];
+
+SalvoModelTooltips[expr_, {A_?SalvoForceNameQ, m_Integer}, {B_?SalvoForceNameQ, n_Integer}, opts : OptionsPattern[]] :=
+    Block[{ttStyle, varRules},
+
+      ttStyle = OptionValue[SalvoModelTooltips, TooltipStyle];
+
+      varRules = Map[#[[1]] -> Tooltip[#[[1]], #[[2]], TooltipStyle -> ttStyle] &, SalvoVariableRules[{A, m}, {B, n}]];
+
+      ReplaceAll[expr /. (x_List /; MatrixQ[x]) :> MatrixForm[x], varRules]
+    ];
+
+SalvoModelTooltips[___] := $Failed;
 
 End[];
 EndPackage[];
